@@ -28,8 +28,7 @@ const Footer = () => {
              <h4 className="text-[12px] font-bold tracking-[0.3em] uppercase text-white mb-2">Connect</h4>
              <nav className="flex flex-col gap-4 text-sm font-light text-white/50 tracking-wide">
                 <a href="https://www.instagram.com/excelimagery/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors inline-flex items-center gap-2 font-medium">Instagram [↗]</a>
-                <a href="#" className="hover:text-white transition-colors inline-flex items-center gap-2 font-medium">Twitter [↗]</a>
-                <a href="#" className="hover:text-white transition-colors inline-flex items-center gap-2 font-medium">Facebook [↗]</a>
+                <a href="https://www.facebook.com/Excelimagery/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors inline-flex items-center gap-2 font-medium">Facebook [↗]</a>
              </nav>
           </div>
 
