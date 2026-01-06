@@ -15,24 +15,23 @@ const BookingForm = () => {
     const formData = new FormData(e.target);
 
     try {
-      // Using FormSubmit.co - completely free, zero configuration required
-      // Emails automatically send to pmbakara@gmail.com
-      const response = await fetch('https://formsubmit.co/ajax/pmbakara@gmail.com', {
+      // Using Web3Forms for professional, reliable email delivery
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          name: formData.get('name'),
+          access_key: '3fe770ba-311a-4642-ad62-14be49c9c398',
+          subject: 'New Excel Imagery Booking Request',
+          from_name: formData.get('name'),
           email: formData.get('email'),
           phone: formData.get('phone') || 'Not provided',
-          eventDate: formData.get('eventDate'),
+          event_date: formData.get('eventDate'),
           collection: formData.get('collection'),
           message: formData.get('message') || 'No additional notes',
-          _subject: 'New Excel Imagery Booking Request',
-          _template: 'table',
-          _captcha: 'false'
+          to: 'pmbakara@gmail.com'
         }),
       });
 

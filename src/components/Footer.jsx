@@ -58,6 +58,21 @@ const Footer = () => {
             EXCEL
          </h2>
       </div>
+
+      {/* Developer Credit */}
+      <div className="mt-8 text-center pointer-events-auto">
+         <p className="text-[10px] font-medium tracking-widest uppercase text-white/20">
+            Built by{' '}
+            <a 
+              href="https://x.com/goodnesmbakara" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white/30 hover:text-white/60 transition-colors underline underline-offset-2"
+            >
+              Goodness Mbakara
+            </a>
+         </p>
+      </div>
     </footer>
   );
 };
