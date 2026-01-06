@@ -14,9 +14,9 @@ const termsData = [
     content: "All deliveries will be made within 30 working days from completion of full payment and photobook picture selection. If job is not delivered after 90 working days, Excel Imagery shall pay ₦10,000 to the client for every month the job remains undelivered."
   },
   {
-    title: "Date Changes & Extensions",
+    title: "Date Changes & Storage Extension",
     icon: <Calendar className="w-5 h-5" />,
-    content: "Change of event date attracts an additional fee of ₦100,000. Clients must make full payment within 90 working days after their event. Extension requests after 90 days attract ₦1,000 daily storage fee. Clients must notify via SMS or social media to activate extension."
+    content: "Change of event date attracts an additional fee of ₦100,000. After delivery, files are stored for 90 working days at no extra cost. Storage extension beyond 90 days attracts ₦1,000 daily fee. Clients must notify via SMS or social media to activate extension."
   },
   {
     title: "File Safety & Liability",
