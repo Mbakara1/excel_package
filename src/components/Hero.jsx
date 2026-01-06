@@ -19,7 +19,7 @@ const Hero = () => {
                monochrome foundation for the most critical moments of your legacy.
             </p>
             <div className="flex justify-center gap-6">
-               <a href="#packages" className="cta-editorial">View Investment</a>
+               <a href="#packages" className="cta-editorial">View Booking</a>
                <a href="#book" className="cta-editorial cta-outline">Start Enquiry</a>
             </div>
         </motion.div>

@@ -8,6 +8,11 @@
   --color-gold-prestige: #D4AF37;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
 :root {
   /* Absolute Monochrome */
   --bg-primary: #000000;

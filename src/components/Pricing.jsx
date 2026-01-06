@@ -47,7 +47,7 @@ const Pricing = () => {
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start mb-32">
           <div className="lg:col-span-12">
-             <h2 className="text-white text-center">Portfolio <br /><span className="serif-italic font-normal">Investment</span></h2>
+             <h2 className="text-white text-center">Portfolio <br /><span className="serif-italic font-normal">Booking</span></h2>
           </div>
         </div>
 

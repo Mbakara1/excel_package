@@ -12,7 +12,7 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Investment', href: '#packages' },
+    { name: 'Booking', href: '#packages' },
     { name: 'Protocol', href: '#terms' },
     { name: 'Archive', href: '#gallery' },
   ];

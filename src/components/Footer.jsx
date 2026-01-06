@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="md:col-span-1 flex flex-col gap-6">
              <h4 className="text-[12px] font-bold tracking-[0.3em] uppercase text-white mb-2">Navigation</h4>
              <nav className="flex flex-col gap-4 text-sm font-light text-white/50 tracking-wide">
-                <a href="#packages" className="hover:text-white transition-colors">Investment Collections</a>
+                <a href="#packages" className="hover:text-white transition-colors">Booking Packages</a>
                 <a href="#terms" className="hover:text-white transition-colors">Service Protocol</a>
                 <a href="#gallery" className="hover:text-white transition-colors">Visual Archive</a>
                 <a href="#book" className="hover:text-white transition-colors">Commission Request</a>
