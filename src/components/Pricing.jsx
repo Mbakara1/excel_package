@@ -51,27 +51,34 @@ const Pricing = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
            {packages.map((pkg, idx) => (
              <motion.div 
                key={pkg.name}
-               initial={{ opacity: 0 }}
-               whileInView={{ opacity: 1 }}
-               transition={{ duration: 1, delay: idx * 0.1 }}
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.8, delay: idx * 0.1 }}
                viewport={{ once: true }}
-               className={`p-12 border-white/10 ${idx % 3 !== 2 ? 'md:border-r' : ''} ${idx >= 3 ? 'border-t' : ''} flex flex-col group hover:bg-white/[0.02] transition-colors`}
+               className={`p-12 border border-white/10 flex flex-col group hover:border-white/30 transition-all duration-500 relative overflow-hidden ${
+                 pkg.highlight ? 'bg-white/[0.02]' : 'bg-transparent'
+               }`}
              >
-                <div className="mb-10 flex justify-between items-baseline">
-                   <h3 className="text-2xl font-serif italic text-white/40 group-hover:text-white transition-colors">Vol. {idx + 1}</h3>
-                   <span className="text-[10px] font-bold tracking-widest text-[#D4AF37] uppercase">{pkg.highlight ? 'Recommended' : ''}</span>
+                {/* Subtle gradient overlay for depth */}
+                <div className="absolute inset-0 bg-gradient-to-b from-white/[0.01] to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                
+                <div className="mb-10 flex justify-between items-baseline relative z-10">
+                   <h3 className="text-2xl font-serif italic text-white/40 group-hover:text-white/60 transition-colors">Vol. {idx + 1}</h3>
+                   {pkg.highlight && (
+                     <span className="text-[10px] font-bold tracking-widest text-[#D4AF37] uppercase">Recommended</span>
+                   )}
                 </div>
                 
-                <h4 className="text-4xl font-sans font-bold tracking-tighter mb-4 text-white">{pkg.name}</h4>
-                <p className="text-xs font-normal text-white/50 tracking-wide mb-8 uppercase line-clamp-2 md:h-8">{pkg.description}</p>
+                <h4 className="text-4xl font-sans font-bold tracking-tighter mb-4 text-white relative z-10">{pkg.name}</h4>
+                <p className="text-xs font-normal text-white/50 tracking-wide mb-8 uppercase line-clamp-2 md:h-8 relative z-10">{pkg.description}</p>
                 
-                <div className="text-5xl font-serif text-white mb-10">{pkg.price}</div>
+                <div className="text-5xl font-serif text-white mb-10 relative z-10">{pkg.price}</div>
                 
-                <ul className="space-y-4 mb-12 flex-grow">
+                <ul className="space-y-4 mb-12 flex-grow relative z-10">
                    {pkg.features.map((f, i) => (
                      <li key={i} className="text-[11px] font-medium tracking-widest uppercase text-white/70 flex items-center gap-3">
                         <div className="w-1 h-1 bg-white/40" />
@@ -80,8 +87,8 @@ const Pricing = () => {
                    ))}
                 </ul>
                 
-                <a href="#book" className={`w-full py-5 text-center text-[10px] font-black tracking-[0.3em] uppercase transition-all ${
-                    pkg.highlight ? 'bg-white text-black' : 'border border-white/20 text-white/60 hover:text-white hover:border-white'
+                <a href="#book" className={`w-full py-5 text-center text-[10px] font-black tracking-[0.3em] uppercase transition-all relative z-10 ${
+                    pkg.highlight ? 'bg-white text-black hover:bg-white/90' : 'border border-white/20 text-white/60 hover:text-white hover:border-white hover:bg-white/5'
                 }`}>
                     Secure Date
                 </a>
