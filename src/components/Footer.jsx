@@ -54,7 +54,14 @@ const Footer = () => {
 
       {/* Massive Brand Narrative */}
       <div className="mt-20 overflow-hidden select-none pointer-events-none">
-         <h2 className="text-[30vw] font-black uppercase tracking-tighter leading-none text-white/[0.03] whitespace-nowrap -mb-[5vw]">
+         <h2 className="text-[30vw] font-black uppercase tracking-tighter leading-none whitespace-nowrap -mb-[5vw] text-white/60 relative" style={{
+           backdropFilter: 'blur(10px)',
+           WebkitBackdropFilter: 'blur(10px)',
+           textShadow: '0 0 40px rgba(255, 255, 255, 0.1)',
+           background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01))',
+           WebkitBackgroundClip: 'text',
+           backgroundClip: 'text'
+         }}>
             EXCEL
          </h2>
       </div>
