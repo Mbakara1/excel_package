@@ -52,16 +52,19 @@ const BookingForm = () => {
                      <label className="text-[10px] font-black uppercase tracking-widest text-black/30">Event Date</label>
                      <input required type="date" className="bg-transparent border-b border-black/10 py-4 focus:border-black outline-none transition-colors" />
                   </div>
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-2 relative">
                      <label className="text-[10px] font-black uppercase tracking-widest text-black/30">Collection</label>
-                     <select className="bg-transparent border-b border-black/10 py-4 focus:border-black outline-none transition-colors appearance-none">
-                        <option>Ruby</option>
-                        <option>Bronze</option>
-                        <option>Silver</option>
-                        <option>Smart</option>
-                        <option>Diamond</option>
-                        <option>Premium / Custom</option>
+                     <select className="bg-transparent border-b border-black/10 py-4 focus:border-black outline-none transition-colors appearance-none cursor-pointer">
+                        <option>Ruby (Vol. 1)</option>
+                        <option>Bronze (Vol. 2)</option>
+                        <option>Silver (Vol. 3)</option>
+                        <option>Smart (Vol. 4)</option>
+                        <option>Diamond (Vol. 5)</option>
+                        <option>Premium / Custom (Vol. 6)</option>
                      </select>
+                     <p className="text-[9px] font-medium tracking-wider text-black/40 mt-2 italic uppercase">
+                        Select to specify your preferred archive volume [↓]
+                     </p>
                   </div>
                   <div className="md:col-span-2 flex flex-col gap-2">
                      <label className="text-[10px] font-black uppercase tracking-widest text-black/30">Creative Vision / Notes</label>
