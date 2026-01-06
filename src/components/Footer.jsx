@@ -20,7 +20,7 @@ const Footer = () => {
                 <a href="#packages" className="hover:text-white transition-colors">Booking Packages</a>
                 <a href="#terms" className="hover:text-white transition-colors">Service Protocol</a>
                 <a href="#gallery" className="hover:text-white transition-colors">Visual Archive</a>
-                <a href="#book" className="hover:text-white transition-colors">Commission Request</a>
+                <a href="#book" className="hover:text-white transition-colors">Enquiry</a>
              </nav>
           </div>
           
