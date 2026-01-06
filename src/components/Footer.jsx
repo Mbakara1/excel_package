@@ -51,9 +51,9 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Massive Brand Narrative with Developer Credit */}
-      <div className="mt-20 relative pb-16">
-         <h2 className="text-[35vw] font-black uppercase tracking-[0.2em] leading-none text-white/60 text-center pointer-events-none" style={{
+      {/* Massive Brand Narrative */}
+      <div className="mt-20 mb-12">
+         <h2 className="text-[35vw] font-black uppercase tracking-[0.25em] leading-none text-white/60 text-center pointer-events-none mb-8" style={{
            backdropFilter: 'blur(10px)',
            WebkitBackdropFilter: 'blur(10px)',
            textShadow: '0 0 40px rgba(255, 255, 255, 0.1)',
@@ -64,26 +64,28 @@ const Footer = () => {
             EXCEL
          </h2>
          
-         {/* Developer Credit - bottom right with proper spacing */}
-         <div className="absolute bottom-0 right-0 md:right-4 pointer-events-auto">
-            <p className="text-xs font-medium tracking-wider uppercase text-white/40 flex items-center gap-2">
-               Built by{' '}
+         {/* Developer Credit - centered below with elegant styling */}
+         <div className="flex justify-center items-center gap-3 pointer-events-auto">
+            <div className="h-px w-12 bg-white/20"></div>
+            <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/30 flex items-center gap-2">
+               Crafted by{' '}
                <a 
                  href="https://x.com/goodnesmbakara" 
                  target="_blank" 
                  rel="noopener noreferrer"
-                 className="text-white hover:text-[#D4AF37] transition-all duration-300 inline-flex items-center gap-2 group cursor-pointer border-b border-white/30 hover:border-[#D4AF37] pb-0.5"
+                 className="text-white/50 hover:text-[#D4AF37] transition-all duration-300 inline-flex items-center gap-1.5 group cursor-pointer relative"
                >
-                 <span className="group-hover:tracking-wide transition-all">Goodness Mbakara</span>
+                 <span className="group-hover:tracking-wider transition-all">Goodness Mbakara</span>
                  <svg 
                    viewBox="0 0 24 24" 
-                   className="w-3.5 h-3.5 fill-current group-hover:scale-110 transition-transform"
+                   className="w-3 h-3 fill-current group-hover:scale-110 group-hover:rotate-12 transition-all"
                    aria-label="X (formerly Twitter)"
                  >
                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                  </svg>
                </a>
             </p>
+            <div className="h-px w-12 bg-white/20"></div>
          </div>
       </div>
     </footer>
