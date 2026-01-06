@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowUp } from 'lucide-react';
 
 const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,7 +28,7 @@ const BackToTop = () => {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-8 right-32 z-50 group"
+      className="fixed bottom-12 right-32 z-50 group"
       aria-label="Back to top"
       style={{ width: '56px', height: '56px' }}
     >
@@ -38,9 +37,20 @@ const BackToTop = () => {
       
       {/* Main button - lighter gray for subtlety */}
       <div className="relative w-full h-full bg-gray-700 hover:bg-gray-800 text-white rounded-full border border-gray-500/40 shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <ArrowUp size={24} strokeWidth={2.5} />
-        </div>
+        {/* Custom SVG arrow with no internal padding for perfect centering */}
+        <svg 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" 
+          width="24" 
+          height="24" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="2.5" 
+          strokeLinecap="round" 
+          strokeLinejoin="round"
+        >
+          <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
       </div>
       
       {/* Tooltip */}
