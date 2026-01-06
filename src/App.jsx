@@ -13,9 +13,9 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <GalleryPreview />
         <Pricing />
         <Terms />
+        <GalleryPreview />
         <BookingForm />
       </main>
       <Footer />

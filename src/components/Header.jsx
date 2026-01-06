@@ -12,9 +12,9 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Collections', href: '#gallery' },
     { name: 'Investment', href: '#packages' },
-    { name: 'House Rules', href: '#terms' },
+    { name: 'Protocol', href: '#terms' },
+    { name: 'Archive', href: '#gallery' },
   ];
 
   return (
