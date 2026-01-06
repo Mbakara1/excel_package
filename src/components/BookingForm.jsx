@@ -123,16 +123,18 @@ const BookingForm = () => {
                   <div className="border-l-2 border-black/10 pl-8">
                      <h3 className="text-xs font-bold tracking-[0.3em] uppercase mb-6 text-black/80">Payment Terms</h3>
                      <div className="space-y-4 text-sm text-black/60 leading-relaxed">
-                        <p>• 50% non-refundable deposit required to secure your date</p>
-                        <p>• Remaining balance due 48 hours before event commencement</p>
-                        <p>• All payments processed securely</p>
+                        <p>• 20% non-refundable booking fee (2 months before event)</p>
+                        <p>• 60% of total sum (2 weeks before event)</p>
+                        <p>• 20% balance (before delivery, max 30 days post-event)</p>
+                        <p className="text-black/80 font-medium">• Date changes: ₦100k additional fee</p>
                      </div>
                   </div>
 
                   {/* Response Time */}
                   <div className="bg-black text-white p-8">
-                     <p className="text-xs font-bold tracking-[0.3em] uppercase mb-3 text-white/60">Typical Response</p>
-                     <p className="text-3xl font-serif italic">24 hrs</p>
+                     <p className="text-xs font-bold tracking-[0.3em] uppercase mb-3 text-white/60">Delivery Time</p>
+                     <p className="text-3xl font-serif italic">30 days</p>
+                     <p className="text-xs text-white/40 mt-2">After full payment</p>
                   </div>
                </div>
 
@@ -205,12 +207,12 @@ const BookingForm = () => {
                                 className="w-full bg-white border-b-2 border-black/10 py-3 text-base focus:border-black outline-none transition-colors appearance-none cursor-pointer"
                               >
                                  <option value="">Select package</option>
-                                 <option>Ruby (Vol. 1) — ₦150k</option>
-                                 <option>Bronze (Vol. 2) — ₦200k</option>
-                                 <option>Silver (Vol. 3) — ₦350k</option>
-                                 <option>Smart (Vol. 4) — ₦400k</option>
-                                 <option>Diamond (Vol. 5) — ₦650k</option>
-                                 <option>Premium (Vol. 6) — Custom</option>
+                                 <option>Ruby — ₦350k</option>
+                                 <option>Bronze — ₦450k</option>
+                                 <option>Silver — ₦600k</option>
+                                 <option>Smart — ₦700k</option>
+                                 <option>Diamond — ₦1.1M</option>
+                                 <option>Premium — ₦2M</option>
                               </select>
                            </div>
                         </div>

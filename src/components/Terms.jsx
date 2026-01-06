@@ -1,22 +1,37 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ShieldCheck, Clock, FileText, Scale, Star } from 'lucide-react';
+import { ChevronDown, ShieldCheck, Clock, FileText, Scale, AlertCircle, Calendar } from 'lucide-react';
 
 const termsData = [
   {
-    title: "Payment & Booking",
+    title: "Payment Structure",
     icon: <ShieldCheck className="w-5 h-5" />,
-    content: "A 50% non-refundable commitment fee is required to secure your date. Balance payment is due 48 hours before the event commencement."
+    content: "20% non-refundable date booking fee must be paid at least 2 months before the event. 60% of total sum must be paid at least 2 weeks before the event. Remaining 20% must be paid before delivery, at most 30 working days after the event. All fees paid are non-refundable."
   },
   {
-    title: "Delivery Timelines",
+    title: "Delivery Timeline",
     icon: <Clock className="w-5 h-5" />,
-    content: "Retouched images: 14-21 business days. Highlight films: 30-45 business days. Photobooks: 4-6 weeks post-selection."
+    content: "All deliveries will be made within 30 working days from completion of full payment and photobook picture selection. If job is not delivered after 90 working days, Excel Imagery shall pay ₦10,000 to the client for every month the job remains undelivered."
   },
   {
-    title: "Policies",
+    title: "Date Changes & Extensions",
+    icon: <Calendar className="w-5 h-5" />,
+    content: "Change of event date attracts an additional fee of ₦100,000. Clients must make full payment within 90 working days after their event. Extension requests after 90 days attract ₦1,000 daily storage fee. Clients must notify via SMS or social media to activate extension."
+  },
+  {
+    title: "File Safety & Liability",
+    icon: <AlertCircle className="w-5 h-5" />,
+    content: "Excel Imagery guarantees job safety for 90 working days after the event. After 90 days, we shall not be held responsible for any loss or damage unless extension request has been made. Excel Imagery will not be held responsible for job loss after 90 working days."
+  },
+  {
+    title: "Copyright & Usage",
+    icon: <FileText className="w-5 h-5" />,
+    content: "Excel Imagery retains full copyright of all images and the right to use images for display, advertising, publication, and promotional purposes."
+  },
+  {
+    title: "Client Cooperation",
     icon: <Scale className="w-5 h-5" />,
-    content: "Rescheduling must be done at least 7 days in advance. No-shows result in forfeiture of commitment fee. Raw files are not provided unless specifically included in the package."
+    content: "The client shall assist and cooperate with the photographer in obtaining desired photographs, including specifying persons and scenes to be photographed. The photographer shall not be responsible for photographs not taken due to client's failure to provide reasonable assistance or cooperation."
   }
 ];
 

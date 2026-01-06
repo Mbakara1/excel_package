@@ -4,40 +4,106 @@ import { motion } from 'framer-motion';
 const packages = [
   {
     name: "Ruby",
-    price: "₦150k",
-    features: ["1 Photographer", "4 Hours Session", "Softcopies only", "10 Retouched Images"],
-    description: "Essential documentation for intimate moments."
+    price: "₦350k",
+    features: [
+      "1 Photo Camera",
+      "1 Video Camera",
+      "2 Enlargements (10x12)",
+      "1 Photobook (10x20)",
+      "Video Thriller",
+      "20 Edited Soft Copies",
+      "Full Event Videos (Flash Drive)",
+      "All Photos (Flash Drive)"
+    ],
+    description: "Essential coverage for your special day.",
+    note: "Flash drive provided by client"
   },
   {
     name: "Bronze",
-    price: "₦200k",
-    features: ["1 Photographer", "6 Hours Session", "12x15 Frame", "15 Retouched Images"],
-    description: "Extended coverage with physical legacy."
+    price: "₦450k",
+    features: [
+      "2 Photo Cameras",
+      "2 Video Cameras",
+      "1 Mic for Interviews/Video",
+      "2 Portraits (12x15)",
+      "1 Regular Photobook (12x24)",
+      "2 Video Thrillers",
+      "25 Edited Soft Copies",
+      "Full Event Videos (Flash Drive)",
+      "All Photos (Flash Drive)",
+      "Pre-wedding Photos (Optional)"
+    ],
+    description: "Enhanced documentation with dual coverage."
   },
   {
     name: "Silver",
-    price: "₦350k",
-    features: ["2 Photographers", "Full Day", "20 Page Album", "30 Retouched Images"],
-    description: "Comprehensive visual storytelling.",
+    price: "₦600k",
+    features: [
+      "2 Photo Cameras",
+      "2 Video Cameras",
+      "1 Mic + 1 Ronin",
+      "2 Portraits (16x20)",
+      "1 Photobook (12x30)",
+      "2 Video Thrillers",
+      "35 Edited Soft Copies",
+      "Google Drive Upload",
+      "Bridal Shower Photos (Optional)",
+      "Pre-wedding Photos (Optional)"
+    ],
+    description: "Premium multi-platform delivery.",
     highlight: true
   },
   {
     name: "Smart",
-    price: "₦400k",
-    features: ["2 Photographers", "1 Cinematographer", "3min Highlight Film", "20 Page Album"],
-    description: "The intelligent choice for modern events."
+    price: "₦700k",
+    features: [
+      "2 Photo Cameras",
+      "2 Video Cameras",
+      "1 Mic + 1 Ronin + 1 Drone",
+      "2 Canvas Prints (16x20)",
+      "1 Synthetic Photobook (12x24)",
+      "2 Video Thrillers",
+      "40 Edited Soft Copies",
+      "Google Drive Upload",
+      "Bridal Shower Photos (Optional)",
+      "Pre-wedding Photos (Optional)"
+    ],
+    description: "Aerial and stabilized cinematography."
   },
   {
     name: "Diamond",
-    price: "₦650k",
-    features: ["3 Photographers", "2 Cinematographers", "10min Film", "Luxury Album Box"],
-    description: "Uncompromising scale and detail."
+    price: "₦1.1M",
+    features: [
+      "3 Photo Cameras",
+      "2 Video Cameras",
+      "1 Mic + 1 Ronin + 1 Drone",
+      "3-in-1 Canvas Print",
+      "1 Synthetic + 1 Regular Photobook",
+      "2 Video Thrillers",
+      "40 Edited Soft Copies",
+      "Google Drive Upload",
+      "Bridal Shower Photos (Optional)",
+      "Pre-wedding Photos (Optional)"
+    ],
+    description: "Maximum coverage and premium deliverables."
   },
   {
     name: "Premium",
-    price: "Custom",
-    features: ["Full Studio Team", "Pre-event Shoot", "4K Drone Coverage", "Lifetime Archival"],
-    description: "The ultimate archive of your history."
+    price: "₦2M",
+    features: [
+      "3 Photo + 3 Video Cameras",
+      "1 Mic + 1 Ronin + 1 Drone",
+      "360 Photo Booth Machine",
+      "5-in-1 Canvas Prints",
+      "2 Acrylic Box Photobooks",
+      "2 Video Thrillers + Content Creation",
+      "50 Edited Soft Copies",
+      "10x10 Backdrop + 4 Banners",
+      "2 Welcome Roll-up Stands",
+      "Hard Drive Delivery",
+      "Bachelor Party Photos (Optional)"
+    ],
+    description: "The ultimate production experience."
   }
 ];
 
