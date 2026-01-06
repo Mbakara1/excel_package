@@ -60,16 +60,17 @@ const Footer = () => {
       </div>
 
       {/* Developer Credit */}
-      <div className="mt-8 text-center pointer-events-auto">
-         <p className="text-[10px] font-medium tracking-widest uppercase text-white/20">
+      <div className="mt-12 pt-8 border-t border-white/5 text-center pointer-events-auto">
+         <p className="text-xs font-medium tracking-wider uppercase text-white/40 flex items-center justify-center gap-2">
             Built by{' '}
             <a 
               href="https://x.com/goodnesmbakara" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-white/30 hover:text-white/60 transition-colors underline underline-offset-2"
+              className="text-white hover:text-[#D4AF37] transition-colors inline-flex items-center gap-2 group"
             >
-              Goodness Mbakara
+              <span>Goodness Mbakara</span>
+              <Twitter size={14} className="group-hover:scale-110 transition-transform" />
             </a>
          </p>
       </div>
