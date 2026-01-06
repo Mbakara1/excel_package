@@ -52,7 +52,7 @@ const BookingForm = () => {
 
   if (submitted) {
     return (
-      <section className="py-40 bg-white text-center min-h-[600px] flex items-center">
+      <section className="py-40 bg-black text-center min-h-[600px] flex items-center">
         <div className="section-container w-full">
            <motion.div 
              initial={{ scale: 0.9, opacity: 0 }} 
@@ -60,18 +60,18 @@ const BookingForm = () => {
              transition={{ duration: 0.6, ease: [0.19, 1, 0.22, 1] }}
              className="max-w-2xl mx-auto"
            >
-              <CheckCircle className="w-20 h-20 text-black mx-auto mb-8" strokeWidth={1.5} />
-              <h2 className="text-black mb-6 leading-tight">Request <span className="serif-italic font-normal">Received</span></h2>
-              <p className="text-black/60 text-base font-normal leading-relaxed mb-4">Your commission request has been archived in our registry.</p>
-              <p className="text-black/40 text-sm font-medium tracking-wider uppercase">Our concierge will contact you within 24 hours.</p>
+              <CheckCircle className="w-20 h-20 text-[#D4AF37] mx-auto mb-8" strokeWidth={1.5} />
+              <h2 className="text-white mb-6 leading-tight">Request <span className="serif-italic font-normal text-[#D4AF37]">Received</span></h2>
+              <p className="text-white/60 text-base font-normal leading-relaxed mb-4">Your commission request has been archived in our registry.</p>
+              <p className="text-white/40 text-sm font-medium tracking-wider uppercase">Our concierge will contact you within 24 hours.</p>
               <motion.a 
                 href="/"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="inline-block mt-12 text-[11px] font-black tracking-[0.3em] uppercase text-black/30 hover:text-black transition-colors"
+                className="inline-block mt-12 text-[11px] font-black tracking-[0.3em] uppercase text-white/30 hover:text-[#D4AF37] transition-colors"
               >
-                Return to Archive [←]
+                Return to Home [←]
               </motion.a>
            </motion.div>
         </div>
@@ -80,203 +80,191 @@ const BookingForm = () => {
   }
 
   return (
-    <section id="book" className="py-32 bg-white text-black border-t border-black/5">
-      <div className="section-container">
-         <div className="max-w-7xl mx-auto">
-            {/* Header */}
-            <div className="mb-20">
-               <div className="flex items-center gap-6 mb-8">
-                  <div className="h-[1px] flex-1 bg-black/10" />
-                  <span className="text-[9px] font-bold tracking-[0.6em] text-black/30 uppercase">Reservation</span>
-                  <div className="h-[1px] flex-1 bg-black/10" />
-               </div>
-               <h2 className="text-black text-center mb-6 leading-[0.85]">
-                  Commission <br />
-                  <span className="serif-italic font-normal">A Session</span>
-               </h2>
+    <section id="book" className="py-40 bg-black text-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '50px 50px'
+        }}></div>
+      </div>
+
+      <div className="section-container relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-6 mb-8">
+            <div className="h-px w-16 bg-white/20"></div>
+            <span className="text-[9px] font-bold tracking-[0.6em] text-white/30 uppercase">Reserve Your Date</span>
+            <div className="h-px w-16 bg-white/20"></div>
+          </div>
+          <h2 className="text-white mb-6 leading-[0.9]">
+            Book <br />
+            <span className="serif-italic font-normal text-[#D4AF37]">Your Session</span>
+          </h2>
+          <p className="text-white/40 text-sm max-w-md mx-auto font-light">
+            Begin your journey to timeless imagery. Share your vision and we'll craft an unforgettable experience.
+          </p>
+        </div>
+
+        {/* Form Card */}
+        <div className="max-w-2xl mx-auto">
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl">
+            {error && (
+              <motion.div 
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-8 p-4 bg-red-500/10 border border-red-500/20 rounded-lg"
+              >
+                <p className="text-red-400 text-sm">{error}</p>
+              </motion.div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-8">
+              {/* Contact Information */}
+              <div className="space-y-6">
+                <h3 className="text-xs font-bold tracking-[0.3em] uppercase text-white/50 pb-3 border-b border-white/10">
+                  Your Details
+                </h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-3">
+                    <label className="block text-xs font-medium tracking-wider uppercase text-white/60">
+                      Full Name *
+                    </label>
+                    <input
+                      required
+                      name="name"
+                      type="text"
+                      className="w-full bg-white/5 border border-white/20 rounded-lg px-5 py-4 text-white placeholder:text-white/30 focus:border-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/20 transition-all"
+                      placeholder="Your name"
+                    />
+                  </div>
+
+                  <div className="space-y-3">
+                    <label className="block text-xs font-medium tracking-wider uppercase text-white/60">
+                      Email Address *
+                    </label>
+                    <input
+                      required
+                      name="email"
+                      type="email"
+                      className="w-full bg-white/5 border border-white/20 rounded-lg px-5 py-4 text-white placeholder:text-white/30 focus:border-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/20 transition-all"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <label className="block text-xs font-medium tracking-wider uppercase text-white/60">
+                    Phone Number <span className="text-white/30">(Optional)</span>
+                  </label>
+                  <input
+                    name="phone"
+                    type="tel"
+                    className="w-full bg-white/5 border border-white/20 rounded-lg px-5 py-4 text-white placeholder:text-white/30 focus:border-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/20 transition-all"
+                    placeholder="+234 000 000 0000"
+                  />
+                </div>
+              </div>
+
+              {/* Event Information */}
+              <div className="space-y-6 pt-4">
+                <h3 className="text-xs font-bold tracking-[0.3em] uppercase text-white/50 pb-3 border-b border-white/10">
+                  Event Details
+                </h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-3">
+                    <label className="block text-xs font-medium tracking-wider uppercase text-white/60">
+                      Event Date *
+                    </label>
+                    <input
+                      required
+                      name="eventDate"
+                      type="date"
+                      className="w-full bg-white/5 border border-white/20 rounded-lg px-5 py-4 text-white placeholder:text-white/30 focus:border-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/20 transition-all cursor-pointer"
+                    />
+                  </div>
+
+                  <div className="space-y-3">
+                    <label className="block text-xs font-medium tracking-wider uppercase text-white/60">
+                      Package *
+                    </label>
+                    <select
+                      required
+                      name="collection"
+                      className="w-full bg-white/5 border border-white/20 rounded-lg px-5 py-4 text-white focus:border-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/20 transition-all cursor-pointer"
+                    >
+                      <option value="" className="bg-gray-900">Select package</option>
+                      <option value="Ruby — ₦350k" className="bg-gray-900">Ruby — ₦350k</option>
+                      <option value="Bronze — ₦450k" className="bg-gray-900">Bronze — ₦450k</option>
+                      <option value="Silver — ₦600k" className="bg-gray-900">Silver — ₦600k</option>
+                      <option value="Smart — ₦700k" className="bg-gray-900">Smart — ₦700k</option>
+                      <option value="Diamond — ₦1.1M" className="bg-gray-900">Diamond — ₦1.1M</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              {/* Additional Information */}
+              <div className="space-y-6 pt-4">
+                <h3 className="text-xs font-bold tracking-[0.3em] uppercase text-white/50 pb-3 border-b border-white/10">
+                  Your Vision
+                </h3>
+                
+                <div className="space-y-3">
+                  <label className="block text-xs font-medium tracking-wider uppercase text-white/60">
+                    Special Requests <span className="text-white/30">(Optional)</span>
+                  </label>
+                  <textarea
+                    name="message"
+                    rows="5"
+                    className="w-full bg-white/5 border border-white/20 rounded-lg px-5 py-4 text-white placeholder:text-white/30 focus:border-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/20 transition-all resize-none"
+                    placeholder="Tell us about your vision, special requirements, or creative ideas for your event..."
+                  />
+                </div>
+              </div>
+
+              {/* Submit Button */}
+              <div className="pt-4">
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="w-full bg-[#D4AF37] hover:bg-[#C4A037] text-black font-bold text-xs tracking-[0.3em] uppercase py-5 px-8 rounded-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 shadow-lg shadow-[#D4AF37]/20"
+                >
+                  {isLoading ? (
+                    <>
+                      <Loader className="w-4 h-4 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      Submit Inquiry
+                      <Send className="w-4 h-4" />
+                    </>
+                  )}
+                </button>
+                <p className="text-white/30 text-[10px] text-center mt-4 font-light tracking-wide">
+                  By submitting, you acknowledge our payment and booking terms
+                </p>
+              </div>
+            </form>
+          </div>
+
+          {/* Contact Info Below Form */}
+          <div className="mt-12 text-center">
+            <p className="text-white/40 text-sm mb-4">Prefer to reach out directly?</p>
+            <div className="flex items-center justify-center gap-8 text-white/60 text-sm">
+              <a href="tel:+2347037667266" className="hover:text-[#D4AF37] transition-colors">
+                +234 703 766 7266
+              </a>
+              <span className="text-white/20">•</span>
+              <a href="mailto:excelimagery@gmail.com" className="hover:text-[#D4AF37] transition-colors">
+                excelimagery@gmail.com
+              </a>
             </div>
-
-            {/* Two-Column Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-               {/* Sidebar - Info */}
-               <div className="lg:col-span-4 space-y-12">
-                  {/* Contact Details */}
-                  <div className="bg-black/[0.02] p-10 border border-black/5">
-                     <h3 className="text-xs font-bold tracking-[0.3em] uppercase mb-8 text-black/80">Direct Contact</h3>
-                     <div className="space-y-4 text-sm text-black/70">
-                        <p className="flex items-start gap-3">
-                           <span className="text-black/40 text-xs mt-1">📍</span>
-                           <span>31 Itiam Street, Uyo</span>
-                        </p>
-                        <p className="flex items-start gap-3">
-                           <span className="text-black/40 text-xs mt-1">📞</span>
-                           <span>+234 703 766 7266</span>
-                        </p>
-                        <p className="flex items-start gap-3">
-                           <span className="text-black/40 text-xs mt-1">✉️</span>
-                           <span className="font-medium text-black">excelimagery@gmail.com</span>
-                        </p>
-                     </div>
-                  </div>
-
-                  {/* Payment Terms */}
-                  <div className="border-l-2 border-black/10 pl-8">
-                     <h3 className="text-xs font-bold tracking-[0.3em] uppercase mb-6 text-black/80">Payment Terms</h3>
-                     <div className="space-y-4 text-sm text-black/60 leading-relaxed">
-                        <p>• 20% non-refundable booking fee (2 months before event)</p>
-                        <p>• 60% of total sum (2 weeks before event)</p>
-                        <p>• 20% balance (before delivery, max 30 days post-event)</p>
-                        <p className="text-black/80 font-medium">• Date changes: ₦100k additional fee</p>
-                     </div>
-                  </div>
-
-                  {/* Response Time */}
-                  <div className="bg-black text-white p-8">
-                     <p className="text-xs font-bold tracking-[0.3em] uppercase mb-3 text-white/60">Delivery Time</p>
-                     <p className="text-3xl font-serif italic">30 days</p>
-                     <p className="text-xs text-white/40 mt-2">After full payment</p>
-                  </div>
-               </div>
-
-               {/* Main Form */}
-               <div className="lg:col-span-8">
-                  <form onSubmit={handleSubmit} className="space-y-20">
-                     {/* Personal Details */}
-                     <div className="space-y-12">
-                        <div className="pb-4 border-b border-black/10">
-                           <h4 className="text-xs font-bold tracking-[0.3em] uppercase text-black/60">01 / Personal Details</h4>
-                        </div>
-                        
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                           <div className="space-y-3">
-                              <label className="block text-xs font-bold tracking-wider uppercase text-black/50">Name</label>
-                              <input 
-                                required 
-                                name="name"
-                                type="text" 
-                                className="w-full bg-white border-b-2 border-black/10 py-4 text-base focus:border-black outline-none transition-colors placeholder:text-black/20" 
-                                placeholder="Your full name" 
-                              />
-                           </div>
-
-                           <div className="space-y-3">
-                              <label className="block text-xs font-bold tracking-wider uppercase text-black/50">Email</label>
-                              <input 
-                                required 
-                                name="email"
-                                type="email" 
-                                className="w-full bg-white border-b-2 border-black/10 py-4 text-base focus:border-black outline-none transition-colors placeholder:text-black/20" 
-                                placeholder="email@example.com" 
-                              />
-                           </div>
-
-                           <div className="space-y-3 md:col-span-2">
-                              <label className="block text-xs font-bold tracking-wider uppercase text-black/50">Phone <span className="text-black/30">(Optional)</span></label>
-                              <input 
-                                name="phone"
-                                type="tel" 
-                                className="w-full bg-white border-b-2 border-black/10 py-4 text-base focus:border-black outline-none transition-colors placeholder:text-black/20" 
-                                placeholder="+234 000 000 0000" 
-                              />
-                           </div>
-                        </div>
-                     </div>
-
-                     {/* Event Information */}
-                     <div className="space-y-12">
-                        <div className="pb-4 border-b border-black/10">
-                           <h4 className="text-xs font-bold tracking-[0.3em] uppercase text-black/60">02 / Event Information</h4>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                           <div className="space-y-3">
-                              <label className="block text-xs font-bold tracking-wider uppercase text-black/50">Event Date</label>
-                              <input 
-                                required 
-                                name="eventDate"
-                                type="date" 
-                                className="w-full bg-white border-b-2 border-black/10 py-4 text-base focus:border-black outline-none transition-colors cursor-pointer" 
-                              />
-                           </div>
-
-                           <div className="space-y-3">
-                              <label className="block text-xs font-bold tracking-wider uppercase text-black/50">Package</label>
-                              <select 
-                                required
-                                name="collection"
-                                className="w-full bg-white border-b-2 border-black/10 py-4 text-base focus:border-black outline-none transition-colors appearance-none cursor-pointer"
-                              >
-                                 <option value="">Select package</option>
-                                 <option>Ruby — ₦350k</option>
-                                 <option>Bronze — ₦450k</option>
-                                 <option>Silver — ₦600k</option>
-                                 <option>Smart — ₦700k</option>
-                                 <option>Diamond — ₦1.1M</option>
-
-                              </select>
-                           </div>
-                        </div>
-                     </div>
-
-                     {/* Additional Details */}
-                     <div className="space-y-12">
-                        <div className="pb-4 border-b border-black/10">
-                           <h4 className="text-xs font-bold tracking-[0.3em] uppercase text-black/60">03 / Additional Details</h4>
-                        </div>
-
-                        <div className="space-y-3">
-                           <label className="block text-xs font-bold tracking-wider uppercase text-black/50">Special Requests <span className="text-black/30">(Optional)</span></label>
-                           <textarea 
-                             name="message"
-                             rows="6" 
-                             className="w-full bg-white border-2 border-black/10 p-6 text-base focus:border-black outline-none transition-colors resize-none placeholder:text-black/20 leading-relaxed" 
-                             placeholder="Share any specific requirements, creative vision, or special requests for your event..."
-                           />
-                        </div>
-                     </div>
-
-                     {/* Error Message */}
-                     <AnimatePresence>
-                       {error && (
-                         <motion.div
-                           initial={{ opacity: 0, y: -10 }}
-                           animate={{ opacity: 1, y: 0 }}
-                           exit={{ opacity: 0 }}
-                           className="p-5 bg-red-50 border-l-4 border-red-500 text-red-800 text-sm"
-                         >
-                           <p className="font-bold mb-1">Submission Error</p>
-                           <p>{error}</p>
-                         </motion.div>
-                       )}
-                     </AnimatePresence>
-
-                     {/* Submit */}
-                     <div className="pt-8 space-y-4">
-                        <button 
-                          type="submit" 
-                          disabled={isLoading}
-                          className="w-full bg-black text-white py-6 text-xs font-black uppercase tracking-[0.4em] hover:bg-black/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-4 group"
-                        >
-                           {isLoading ? (
-                             <>
-                               <Loader size={18} className="animate-spin" />
-                               Processing
-                             </>
-                           ) : (
-                             <>
-                               Submit Enquiry
-                               <Send size={18} className="group-hover:translate-x-1 transition-transform" />
-                             </>
-                           )}
-                        </button>
-                        <p className="text-center text-xs text-black/40 tracking-wide">
-                           By submitting, you acknowledge our payment and booking terms
-                        </p>
-                     </div>
-                  </form>
-               </div>
-            </div>
-         </div>
+          </div>
+        </div>
       </div>
     </section>
   );
