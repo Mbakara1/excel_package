@@ -140,7 +140,7 @@ const BookingForm = () => {
 
                {/* Main Form */}
                <div className="lg:col-span-8">
-                  <form onSubmit={handleSubmit} className="space-y-12">
+                  <form onSubmit={handleSubmit} className="space-y-16">
                      {/* Personal Details */}
                      <div className="space-y-8">
                         <div className="pb-4 border-b border-black/10">
