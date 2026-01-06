@@ -130,9 +130,9 @@ Sent via Excel Imagery Reservation Form
   return (
     <section id="book" className="py-40 bg-white text-black">
       <div className="section-container">
-         <div className="max-w-5xl mx-auto">
+         <div className="max-w-4xl mx-auto">
             {/* Header Section */}
-            <div className="text-center mb-20">
+            <div className="text-center mb-24">
                <span className="text-[10px] font-bold tracking-[0.5em] text-black/30 uppercase mb-8 block">Reservation</span>
                <h2 className="text-black mb-8 leading-[0.8]">Commission <br /><span className="serif-italic font-normal">A Session</span></h2>
                <div className="h-[1px] w-24 bg-black/10 mx-auto mb-8" />
@@ -141,37 +141,37 @@ Sent via Excel Imagery Reservation Form
                </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-16">
+            <form onSubmit={handleSubmit} className="space-y-24">
                {/* Contact Information */}
                <div>
-                  <h3 className="text-sm font-bold tracking-[0.3em] uppercase text-black mb-10 pb-4 border-b border-black/10">Contact Details</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-                     <div className="flex flex-col gap-3">
+                  <h3 className="text-sm font-bold tracking-[0.3em] uppercase text-black mb-12 pb-6 border-b border-black/10">Contact Details</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-14">
+                     <div className="flex flex-col gap-4">
                         <label className="text-[10px] font-black uppercase tracking-widest text-black/60">Your Name*</label>
                         <input 
                           required 
                           name="name"
                           type="text" 
-                          className="bg-transparent border-b border-black/10 py-4 focus:border-black outline-none transition-all text-base font-normal" 
+                          className="bg-transparent border-b border-black/10 py-5 focus:border-black outline-none transition-all text-base font-normal" 
                           placeholder="Full name" 
                         />
                      </div>
-                     <div className="flex flex-col gap-3">
+                     <div className="flex flex-col gap-4">
                         <label className="text-[10px] font-black uppercase tracking-widest text-black/60">Email Address*</label>
                         <input 
                           required 
                           name="email"
                           type="email" 
-                          className="bg-transparent border-b border-black/10 py-4 focus:border-black outline-none transition-all text-base font-normal" 
+                          className="bg-transparent border-b border-black/10 py-5 focus:border-black outline-none transition-all text-base font-normal" 
                           placeholder="email@address.com" 
                         />
                      </div>
-                     <div className="flex flex-col gap-3">
+                     <div className="flex flex-col gap-4">
                         <label className="text-[10px] font-black uppercase tracking-widest text-black/60">Phone Number</label>
                         <input 
                           name="phone"
                           type="tel" 
-                          className="bg-transparent border-b border-black/10 py-4 focus:border-black outline-none transition-all text-base font-normal" 
+                          className="bg-transparent border-b border-black/10 py-5 focus:border-black outline-none transition-all text-base font-normal" 
                           placeholder="+234 000 000 0000" 
                         />
                      </div>
@@ -180,23 +180,23 @@ Sent via Excel Imagery Reservation Form
 
                {/* Event Details */}
                <div>
-                  <h3 className="text-sm font-bold tracking-[0.3em] uppercase text-black mb-10 pb-4 border-b border-black/10">Event Information</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-                     <div className="flex flex-col gap-3">
+                  <h3 className="text-sm font-bold tracking-[0.3em] uppercase text-black mb-12 pb-6 border-b border-black/10">Event Information</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-14">
+                     <div className="flex flex-col gap-4">
                         <label className="text-[10px] font-black uppercase tracking-widest text-black/60">Event Date*</label>
                         <input 
                           required 
                           name="eventDate"
                           type="date" 
-                          className="bg-transparent border-b border-black/10 py-4 focus:border-black outline-none transition-all text-base font-normal cursor-pointer" 
+                          className="bg-transparent border-b border-black/10 py-5 focus:border-black outline-none transition-all text-base font-normal cursor-pointer" 
                         />
                      </div>
-                     <div className="flex flex-col gap-3 relative">
+                     <div className="flex flex-col gap-4 relative">
                         <label className="text-[10px] font-black uppercase tracking-widest text-black/60">Collection Volume*</label>
                         <select 
                           required
                           name="collection"
-                          className="bg-transparent border-b border-black/10 py-4 focus:border-black outline-none transition-all appearance-none cursor-pointer text-base font-normal"
+                          className="bg-transparent border-b border-black/10 py-5 focus:border-black outline-none transition-all appearance-none cursor-pointer text-base font-normal"
                         >
                            <option value="">Select volume</option>
                            <option>Ruby (Vol. 1)</option>
@@ -212,13 +212,13 @@ Sent via Excel Imagery Reservation Form
 
                {/* Creative Vision */}
                <div>
-                  <h3 className="text-sm font-bold tracking-[0.3em] uppercase text-black mb-10 pb-4 border-b border-black/10">Additional Notes</h3>
-                  <div className="flex flex-col gap-3">
+                  <h3 className="text-sm font-bold tracking-[0.3em] uppercase text-black mb-12 pb-6 border-b border-black/10">Additional Notes</h3>
+                  <div className="flex flex-col gap-4">
                      <label className="text-[10px] font-black uppercase tracking-widest text-black/60">Special Requests</label>
                      <textarea 
                        name="message"
                        rows="6" 
-                       className="bg-transparent border border-black/10 p-6 focus:border-black outline-none transition-all resize-none text-base font-normal leading-relaxed" 
+                       className="bg-transparent border border-black/10 p-8 focus:border-black outline-none transition-all resize-none text-base font-normal leading-relaxed" 
                        placeholder="Details about your event, specific requirements, or creative direction..."
                      />
                   </div>
