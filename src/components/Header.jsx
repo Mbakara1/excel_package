@@ -19,8 +19,8 @@ const Header = () => {
 
   return (
     <>
-      {/* Logo - Fixed without blend mode */}
-      <div className="fixed top-0 left-0 z-[200] pointer-events-none">
+      {/* Logo - Absolute position, scrolls with page */}
+      <div className="absolute top-0 left-0 z-[200] pointer-events-none">
         <div className="section-container pt-8 md:pt-12 pointer-events-auto">
           <a href="/" className="group flex flex-col items-center inline-block">
               <img 
