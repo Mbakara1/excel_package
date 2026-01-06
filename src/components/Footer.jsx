@@ -51,6 +51,13 @@ const Footer = () => {
            </div>
         </div>
       </div>
+
+      {/* Massive Brand Narrative */}
+      <div className="mt-20 overflow-hidden select-none pointer-events-none">
+         <h2 className="text-[30vw] font-black uppercase tracking-tighter leading-none text-white/[0.03] whitespace-nowrap -mb-[5vw]">
+            EXCEL
+         </h2>
+      </div>
     </footer>
   );
 };
