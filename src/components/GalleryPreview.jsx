@@ -3,25 +3,25 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 const narrativeItems = [
   {
-    title: 'The Silent Vow',
+    title: 'Timeless Union',
     plate: '01',
-    category: 'Union',
-    description: 'Captured in the quiet moments between breaths. We seek the authenticity of emotion over the noise of the occasion.',
-    image: '/wedding-hero.png'
+    category: 'Wedding',
+    description: 'Every love story deserves to be beautifully told. We capture the unique, unrepeatable moments that define your journey together.',
+    image: '/wedding-moment-1.jpg'
   },
   {
-    title: 'Inner Profile',
+    title: 'Precious Moments',
     plate: '02',
-    category: 'Identity',
-    description: 'A study in light and shadow. A portrait is not just a face; it is a narrative of existence told through a lens.',
-    image: '/portrait-studio.png'
+    category: 'Celebration',
+    description: 'Through continuous innovation and a distinctive eye, we preserve the emotions and details that make your celebration extraordinary.',
+    image: '/wedding-moment-2.jpg'
   },
   {
-    title: 'Cinematic Flow',
+    title: 'Eternal Elegance',
     plate: '03',
-    category: 'Motion',
-    description: 'Life in motion, distilled into singular frames of cinematic history. Every second is a story waiting to be told.',
-    image: '/cinema-stills.png'
+    category: 'Luxury',
+    description: 'Leading luxury wedding photography that transforms fleeting moments into timeless treasures, crafted with unparalleled artistry.',
+    image: '/wedding-moment-3.jpg'
   }
 ];
 
@@ -71,14 +71,14 @@ const GalleryPreview = () => {
       <div className="section-container">
         {/* Intro */}
         <div className="mb-40 max-w-4xl">
-            <span className="text-[10px] font-bold tracking-[0.6em] text-white/30 uppercase mb-6 block">The Collective Narrative</span>
-            <h2 className="text-white mb-12">Visual <br /><span className="serif-italic font-normal">Anthem</span></h2>
+            <span className="text-[10px] font-bold tracking-[0.6em] text-white/30 uppercase mb-6 block">Our Portfolio</span>
+            <h2 className="text-white mb-12">Captured <br /><span className="serif-italic font-normal">Moments</span></h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-white/10 pt-12">
                 <p className="text-sm font-light text-white/40 leading-relaxed italic">
-                    "We do not document facts; we record feelings. In the absence of color, the truth becomes undeniable."
+                    "Every wedding tells a unique story. Through innovation and artistry, we preserve the timeless moments that define your love."
                 </p>
                 <p className="text-[10px] font-bold tracking-widest text-white/20 uppercase leading-loose">
-                    Excel Imagery is a consultancy dedicated to the preservation of high-value memories through an editorial, monochrome lens.
+                    Excel Imagery — The leading provider of luxury wedding photography and cinematography, dedicated to beautiful storytelling.
                 </p>
             </div>
         </div>

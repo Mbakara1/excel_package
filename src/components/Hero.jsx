@@ -9,14 +9,15 @@ const Hero = () => {
     <section className="relative h-[80vh] flex flex-col justify-center overflow-hidden pt-[100px]">
       <div className="section-container relative z-10 w-full text-center">
         <motion.div style={{ opacity: opacityText }}>
-            <span className="text-[10px] font-bold tracking-[0.5em] uppercase mb-8 block text-white/40">Excel Imagery / Archive</span>
+            <span className="text-[10px] font-bold tracking-[0.5em] uppercase mb-8 block text-white/40">Luxury Wedding Photography & Cinematography</span>
             <h1 className="mb-12 font-serif leading-[0.85] text-white">
-              The Standard of <br />
-              <span className="serif-italic font-normal">Authenticity</span>
+              Timeless Moments, <br />
+              <span className="serif-italic font-normal">Beautifully Told</span>
             </h1>
             <p className="max-w-xl mx-auto text-sm font-light tracking-[0.05em] leading-relaxed text-white/60 mb-12">
-               Premier cinematography and photography consultancy. We provide a strictly 
-               monochrome foundation for the most critical moments of your legacy.
+               The leading provider of luxury wedding photography and cinematography. 
+               Through continuous innovation and a distinctive style, we capture unique moments 
+               and ensure every client's story is beautifully preserved for eternity.
             </p>
             <div className="flex justify-center gap-6">
                <a href="#packages" className="cta-editorial">View Booking</a>

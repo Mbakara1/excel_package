@@ -16,7 +16,7 @@ const packages = [
       "Full Event Videos (Flash Drive)",
       "All Photos (Flash Drive)"
     ],
-    description: "Essential coverage for your special day.",
+    description: "Essential luxury storytelling for intimate celebrations.",
     note: "Flash drive provided by client"
   },
   {
@@ -35,7 +35,7 @@ const packages = [
       "All Photos (Flash Drive)",
       "Pre-wedding Photos (Optional)"
     ],
-    description: "Enhanced documentation with dual coverage."
+    description: "Elevated coverage capturing every precious moment."
   },
   {
     name: "Silver",
@@ -53,7 +53,7 @@ const packages = [
       "Bridal Shower Photos (Optional)",
       "Pre-wedding Photos (Optional)"
     ],
-    description: "Premium multi-platform delivery.",
+    description: "Innovative multi-platform delivery and timeless artistry.",
     highlight: true
   },
   {
@@ -72,7 +72,7 @@ const packages = [
       "Bridal Shower Photos (Optional)",
       "Pre-wedding Photos (Optional)"
     ],
-    description: "Aerial and stabilized cinematography."
+    description: "Cutting-edge aerial cinematography and unique perspectives."
   },
   {
     name: "Diamond",
@@ -90,7 +90,7 @@ const packages = [
       "Bridal Shower Photos (Optional)",
       "Pre-wedding Photos (Optional)"
     ],
-    description: "Maximum coverage and premium deliverables."
+    description: "Comprehensive luxury experience with unparalleled service."
   }
 ];
 

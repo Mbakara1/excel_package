@@ -9,8 +9,8 @@ const Footer = () => {
           <div className="md:col-span-1">
              <img src="/Excel Imagery white logo format.png" alt="Excel Imagery Logo" className="h-10 mb-8 grayscale hover:grayscale-0 transition-all duration-500" />
              <p className="text-white/60 text-sm font-light leading-relaxed max-w-xs">
-                Uyo's premier cinematography and photography consultancy. We provide 
-                a strictly monochrome foundation for historical visual preservation.
+                Leading luxury wedding photography and cinematography. Continuously innovating 
+                to capture your unique, timeless moments and tell your story beautifully.
              </p>
           </div>
 
@@ -37,7 +37,7 @@ const Footer = () => {
              <h4 className="text-[12px] font-bold tracking-[0.3em] uppercase text-white mb-2">Contact</h4>
              <div className="text-sm font-light text-white/50 space-y-2">
                 <p>31 Itiam Street, Uyo</p>
-                <p>+234 812 345 6789</p>
+                <p>+234 701 808 7954</p>
                 <p className="text-white font-medium">pmbakara@gmail</p>
              </div>
           </div>
