@@ -7,6 +7,7 @@ import Terms from './components/Terms';
 import BookingForm from './components/BookingForm';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import BackToTop from './components/BackToTop';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <BackToTop />
     </div>
   );
 }
