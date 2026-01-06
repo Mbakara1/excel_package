@@ -31,7 +31,7 @@ const BookingForm = () => {
           event_date: formData.get('eventDate'),
           collection: formData.get('collection'),
           message: formData.get('message') || 'No additional notes',
-          to: 'pmbakara@gmail.com'
+          to: 'excelimagery@gmail.com'
         }),
       });
 
@@ -40,7 +40,7 @@ const BookingForm = () => {
       if (response.ok && data.success) {
         setSubmitted(true);
       } else {
-        setError('Failed to send your request. Please try again or contact us directly at pmbakara@gmail.com');
+        setError('Failed to send your request. Please try again or contact us directly at excelimagery@gmail.com');
       }
     } catch (err) {
       console.error('Form submission error:', err);
@@ -110,11 +110,11 @@ const BookingForm = () => {
                         </p>
                         <p className="flex items-start gap-3">
                            <span className="text-black/40 text-xs mt-1">📞</span>
-                           <span>+234 812 345 6789</span>
+                           <span>+234 703 766 7266</span>
                         </p>
                         <p className="flex items-start gap-3">
                            <span className="text-black/40 text-xs mt-1">✉️</span>
-                           <span className="font-medium text-black">pmbakara@gmail</span>
+                           <span className="font-medium text-black">excelimagery@gmail.com</span>
                         </p>
                      </div>
                   </div>
@@ -212,7 +212,7 @@ const BookingForm = () => {
                                  <option>Silver — ₦600k</option>
                                  <option>Smart — ₦700k</option>
                                  <option>Diamond — ₦1.1M</option>
-                                 <option>Premium — ₦2M</option>
+
                               </select>
                            </div>
                         </div>
