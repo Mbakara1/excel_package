@@ -37,8 +37,8 @@ const Footer = () => {
              <h4 className="text-[12px] font-bold tracking-[0.3em] uppercase text-white mb-2">Contact</h4>
              <div className="text-sm font-light text-white/50 space-y-2">
                 <p>31 Itiam Street, Uyo</p>
-                <p>+234 701 808 7954</p>
-                <p className="text-white font-medium">pmbakara@gmail</p>
+                <p>+234 703 766 7266</p>
+                <p className="text-white font-medium">excelimagery@gmail.com</p>
              </div>
           </div>
         </div>
@@ -53,8 +53,8 @@ const Footer = () => {
       </div>
 
       {/* Massive Brand Narrative */}
-      <div className="mt-20 overflow-hidden select-none pointer-events-none">
-         <h2 className="text-[30vw] font-black uppercase tracking-tighter leading-none whitespace-nowrap -mb-[5vw] text-white/60 relative" style={{
+      <div className="mt-20 overflow-hidden select-none pointer-events-none text-center">
+         <h2 className="text-[30vw] font-black uppercase tracking-tighter leading-none -mb-[5vw] text-white/60 relative" style={{
            backdropFilter: 'blur(10px)',
            WebkitBackdropFilter: 'blur(10px)',
            textShadow: '0 0 40px rgba(255, 255, 255, 0.1)',
