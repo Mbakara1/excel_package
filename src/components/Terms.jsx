@@ -44,7 +44,7 @@ const Terms = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
             <div className="lg:col-span-5">
                 <span className="text-[10px] font-bold tracking-[0.5em] text-white/30 uppercase mb-4 block">Legal</span>
-                <h2 className="text-white mb-8">Terms of <br /><span className="serif-italic font-normal">Service</span></h2>
+                <h2 className="text-white mb-8 leading-[1.3]">Terms of <br /><span className="serif-italic font-normal">Service</span></h2>
                 <p className="text-sm font-light text-white/40 leading-relaxed max-w-sm">
                     Our standards ensure a seamless creative partnership. By engaging our services, you agree to these terms and conditions.
                 </p>

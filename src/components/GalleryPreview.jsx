@@ -72,7 +72,7 @@ const GalleryPreview = () => {
         {/* Intro */}
         <div className="mb-40 max-w-4xl">
             <span className="text-[10px] font-bold tracking-[0.6em] text-white/30 uppercase mb-6 block">Our Portfolio</span>
-            <h2 className="text-white mb-12">Captured <br /><span className="serif-italic font-normal">Moments</span></h2>
+            <h2 className="text-white mb-12 leading-[1.3]">Captured <br /><span className="serif-italic font-normal">Moments</span></h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-white/10 pt-12">
                 <p className="text-sm font-light text-white/40 leading-relaxed italic">
                     "Every wedding tells a unique story. Through innovation and artistry, we preserve the timeless moments that define your love."
