@@ -1,74 +1,109 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
-const ArchiveItem = ({ item, index }) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 100 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1], delay: index * 0.1 }}
-    viewport={{ once: true }}
-    className={`group relative overflow-hidden ${item.width} ${item.height} ${item.margin}`}
-  >
-    <div className="mask-reveal h-full w-full">
-        <img 
-            src={item.image} 
-            alt={item.title} 
-            className="h-full w-full object-cover grayscale transition-all duration-1000 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all duration-700" />
-    </div>
-    <div className="absolute inset-0 flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-        <span className="text-[10px] font-bold tracking-widest text-white/60 mb-2 uppercase">{item.category}</span>
-        <h3 className="text-3xl font-serif italic text-white leading-none">{item.title}</h3>
-    </div>
-  </motion.div>
-);
+const narrativeItems = [
+  {
+    title: 'The Silent Vow',
+    plate: '01',
+    category: 'Union',
+    description: 'Captured in the quiet moments between breaths. We seek the authenticity of emotion over the noise of the occasion.',
+    image: '/wedding-hero.png'
+  },
+  {
+    title: 'Inner Profile',
+    plate: '02',
+    category: 'Identity',
+    description: 'A study in light and shadow. A portrait is not just a face; it is a narrative of existence told through a lens.',
+    image: '/portrait-studio.png'
+  },
+  {
+    title: 'Cinematic Flow',
+    plate: '03',
+    category: 'Motion',
+    description: 'Life in motion, distilled into singular frames of cinematic history. Every second is a story waiting to be told.',
+    image: '/cinema-stills.png'
+  }
+];
 
-const GalleryPreview = () => {
-  const collections = [
-    {
-      title: 'Nuance of White',
-      category: 'Portrait',
-      image: '/portrait-studio.png',
-      width: 'md:w-[45%]',
-      height: 'h-[600px]',
-      margin: 'md:mt-0 mt-8'
-    },
-    {
-      title: 'Shadow & Light',
-      category: 'Wedding',
-      image: '/wedding-hero.png',
-      width: 'md:w-[35%]',
-      height: 'h-[400px]',
-      margin: 'md:ml-auto md:-mt-20'
-    },
-    {
-        title: 'Cinematic Flow',
-        category: 'Cinema',
-        image: '/cinema-stills.png',
-        width: 'md:w-full',
-        height: 'h-[80vh]',
-        margin: 'mt-32'
-    }
-  ];
+const NarrativeSection = ({ item, index }) => {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.9]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   return (
-    <section id="gallery" className="py-40 bg-black">
+    <div ref={container} className="min-h-screen flex flex-col md:flex-row items-center gap-20 py-32 md:py-0">
+      <div className="w-full md:w-1/2 overflow-hidden h-[60vh] md:h-[80vh] relative group">
+        <motion.img 
+          style={{ scale, y }}
+          src={item.image} 
+          alt={item.title} 
+          className="w-full h-full object-cover grayscale brightness-75 group-hover:brightness-90 transition-all duration-1000"
+        />
+        <div className="absolute top-8 left-8">
+            <span className="text-[120px] font-serif italic text-white/10 select-none leading-none">{item.plate}</span>
+        </div>
+      </div>
+      
+      <motion.div 
+        style={{ opacity }}
+        className="w-full md:w-1/3 text-left px-4 md:px-0"
+      >
+        <span className="text-[10px] font-bold tracking-[0.5em] text-[#D4AF37] uppercase mb-4 block">{item.category}</span>
+        <h3 className="text-5xl md:text-7xl mb-8 leading-tight">{item.title}</h3>
+        <p className="text-sm font-light tracking-widest leading-relaxed text-white/40 max-w-sm">
+          {item.description}
+        </p>
+        <div className="mt-12 h-[1px] w-20 bg-white/20" />
+      </motion.div>
+    </div>
+  );
+};
+
+const GalleryPreview = () => {
+  return (
+    <section id="gallery" className="bg-black pt-40">
       <div className="section-container">
-        <div className="mb-32 flex flex-col md:flex-row items-baseline gap-8">
-            <h2 className="text-white">Our <br /><span className="serif-italic ml-4 lg:ml-12 font-normal">Narrative</span></h2>
-            <div className="h-[1px] flex-grow bg-white/10 hidden md:block" />
-            <p className="max-w-xs text-xs font-light tracking-widest uppercase text-white/40 text-right">Selected Works Collection / Vol 01</p>
+        {/* Intro */}
+        <div className="mb-40 max-w-4xl">
+            <span className="text-[10px] font-bold tracking-[0.6em] text-white/30 uppercase mb-6 block">The Collective Narrative</span>
+            <h2 className="text-white mb-12">Visual <br /><span className="serif-italic font-normal">Anthem</span></h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-white/10 pt-12">
+                <p className="text-sm font-light text-white/40 leading-relaxed italic">
+                    "We do not document facts; we record feelings. In the absence of color, the truth becomes undeniable."
+                </p>
+                <p className="text-[10px] font-bold tracking-widest text-white/20 uppercase leading-loose">
+                    Excel Imagery is a consultancy dedicated to the preservation of high-value memories through an editorial, monochrome lens.
+                </p>
+            </div>
         </div>
 
-        <div className="flex flex-wrap gap-y-12">
-            {collections.map((item, idx) => (
-                <ArchiveItem key={idx} item={item} index={idx} />
+        {/* Vertical Items */}
+        <div className="space-y-40">
+            {narrativeItems.map((item, idx) => (
+                <NarrativeSection key={idx} item={item} index={idx} />
             ))}
         </div>
-        
-        <div className="mt-40 text-center">
-             <a href="#" className="text-[12px] font-bold tracking-[0.5em] uppercase hover:text-white/40 transition-all">Explore Entire Archive [→]</a>
+
+        {/* Outro */}
+        <div className="py-60 text-center">
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+            >
+                <p className="text-[10px] font-bold tracking-[0.8em] text-white/30 uppercase mb-12">End of Volume 01</p>
+                <h2 className="text-white mb-20 text-6xl md:text-9xl tracking-tighter">FIN.</h2>
+                <div className="flex justify-center gap-12">
+                   <a href="#book" className="text-[12px] font-black tracking-[0.3em] uppercase border-b border-white py-2 hover:opacity-50 transition-all">Commission Vol 02</a>
+                </div>
+            </motion.div>
         </div>
       </div>
     </section>
