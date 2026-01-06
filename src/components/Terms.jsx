@@ -36,7 +36,7 @@ const termsData = [
 ];
 
 const Terms = () => {
-  const [activeIdx, setActiveIdx] = useState(0);
+  const [activeIdx, setActiveIdx] = useState(null);
 
   return (
     <section id="terms" className="py-40 bg-black">
@@ -57,7 +57,7 @@ const Terms = () => {
                         className={`p-10 border transition-all cursor-pointer ${
                             activeIdx === idx ? 'border-white bg-white/[0.02]' : 'border-white/10 opacity-40 hover:opacity-100'
                         }`}
-                        onClick={() => setActiveIdx(idx)}
+                        onClick={() => setActiveIdx(activeIdx === idx ? null : idx)}
                     >
                         <div className="flex justify-between items-center">
                             <div className="flex items-center gap-6">
