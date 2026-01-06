@@ -1,74 +1,74 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const items = [
-  {
-    title: 'The Eternal Vow',
-    category: 'Wedding',
-    image: '/wedding-hero.png',
-    span: 'col-span-2 row-span-2'
-  },
-  {
-    title: 'Identity',
-    category: 'Portrait',
-    image: '/portrait-studio.png',
-    span: 'col-span-1 row-span-1'
-  },
-  {
-    title: 'Cinematic Stills',
-    category: 'Events',
-    image: '/cinema-stills.png',
-    span: 'col-span-1 row-span-2'
-  },
-  {
-    title: 'Details',
-    category: 'Macro',
-    image: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2070&auto=format&fit=crop', // High quality fallback
-    span: 'col-span-1 row-span-1'
-  }
-];
+const ArchiveItem = ({ item, index }) => (
+  <motion.div 
+    initial={{ opacity: 0, y: 100 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1], delay: index * 0.1 }}
+    viewport={{ once: true }}
+    className={`group relative overflow-hidden ${item.width} ${item.height} ${item.margin}`}
+  >
+    <div className="mask-reveal h-full w-full">
+        <img 
+            src={item.image} 
+            alt={item.title} 
+            className="h-full w-full object-cover grayscale transition-all duration-1000 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all duration-700" />
+    </div>
+    <div className="absolute inset-0 flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+        <span className="text-[10px] font-bold tracking-widest text-white/60 mb-2 uppercase">{item.category}</span>
+        <h3 className="text-3xl font-serif italic text-white leading-none">{item.title}</h3>
+    </div>
+  </motion.div>
+);
 
 const GalleryPreview = () => {
+  const collections = [
+    {
+      title: 'Nuance of White',
+      category: 'Portrait',
+      image: '/portrait-studio.png',
+      width: 'md:w-[45%]',
+      height: 'h-[600px]',
+      margin: 'md:mt-0 mt-8'
+    },
+    {
+      title: 'Shadow & Light',
+      category: 'Wedding',
+      image: '/wedding-hero.png',
+      width: 'md:w-[35%]',
+      height: 'h-[400px]',
+      margin: 'md:ml-auto md:-mt-20'
+    },
+    {
+        title: 'Cinematic Flow',
+        category: 'Cinema',
+        image: '/cinema-stills.png',
+        width: 'md:w-full',
+        height: 'h-[80vh]',
+        margin: 'mt-32'
+    }
+  ];
+
   return (
-    <section id="gallery" className="py-32 bg-[#050505]">
+    <section id="gallery" className="py-40 bg-black">
       <div className="section-container">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-          <div className="max-w-xl">
-            <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">The Portfolio</span>
-            <h2 className="">Curated <span className="serif italic lg:ml-2">Excellence</span></h2>
-            <p className="mt-8 text-white/40 font-light leading-relaxed">
-              Every project is an opportunity to redefine the boundary between reality and art. 
-              Our portfolio reflects a diverse range of styles, all united by a single standard of perfection.
-            </p>
-          </div>
-          <a href="#" className="group flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em]">
-            View Archive
-            <div className="w-12 h-[1px] bg-[#D4AF37] transition-all group-hover:w-20" />
-          </a>
+        <div className="mb-32 flex flex-col md:flex-row items-baseline gap-8">
+            <h2 className="text-white">Our <br /><span className="serif-italic ml-4 lg:ml-12 font-normal">Narrative</span></h2>
+            <div className="h-[1px] flex-grow bg-white/10 hidden md:block" />
+            <p className="max-w-xs text-xs font-light tracking-widest uppercase text-white/40 text-right">Selected Works Collection / Vol 01</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6 min-h-[800px]">
-          {items.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`relative overflow-hidden group rounded-lg ${item.span}`}
-            >
-              <img 
-                src={item.image} 
-                alt={item.title} 
-                className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 grayscale-[0.2] group-hover:grayscale-0"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-0 left-0 p-8 transform translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
-                <p className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest mb-2">{item.category}</p>
-                <h4 className="text-2xl font-bold">{item.title}</h4>
-              </div>
-            </motion.div>
-          ))}
+        <div className="flex flex-wrap gap-y-12">
+            {collections.map((item, idx) => (
+                <ArchiveItem key={idx} item={item} index={idx} />
+            ))}
+        </div>
+        
+        <div className="mt-40 text-center">
+             <a href="#" className="text-[12px] font-bold tracking-[0.5em] uppercase hover:text-white/40 transition-all">Explore Entire Archive [→]</a>
         </div>
       </div>
     </section>

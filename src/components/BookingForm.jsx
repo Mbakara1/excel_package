@@ -1,186 +1,83 @@
 import React, { useState } from 'react';
-import { Send, Calendar, MapPin, MessageSquare, CheckCircle2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Send, CheckCircle } from 'lucide-react';
 
 const BookingForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    date: '',
-    location: '',
-    package: '',
-    requests: '',
-    agreed: false
-  });
-
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.agreed) {
-      setSubmitted(true);
-      // In a real app, this would send to an API
-    } else {
-      alert("Please agree to the Terms and Conditions to proceed.");
-    }
+    setSubmitted(true);
   };
-
-  const packages = ['Ruby', 'Bronze', 'Silver', 'Smart', 'Diamond', 'Premium'];
 
   if (submitted) {
     return (
-      <section id="book" className="py-24 bg-black">
-        <div className="section-container max-w-2xl text-center">
-          <div className="glass-card p-12 flex flex-col items-center">
-            <CheckCircle2 className="w-16 h-16 text-[#D4AF37] mb-6" />
-            <h2 className="text-3xl font-bold mb-4">Inquiry <span className="gold-text">Success!</span></h2>
-            <p className="text-white/60 mb-8">
-              Thank you for reaching out to Excel Imagery. We've received your request for {formData.package} package on {formData.date} and will contact you within 24 hours.
-            </p>
-            <button 
-              onClick={() => setSubmitted(false)}
-              className="px-8 py-3 bg-[#D4AF37] text-black font-bold rounded-lg hover:bg-[#FFDF00] transition-all"
-            >
-              Send Another Inquiry
-            </button>
-          </div>
+      <section className="py-40 bg-black text-center h-[600px] flex items-center">
+        <div className="section-container w-full">
+           <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}>
+              <CheckCircle className="w-20 h-20 text-white mx-auto mb-8" />
+              <h2 className="text-white mb-4">Message <span className="serif-italic font-normal">Stored</span></h2>
+              <p className="text-white/40">Our concierge will contact you within 24 hours.</p>
+           </motion.div>
         </div>
       </section>
     );
   }
 
   return (
-    <section id="book" className="py-32 bg-[#050505]">
+    <section id="book" className="py-40 bg-white text-black">
       <div className="section-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
-          <div>
-            <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Inquiries</span>
-            <h2 className="mb-8">Join the <span className="serif italic">Elite</span></h2>
-            <p className="text-white/40 mb-12 text-lg font-light leading-relaxed">
-              Book your session today and let us transform your moments into cinematic history. 
-              Our team is ready to capture the soul of your event.
-            </p>
-
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37]">
-                  <MapPin className="w-6 h-6" />
+         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
+            <div className="lg:col-span-4">
+                <span className="text-[10px] font-bold tracking-[0.5em] text-black/40 uppercase mb-4 block">Reservation</span>
+                <h2 className="text-black mb-8 leading-[0.8]">Commission <br /><span className="serif-italic font-normal">A Session</span></h2>
+                <div className="space-y-8 mt-12 text-black/60 font-medium text-xs tracking-widest uppercase">
+                   <p>31 Itiam Street, Uyo</p>
+                   <p>+234 812 345 6789</p>
+                   <p>hello@excelimagery.com</p>
                 </div>
-                <div>
-                  <h4 className="font-bold">Location</h4>
-                  <p className="text-sm text-white/40">31 Itiam Street, Uyo, Akwa Ibom</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37]">
-                  <MessageSquare className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold">Consultation</h4>
-                  <p className="text-sm text-white/40">Available 9AM - 6PM Daily</p>
-                </div>
-              </div>
             </div>
-          </div>
 
-          <div className="glass-card p-8 md:p-10">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-white/40">Full Name</label>
-                  <input 
-                    type="text" 
-                    required
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-[#D4AF37] outline-none transition-colors"
-                    placeholder="John Doe"
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-white/40">Email Address</label>
-                  <input 
-                    type="email" 
-                    required
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-[#D4AF37] outline-none transition-colors"
-                    placeholder="john@example.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-white/40">Event Date</label>
-                  <div className="relative">
-                    <input 
-                      type="date" 
-                      required
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-[#D4AF37] outline-none transition-colors"
-                      value={formData.date}
-                      onChange={(e) => setFormData({...formData, date: e.target.value})}
-                    />
+            <div className="lg:col-span-8">
+               <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                  <div className="flex flex-col gap-2">
+                     <label className="text-[10px] font-black uppercase tracking-widest text-black/30">Your Name</label>
+                     <input required type="text" className="bg-transparent border-b border-black/10 py-4 focus:border-black outline-none transition-colors" placeholder="Full Name" />
                   </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-white/40">Choose Package</label>
-                  <select 
-                    required
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-[#D4AF37] outline-none transition-colors appearance-none"
-                    value={formData.package}
-                    onChange={(e) => setFormData({...formData, package: e.target.value})}
-                  >
-                    <option value="" disabled className="bg-black">Select a package</option>
-                    {packages.map(p => (
-                      <option key={p} value={p} className="bg-black">{p}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-white/40">Location & Special Requests</label>
-                <textarea 
-                  rows="4"
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-[#D4AF37] outline-none transition-colors"
-                  placeholder="Tell us about your event..."
-                  value={formData.requests}
-                  onChange={(e) => setFormData({...formData, requests: e.target.value})}
-                ></textarea>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <input 
-                  type="checkbox" 
-                  id="agree"
-                  className="mt-1 accent-[#D4AF37]"
-                  checked={formData.agreed}
-                  onChange={(e) => setFormData({...formData, agreed: e.target.checked})}
-                />
-                <label htmlFor="agree" className="text-sm text-white/40 cursor-pointer">
-                  I agree to the <a href="#terms" className="text-[#D4AF37] hover:underline">Terms & Conditions</a> mentioned above.
-                </label>
-              </div>
-
-              <button 
-                type="submit"
-                className="w-full py-4 bg-[#D4AF37] text-black font-bold rounded-lg flex items-center justify-center gap-2 hover:bg-[#FFDF00] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
-              >
-                Book Your Experience
-                <Send className="w-4 h-4" />
-              </button>
-            </form>
-          </div>
-        </div>
+                  <div className="flex flex-col gap-2">
+                     <label className="text-[10px] font-black uppercase tracking-widest text-black/30">Email Address</label>
+                     <input required type="email" className="bg-transparent border-b border-black/10 py-4 focus:border-black outline-none transition-colors" placeholder="email@address.com" />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                     <label className="text-[10px] font-black uppercase tracking-widest text-black/30">Event Date</label>
+                     <input required type="date" className="bg-transparent border-b border-black/10 py-4 focus:border-black outline-none transition-colors" />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                     <label className="text-[10px] font-black uppercase tracking-widest text-black/30">Collection</label>
+                     <select className="bg-transparent border-b border-black/10 py-4 focus:border-black outline-none transition-colors appearance-none">
+                        <option>Ruby</option>
+                        <option>Bronze</option>
+                        <option>Silver</option>
+                        <option>Smart</option>
+                        <option>Diamond</option>
+                        <option>Premium / Custom</option>
+                     </select>
+                  </div>
+                  <div className="md:col-span-2 flex flex-col gap-2">
+                     <label className="text-[10px] font-black uppercase tracking-widest text-black/30">Creative Vision / Notes</label>
+                     <textarea rows="4" className="bg-transparent border-b border-black/10 py-4 focus:border-black outline-none transition-colors resize-none" placeholder="Details about your event..." />
+                  </div>
+                  
+                  <div className="md:col-span-2 mt-8">
+                     <button type="submit" className="w-full bg-black text-white py-6 text-[12px] font-black uppercase tracking-[0.4em] hover:bg-black/80 transition-all flex items-center justify-center gap-4">
+                        Send Inquiry
+                        <Send size={16} />
+                     </button>
+                  </div>
+               </form>
+            </div>
+         </div>
       </div>
-
-      <style dangerouslySetInnerHTML={{ __html: `
-        .grid { display: grid; }
-        @media (min-width: 1024px) { .lg\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-        .gap-16 { gap: 4rem; }
-        .gap-6 { gap: 1.5rem; }
-      `}} />
     </section>
   );
 };
