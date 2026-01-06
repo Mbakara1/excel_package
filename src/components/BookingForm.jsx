@@ -183,7 +183,7 @@ const BookingForm = () => {
                      </div>
 
                      {/* Event Information */}
-                     <div className="space-y-8">
+                     <div className="space-y-12">
                         <div className="pb-4 border-b border-black/10">
                            <h4 className="text-xs font-bold tracking-[0.3em] uppercase text-black/60">02 / Event Information</h4>
                         </div>
