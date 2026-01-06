@@ -6,6 +6,7 @@ import Pricing from './components/Pricing';
 import Terms from './components/Terms';
 import BookingForm from './components/BookingForm';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <BookingForm />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
