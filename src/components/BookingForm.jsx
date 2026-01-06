@@ -219,7 +219,7 @@ const BookingForm = () => {
                      </div>
 
                      {/* Additional Details */}
-                     <div className="space-y-8">
+                     <div className="space-y-12">
                         <div className="pb-4 border-b border-black/10">
                            <h4 className="text-xs font-bold tracking-[0.3em] uppercase text-black/60">03 / Additional Details</h4>
                         </div>
