@@ -80,148 +80,198 @@ const BookingForm = () => {
   }
 
   return (
-    <section id="book" className="py-40 bg-white text-black">
+    <section id="book" className="py-32 bg-white text-black border-t border-black/5">
       <div className="section-container">
-         <div className="max-w-4xl mx-auto">
-            {/* Header Section */}
-            <div className="text-center mb-24">
-               <span className="text-[10px] font-bold tracking-[0.5em] text-black/30 uppercase mb-8 block">Reservation</span>
-               <h2 className="text-black mb-8 leading-[0.8]">Commission <br /><span className="serif-italic font-normal">A Session</span></h2>
-               <div className="h-[1px] w-24 bg-black/10 mx-auto mb-8" />
-               <p className="text-sm font-normal text-black/60 tracking-wide max-w-xl mx-auto leading-relaxed">
-                  50% non-refundable commitment required. Balance due 48 hours before event.
-               </p>
+         <div className="max-w-7xl mx-auto">
+            {/* Header */}
+            <div className="mb-20">
+               <div className="flex items-center gap-6 mb-8">
+                  <div className="h-[1px] flex-1 bg-black/10" />
+                  <span className="text-[9px] font-bold tracking-[0.6em] text-black/30 uppercase">Reservation</span>
+                  <div className="h-[1px] flex-1 bg-black/10" />
+               </div>
+               <h2 className="text-black text-center mb-6 leading-[0.85]">
+                  Commission <br />
+                  <span className="serif-italic font-normal">A Session</span>
+               </h2>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-24">
-               {/* Contact Information */}
-               <div>
-                  <h3 className="text-sm font-bold tracking-[0.3em] uppercase text-black mb-12 pb-6 border-b border-black/10">Contact Details</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-14">
-                     <div className="flex flex-col gap-4">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-black/60">Your Name*</label>
-                        <input 
-                          required 
-                          name="name"
-                          type="text" 
-                          className="bg-transparent border-b border-black/10 py-5 focus:border-black outline-none transition-all text-base font-normal" 
-                          placeholder="Full name" 
-                        />
+            {/* Two-Column Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+               {/* Sidebar - Info */}
+               <div className="lg:col-span-4 space-y-12">
+                  {/* Contact Details */}
+                  <div className="bg-black/[0.02] p-10 border border-black/5">
+                     <h3 className="text-xs font-bold tracking-[0.3em] uppercase mb-8 text-black/80">Direct Contact</h3>
+                     <div className="space-y-4 text-sm text-black/70">
+                        <p className="flex items-start gap-3">
+                           <span className="text-black/40 text-xs mt-1">📍</span>
+                           <span>31 Itiam Street, Uyo</span>
+                        </p>
+                        <p className="flex items-start gap-3">
+                           <span className="text-black/40 text-xs mt-1">📞</span>
+                           <span>+234 812 345 6789</span>
+                        </p>
+                        <p className="flex items-start gap-3">
+                           <span className="text-black/40 text-xs mt-1">✉️</span>
+                           <span className="font-medium text-black">hello@excelimagery.com</span>
+                        </p>
                      </div>
-                     <div className="flex flex-col gap-4">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-black/60">Email Address*</label>
-                        <input 
-                          required 
-                          name="email"
-                          type="email" 
-                          className="bg-transparent border-b border-black/10 py-5 focus:border-black outline-none transition-all text-base font-normal" 
-                          placeholder="email@address.com" 
-                        />
+                  </div>
+
+                  {/* Payment Terms */}
+                  <div className="border-l-2 border-black/10 pl-8">
+                     <h3 className="text-xs font-bold tracking-[0.3em] uppercase mb-6 text-black/80">Payment Terms</h3>
+                     <div className="space-y-4 text-sm text-black/60 leading-relaxed">
+                        <p>• 50% non-refundable deposit required to secure your date</p>
+                        <p>• Remaining balance due 48 hours before event commencement</p>
+                        <p>• All payments processed securely</p>
                      </div>
-                     <div className="flex flex-col gap-4">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-black/60">Phone Number</label>
-                        <input 
-                          name="phone"
-                          type="tel" 
-                          className="bg-transparent border-b border-black/10 py-5 focus:border-black outline-none transition-all text-base font-normal" 
-                          placeholder="+234 000 000 0000" 
-                        />
-                     </div>
+                  </div>
+
+                  {/* Response Time */}
+                  <div className="bg-black text-white p-8">
+                     <p className="text-xs font-bold tracking-[0.3em] uppercase mb-3 text-white/60">Typical Response</p>
+                     <p className="text-3xl font-serif italic">24 hrs</p>
                   </div>
                </div>
 
-               {/* Event Details */}
-               <div>
-                  <h3 className="text-sm font-bold tracking-[0.3em] uppercase text-black mb-12 pb-6 border-b border-black/10">Event Information</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-14">
-                     <div className="flex flex-col gap-4">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-black/60">Event Date*</label>
-                        <input 
-                          required 
-                          name="eventDate"
-                          type="date" 
-                          className="bg-transparent border-b border-black/10 py-5 focus:border-black outline-none transition-all text-base font-normal cursor-pointer" 
-                        />
+               {/* Main Form */}
+               <div className="lg:col-span-8">
+                  <form onSubmit={handleSubmit} className="space-y-12">
+                     {/* Personal Details */}
+                     <div className="space-y-8">
+                        <div className="pb-4 border-b border-black/10">
+                           <h4 className="text-xs font-bold tracking-[0.3em] uppercase text-black/60">01 / Personal Details</h4>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                           <div className="space-y-3">
+                              <label className="block text-xs font-bold tracking-wider uppercase text-black/50">Name</label>
+                              <input 
+                                required 
+                                name="name"
+                                type="text" 
+                                className="w-full bg-white border-b-2 border-black/10 py-3 text-base focus:border-black outline-none transition-colors placeholder:text-black/20" 
+                                placeholder="Your full name" 
+                              />
+                           </div>
+
+                           <div className="space-y-3">
+                              <label className="block text-xs font-bold tracking-wider uppercase text-black/50">Email</label>
+                              <input 
+                                required 
+                                name="email"
+                                type="email" 
+                                className="w-full bg-white border-b-2 border-black/10 py-3 text-base focus:border-black outline-none transition-colors placeholder:text-black/20" 
+                                placeholder="email@example.com" 
+                              />
+                           </div>
+
+                           <div className="space-y-3 md:col-span-2">
+                              <label className="block text-xs font-bold tracking-wider uppercase text-black/50">Phone <span className="text-black/30">(Optional)</span></label>
+                              <input 
+                                name="phone"
+                                type="tel" 
+                                className="w-full bg-white border-b-2 border-black/10 py-3 text-base focus:border-black outline-none transition-colors placeholder:text-black/20" 
+                                placeholder="+234 000 000 0000" 
+                              />
+                           </div>
+                        </div>
                      </div>
-                     <div className="flex flex-col gap-4 relative">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-black/60">Collection Volume*</label>
-                        <select 
-                          required
-                          name="collection"
-                          className="bg-transparent border-b border-black/10 py-5 focus:border-black outline-none transition-all appearance-none cursor-pointer text-base font-normal"
+
+                     {/* Event Information */}
+                     <div className="space-y-8">
+                        <div className="pb-4 border-b border-black/10">
+                           <h4 className="text-xs font-bold tracking-[0.3em] uppercase text-black/60">02 / Event Information</h4>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                           <div className="space-y-3">
+                              <label className="block text-xs font-bold tracking-wider uppercase text-black/50">Event Date</label>
+                              <input 
+                                required 
+                                name="eventDate"
+                                type="date" 
+                                className="w-full bg-white border-b-2 border-black/10 py-3 text-base focus:border-black outline-none transition-colors cursor-pointer" 
+                              />
+                           </div>
+
+                           <div className="space-y-3">
+                              <label className="block text-xs font-bold tracking-wider uppercase text-black/50">Package</label>
+                              <select 
+                                required
+                                name="collection"
+                                className="w-full bg-white border-b-2 border-black/10 py-3 text-base focus:border-black outline-none transition-colors appearance-none cursor-pointer"
+                              >
+                                 <option value="">Select package</option>
+                                 <option>Ruby (Vol. 1) — ₦150k</option>
+                                 <option>Bronze (Vol. 2) — ₦200k</option>
+                                 <option>Silver (Vol. 3) — ₦350k</option>
+                                 <option>Smart (Vol. 4) — ₦400k</option>
+                                 <option>Diamond (Vol. 5) — ₦650k</option>
+                                 <option>Premium (Vol. 6) — Custom</option>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+
+                     {/* Additional Details */}
+                     <div className="space-y-8">
+                        <div className="pb-4 border-b border-black/10">
+                           <h4 className="text-xs font-bold tracking-[0.3em] uppercase text-black/60">03 / Additional Details</h4>
+                        </div>
+
+                        <div className="space-y-3">
+                           <label className="block text-xs font-bold tracking-wider uppercase text-black/50">Special Requests <span className="text-black/30">(Optional)</span></label>
+                           <textarea 
+                             name="message"
+                             rows="6" 
+                             className="w-full bg-white border-2 border-black/10 p-6 text-base focus:border-black outline-none transition-colors resize-none placeholder:text-black/20 leading-relaxed" 
+                             placeholder="Share any specific requirements, creative vision, or special requests for your event..."
+                           />
+                        </div>
+                     </div>
+
+                     {/* Error Message */}
+                     <AnimatePresence>
+                       {error && (
+                         <motion.div
+                           initial={{ opacity: 0, y: -10 }}
+                           animate={{ opacity: 1, y: 0 }}
+                           exit={{ opacity: 0 }}
+                           className="p-5 bg-red-50 border-l-4 border-red-500 text-red-800 text-sm"
+                         >
+                           <p className="font-bold mb-1">Submission Error</p>
+                           <p>{error}</p>
+                         </motion.div>
+                       )}
+                     </AnimatePresence>
+
+                     {/* Submit */}
+                     <div className="pt-8 space-y-4">
+                        <button 
+                          type="submit" 
+                          disabled={isLoading}
+                          className="w-full bg-black text-white py-6 text-xs font-black uppercase tracking-[0.4em] hover:bg-black/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-4 group"
                         >
-                           <option value="">Select volume</option>
-                           <option>Ruby (Vol. 1)</option>
-                           <option>Bronze (Vol. 2)</option>
-                           <option>Silver (Vol. 3)</option>
-                           <option>Smart (Vol. 4)</option>
-                           <option>Diamond (Vol. 5)</option>
-                           <option>Premium / Custom (Vol. 6)</option>
-                        </select>
+                           {isLoading ? (
+                             <>
+                               <Loader size={18} className="animate-spin" />
+                               Processing
+                             </>
+                           ) : (
+                             <>
+                               Submit Enquiry
+                               <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+                             </>
+                           )}
+                        </button>
+                        <p className="text-center text-xs text-black/40 tracking-wide">
+                           By submitting, you acknowledge our payment and booking terms
+                        </p>
                      </div>
-                  </div>
-               </div>
-
-               {/* Creative Vision */}
-               <div>
-                  <h3 className="text-sm font-bold tracking-[0.3em] uppercase text-black mb-12 pb-6 border-b border-black/10">Additional Notes</h3>
-                  <div className="flex flex-col gap-4">
-                     <label className="text-[10px] font-black uppercase tracking-widest text-black/60">Special Requests</label>
-                     <textarea 
-                       name="message"
-                       rows="6" 
-                       className="bg-transparent border border-black/10 p-8 focus:border-black outline-none transition-all resize-none text-base font-normal leading-relaxed" 
-                       placeholder="Details about your event, specific requirements, or creative direction..."
-                     />
-                  </div>
-               </div>
-
-               {/* Error Message */}
-               <AnimatePresence>
-                 {error && (
-                   <motion.div
-                     initial={{ opacity: 0, y: -10 }}
-                     animate={{ opacity: 1, y: 0 }}
-                     exit={{ opacity: 0 }}
-                     className="p-4 bg-red-50 border border-red-200 text-red-800 text-sm text-center"
-                   >
-                     {error}
-                   </motion.div>
-                 )}
-               </AnimatePresence>
-
-               {/* Submit Button */}
-               <div className="pt-8">
-                  <button 
-                    type="submit" 
-                    disabled={isLoading}
-                    className="w-full bg-black text-white py-6 text-[12px] font-black uppercase tracking-[0.4em] hover:bg-black/90 transition-all flex items-center justify-center gap-4 disabled:opacity-50 disabled:cursor-not-allowed group"
-                  >
-                     {isLoading ? (
-                       <>
-                         <Loader size={16} className="animate-spin" />
-                         Processing Request
-                       </>
-                     ) : (
-                       <>
-                         Send Inquiry
-                         <Send size={16} className="group-hover:translate-x-1 transition-transform" />
-                       </>
-                     )}
-                  </button>
-                  <p className="text-center mt-6 text-[10px] font-medium tracking-wider text-black/30 uppercase">
-                     We typically respond within 24 hours
-                  </p>
-               </div>
-            </form>
-
-            {/* Contact Info */}
-            <div className="mt-20 pt-20 border-t border-black/10 text-center space-y-4">
-               <p className="text-xs font-bold tracking-widest uppercase text-black/40">Direct Contact</p>
-               <div className="space-y-2 text-black/60 font-medium text-sm">
-                  <p>31 Itiam Street, Uyo</p>
-                  <p>+234 812 345 6789</p>
-                  <p className="text-black font-semibold">hello@excelimagery.com</p>
+                  </form>
                </div>
             </div>
          </div>
