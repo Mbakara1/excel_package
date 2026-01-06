@@ -14,8 +14,9 @@ const Hero = () => {
               The Standard of <br />
               <span className="serif-italic font-normal">Authenticity</span>
             </h1>
-            <p className="max-w-xl mx-auto text-sm font-light tracking-[0.05em] leading-relaxed text-white/60 mb-12">
-               Where innovation meets artistry to preserve your most precious moments.
+            <p className="max-w-2xl mx-auto text-center text-base font-light tracking-[0.08em] leading-loose text-white/70 mb-12">
+               Capturing the raw, unfiltered truth of your most treasured moments—<br />
+               where every frame tells an authentic story that transcends time.
             </p>
             <div className="flex justify-center gap-6">
                <a href="#packages" className="cta-editorial">View Booking</a>
