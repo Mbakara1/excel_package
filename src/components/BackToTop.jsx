@@ -30,7 +30,7 @@ const BackToTop = () => {
       onClick={scrollToTop}
       className="fixed bottom-12 left-1/2 -translate-x-1/2 z-50 group"
       aria-label="Back to top"
-      style={{ width: '44px', height: '44px' }}
+      style={{ width: '36px', height: '36px' }}
     >
       {/* Subtle pulse - white */}
       <div className="absolute inset-0 bg-white rounded-full animate-pulse opacity-20"></div>
@@ -39,12 +39,12 @@ const BackToTop = () => {
       <div className="relative w-full h-full bg-white text-black rounded-full shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1">
         <svg 
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" 
-          width="18" 
-          height="18" 
+          width="14" 
+          height="14" 
           viewBox="0 0 24 24" 
           fill="none" 
           stroke="black" 
-          strokeWidth="3.5" 
+          strokeWidth="4" 
           strokeLinecap="round" 
           strokeLinejoin="round"
         >
