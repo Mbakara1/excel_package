@@ -82,60 +82,63 @@ const packages = [
 
 const Pricing = () => {
   return (
-    <section id="packages" className="py-24 bg-black">
+    <section id="packages" className="py-32 bg-[#050505]">
       <div className="section-container">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Investment <span className="gold-text">Packages</span></h2>
-          <p className="text-white/50">Choose the perfect tier for your special day</p>
+        <div className="max-w-xl mb-24">
+          <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Collections</span>
+          <h2 className="mb-8">Investment <span className="serif italic">Packages</span></h2>
+          <p className="text-white/40 font-light leading-relaxed">
+            Transparent pricing for non-compromised quality. Select the tier that best captures the scale and soul of your occasion.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
           {packages.map((pkg, index) => (
             <motion.div
               key={pkg.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.1, duration: 0.8 }}
               viewport={{ once: true }}
-              className={`glass-card p-8 relative flex flex-col ${pkg.highlight ? 'border-[#D4AF37]/40 ring-1 ring-[#D4AF37]/20 shadow-2xl shadow-[#D4AF37]/5' : ''} ${pkg.extraClass || ''}`}
+              className={`p-0 relative flex flex-col group`}
             >
-              {pkg.highlight && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#D4AF37] text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">
-                  Most Popular
+              <div className="aspect-[4/5] overflow-hidden rounded-sm mb-8 relative">
+                <div className="absolute inset-0 bg-[#111] transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-x-8 top-12">
+                   <div className="mb-6 opacity-40 group-hover:opacity-100 transition-opacity">{pkg.icon}</div>
+                   <h3 className="text-3xl font-light tracking-tight mb-2">{pkg.name}</h3>
+                   <div className="text-xl font-bold gold-text">{pkg.price}</div>
                 </div>
-              )}
-              
-              <div className="mb-6">{pkg.icon}</div>
-              <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
-              <div className="text-3xl font-black mb-6 gold-text">{pkg.price}</div>
-              
-              <ul className="space-y-4 mb-8 flex-grow">
-                {pkg.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-white/70">
-                    <Check className="w-4 h-4 text-[#D4AF37] mt-0.5 shrink-0" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <button className={`w-full py-3 rounded-lg font-bold transition-all ${
-                pkg.highlight || pkg.name === 'Premium' 
-                  ? 'bg-[#D4AF37] text-black hover:bg-[#FFDF00]' 
-                  : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
-              }`}>
-                Choose {pkg.name}
-              </button>
+                
+                <div className="absolute inset-x-8 bottom-12">
+                  <ul className="space-y-4 mb-8">
+                    {pkg.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-4 text-xs font-light tracking-wide text-white/50">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-1 shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <button className={`w-full py-4 text-[10px] font-black tracking-[0.3em] uppercase transition-all border ${
+                    pkg.highlight || pkg.name === 'Premium' 
+                      ? 'bg-[#D4AF37] text-black border-[#D4AF37]' 
+                      : 'border-white/10 text-white hover:border-white/40'
+                  }`}>
+                    Select {pkg.name}
+                  </button>
+                </div>
+
+                {pkg.highlight && (
+                  <div className="absolute top-4 right-4 bg-[#D4AF37] text-black text-[9px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest">
+                    Signature
+                  </div>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>
       </div>
-
-      <style dangerouslySetInnerHTML={{ __html: `
-        .grid { display: grid; }
-        @media (min-width: 768px) { .md\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-        @media (min-width: 1024px) { .lg\\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-        .gap-8 { gap: 2rem; }
-      `}} />
     </section>
   );
 };

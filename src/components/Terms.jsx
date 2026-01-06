@@ -55,10 +55,11 @@ const Terms = () => {
 
   return (
     <section id="terms" className="py-24 bg-black border-t border-white/5">
-      <div className="section-container max-w-3xl">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Terms & <span className="gold-text">Conditions</span></h2>
-          <p className="text-white/40">Our commitment to professional service standards</p>
+      <div className="section-container max-w-4xl">
+        <div className="max-w-xl mb-20">
+          <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Standards</span>
+          <h2 className="mb-8">Terms & <span className="serif italic">Conditions</span></h2>
+          <p className="text-white/40 font-light leading-relaxed">Our commitment to excellence and professional transparency.</p>
         </div>
 
         <div className="space-y-4">

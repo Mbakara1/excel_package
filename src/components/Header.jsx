@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Camera, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -7,7 +8,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -21,77 +22,93 @@ const Header = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? 'bg-black/60 backdrop-blur-xl py-4 border-b border-white/10' : 'bg-transparent py-6'
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-700 ${
+        isScrolled ? 'py-4' : 'py-8'
       }`}
     >
-      <div className="section-container flex items-center justify-between" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <a href="#" className="flex items-center gap-2 group">
-          <img src="/Excel Imagery white logo format.png" alt="Excel Imagery Logo" className="w-12 h-auto group-hover:scale-110 transition-transform object-contain" />
-          <span className="text-xl font-bold tracking-tighter">
-            EXCEL <span className="gold-text">IMAGERY</span>
-          </span>
+      <div className={`section-container flex items-center justify-between transition-all duration-700 ${
+        isScrolled ? 'bg-black/40 backdrop-blur-xl border border-white/10 rounded-full py-3 px-8 mx-auto max-w-[900px]' : ''
+      }`}>
+        <a href="#" className="flex items-center gap-3 group">
+          <img 
+            src="/Excel Imagery white logo format.png" 
+            alt="Excel Imagery" 
+            className={`transition-all duration-700 ${isScrolled ? 'h-8' : 'h-12'}`} 
+            style={{ objectFit: 'contain' }}
+          />
+          {!isScrolled && (
+            <span className="text-lg font-extrabold tracking-widest hidden sm:block">
+              EXCEL <span className="gold-text">IMAGERY</span>
+            </span>
+          )}
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8" style={{ display: 'flex', gap: '2rem' }}>
+        <nav className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
               href={link.href}
-              className="text-sm font-medium text-white/70 hover:text-[#D4AF37] transition-colors"
+              className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors"
             >
               {link.name}
             </a>
           ))}
           <a 
             href="#book" 
-            className="px-6 py-2 bg-[#D4AF37] text-black text-sm font-bold rounded-full hover:bg-[#FFDF00] transition-all transform hover:scale-105 active:scale-95"
+            className={`px-6 py-2 border border-[#D4AF37]/50 text-[10px] font-black tracking-widest uppercase rounded-full hover:bg-[#D4AF37] hover:text-black transition-all transform active:scale-95`}
           >
-            BOOK NOW
+            Inquire
           </a>
         </nav>
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-white p-2 hover:bg-white/5 rounded-lg transition-colors"
+          className="md:hidden text-white p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X /> : <Menu />}
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[73px] bg-black/95 backdrop-blur-2xl z-40 animate-fade-in">
-          <nav className="flex flex-col items-center justify-center h-full gap-8 p-6">
-            {navLinks.map((link) => (
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 bg-black z-[110] flex flex-col p-10"
+          >
+            <div className="flex justify-between items-center mb-20">
+              <img src="/Excel Imagery white logo format.png" alt="Logo" className="h-10" />
+              <button onClick={() => setIsMobileMenuOpen(false)} className="text-white">
+                <X size={32} />
+              </button>
+            </div>
+            <nav className="flex flex-col gap-8">
+              {navLinks.map((link) => (
+                <a 
+                  key={link.name} 
+                  href={link.href}
+                  className="text-4xl font-bold hover:gold-text transition-all"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
               <a 
-                key={link.name} 
-                href={link.href}
-                className="text-2xl font-bold text-white/70 hover:text-[#D4AF37] transition-colors"
+                href="#book" 
+                className="mt-10 py-5 bg-[#D4AF37] text-black text-center text-xl font-bold rounded-lg"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                {link.name}
+                BOOK NOW
               </a>
-            ))}
-            <a 
-              href="#book" 
-              className="w-full text-center px-8 py-4 bg-[#D4AF37] text-black text-lg font-bold rounded-full hover:bg-[#FFDF00] transition-all"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              BOOK NOW
-            </a>
-          </nav>
-        </div>
-      )}
-
-      <style dangerouslySetInnerHTML={{ __html: `
-        @media (max-width: 768px) {
-          .md\\:hidden { display: block !important; }
-          .md\\:flex { display: none !important; }
-        }
-      `}} />
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

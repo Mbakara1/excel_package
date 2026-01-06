@@ -50,12 +50,13 @@ const BookingForm = () => {
   }
 
   return (
-    <section id="book" className="py-24 bg-black">
+    <section id="book" className="py-32 bg-[#050505]">
       <div className="section-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           <div>
-            <h2 className="text-4xl font-bold mb-6">Ready to <span className="gold-text">Join the Elite?</span></h2>
-            <p className="text-white/50 mb-8 text-lg">
+            <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Inquiries</span>
+            <h2 className="mb-8">Join the <span className="serif italic">Elite</span></h2>
+            <p className="text-white/40 mb-12 text-lg font-light leading-relaxed">
               Book your session today and let us transform your moments into cinematic history. 
               Our team is ready to capture the soul of your event.
             </p>
