@@ -11,6 +11,7 @@ const packages = [
       "2 Enlargements (10x12)",
       "1 Photobook (10x20)",
       "Video Thriller",
+      "2 Reels",
       "20 Edited Soft Copies",
       "Full Event Videos (Flash Drive)",
       "All Photos (Flash Drive)"
@@ -28,6 +29,7 @@ const packages = [
       "2 Portraits (12x15)",
       "1 Regular Photobook (12x24)",
       "2 Video Thrillers",
+      "2 Reels",
       "25 Edited Soft Copies",
       "Full Event Videos (Flash Drive)",
       "All Photos (Flash Drive)",
@@ -45,6 +47,7 @@ const packages = [
       "2 Portraits (16x20)",
       "1 Photobook (12x30)",
       "2 Video Thrillers",
+      "3 Reels",
       "35 Edited Soft Copies",
       "Google Drive Upload",
       "Bridal Shower Photos (Optional)",
@@ -63,6 +66,7 @@ const packages = [
       "2 Canvas Prints (16x20)",
       "1 Synthetic Photobook (12x24)",
       "2 Video Thrillers",
+      "3 Reels",
       "40 Edited Soft Copies",
       "Google Drive Upload",
       "Bridal Shower Photos (Optional)",
@@ -80,30 +84,13 @@ const packages = [
       "3-in-1 Canvas Print",
       "1 Synthetic + 1 Regular Photobook",
       "2 Video Thrillers",
+      "3 Reels",
       "40 Edited Soft Copies",
       "Google Drive Upload",
       "Bridal Shower Photos (Optional)",
       "Pre-wedding Photos (Optional)"
     ],
     description: "Maximum coverage and premium deliverables."
-  },
-  {
-    name: "Premium",
-    price: "₦2M",
-    features: [
-      "3 Photo + 3 Video Cameras",
-      "1 Mic + 1 Ronin + 1 Drone",
-      "360 Photo Booth Machine",
-      "5-in-1 Canvas Prints",
-      "2 Acrylic Box Photobooks",
-      "2 Video Thrillers + Content Creation",
-      "50 Edited Soft Copies",
-      "10x10 Backdrop + 4 Banners",
-      "2 Welcome Roll-up Stands",
-      "Hard Drive Delivery",
-      "Bachelor Party Photos (Optional)"
-    ],
-    description: "The ultimate production experience."
   }
 ];
 
