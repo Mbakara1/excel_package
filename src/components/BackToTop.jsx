@@ -29,7 +29,7 @@ const BackToTop = () => {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-6 right-24 z-50 group"
+      className="fixed bottom-6 right-32 z-50 group"
       aria-label="Back to top"
     >
       <div className="relative flex items-center justify-center">
