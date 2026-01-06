@@ -30,22 +30,21 @@ const BackToTop = () => {
       onClick={scrollToTop}
       className="fixed bottom-12 left-1/2 -translate-x-1/2 z-50 group"
       aria-label="Back to top"
-      style={{ width: '56px', height: '56px' }}
+      style={{ width: '44px', height: '44px' }}
     >
-      {/* Subtle pulse - lighter */}
-      <div className="absolute inset-0 bg-gray-600 rounded-full animate-pulse opacity-30"></div>
+      {/* Subtle pulse - white */}
+      <div className="absolute inset-0 bg-white rounded-full animate-pulse opacity-20"></div>
       
-      {/* Main button - lighter gray for subtlety */}
-      <div className="relative w-full h-full bg-gray-700 hover:bg-gray-800 text-white rounded-full border border-gray-500/40 shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1">
-        {/* Custom SVG arrow with no internal padding for perfect centering */}
+      {/* Main button - White with Black Arrow for Brand Style */}
+      <div className="relative w-full h-full bg-white text-black rounded-full shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1">
         <svg 
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" 
-          width="24" 
-          height="24" 
+          width="18" 
+          height="18" 
           viewBox="0 0 24 24" 
           fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2.5" 
+          stroke="black" 
+          strokeWidth="3.5" 
           strokeLinecap="round" 
           strokeLinejoin="round"
         >
