@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Twitter, Facebook, Mail } from 'lucide-react';
+import { Instagram, Facebook, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -67,10 +67,16 @@ const Footer = () => {
               href="https://x.com/goodnesmbakara" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-white hover:text-[#D4AF37] transition-colors inline-flex items-center gap-2 group"
+              className="text-white hover:text-[#D4AF37] transition-all duration-300 inline-flex items-center gap-2 group cursor-pointer border-b border-white/30 hover:border-[#D4AF37] pb-0.5"
             >
-              <span>Goodness Mbakara</span>
-              <Twitter size={14} className="group-hover:scale-110 transition-transform" />
+              <span className="group-hover:tracking-wide transition-all">Goodness Mbakara</span>
+              <svg 
+                viewBox="0 0 24 24" 
+                className="w-3.5 h-3.5 fill-current group-hover:scale-110 transition-transform"
+                aria-label="X (formerly Twitter)"
+              >
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
             </a>
          </p>
       </div>
