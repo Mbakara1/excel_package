@@ -90,7 +90,7 @@ const BookingForm = () => {
         </div>
 
         {/* Minimal Form */}
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-xl mx-auto">
           {error && (
             <motion.div 
               initial={{ opacity: 0 }}
@@ -147,13 +147,13 @@ const BookingForm = () => {
               </div>
 
               <div className="space-y-4 md:col-span-2">
-                <label className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/40">Package Collection</label>
+                <label className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/40">Package</label>
                 <select
                   required
                   name="collection"
                   className="w-full bg-transparent border-b border-white/20 py-4 text-white focus:border-white focus:outline-none transition-all cursor-pointer appearance-none"
                 >
-                  <option value="" className="bg-black">Select Experience</option>
+                  <option value="" className="bg-black">Select Package</option>
                   <option value="Ruby — ₦350k" className="bg-black">Ruby — ₦350k</option>
                   <option value="Bronze — ₦450k" className="bg-black">Bronze — ₦450k</option>
                   <option value="Silver — ₦600k" className="bg-black">Silver — ₦600k</option>
@@ -163,7 +163,7 @@ const BookingForm = () => {
               </div>
 
               <div className="space-y-4 md:col-span-2 pt-6">
-                <label className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/40">Your Vision</label>
+                <label className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/40">Additional Details</label>
                 <textarea
                   name="message"
                   rows="4"
