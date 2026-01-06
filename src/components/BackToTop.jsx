@@ -29,15 +29,22 @@ const BackToTop = () => {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-8 right-32 z-50 group w-14 h-14"
+      className="fixed bottom-8 right-32 z-50 group"
       aria-label="Back to top"
+      style={{ width: '56px', height: '56px' }}
     >
       {/* Subtle pulse - lighter */}
       <div className="absolute inset-0 bg-gray-600 rounded-full animate-pulse opacity-30"></div>
       
       {/* Main button - lighter gray for subtlety */}
-      <div className="relative w-full h-full bg-gray-700 hover:bg-gray-800 text-white rounded-full border border-gray-500/40 shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1 flex items-center justify-center">
-        <ArrowUp size={24} strokeWidth={2.5} />
+      <div 
+        className="relative w-full h-full bg-gray-700 hover:bg-gray-800 text-white rounded-full border border-gray-500/40 shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1"
+        style={{
+          display: 'grid',
+          placeItems: 'center'
+        }}
+      >
+        <ArrowUp size={24} strokeWidth={2.5} style={{ display: 'block', margin: 0, padding: 0 }} />
       </div>
       
       {/* Tooltip */}
