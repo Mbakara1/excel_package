@@ -32,13 +32,13 @@ const BackToTop = () => {
       className="fixed bottom-6 right-24 z-50 group"
       aria-label="Back to top"
     >
-      <div className="relative">
+      <div className="relative flex items-center justify-center">
         {/* Subtle pulse */}
-        <div className="absolute inset-0 bg-white/20 rounded-full animate-pulse opacity-50"></div>
+        <div className="absolute inset-0 bg-gray-800 rounded-full animate-pulse opacity-50"></div>
         
-        {/* Main button */}
-        <div className="relative bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-full p-4 border border-white/20 shadow-xl transition-all duration-300 transform group-hover:scale-110 group-hover:-translate-y-1">
-          <ArrowUp size={24} strokeWidth={2} />
+        {/* Main button - dark background for visibility on white */}
+        <div className="relative bg-gray-900 hover:bg-black text-white rounded-full p-4 border border-white/10 shadow-2xl transition-all duration-300 transform group-hover:scale-110 group-hover:-translate-y-1 flex items-center justify-center">
+          <ArrowUp size={24} strokeWidth={2.5} className="flex-shrink-0" />
         </div>
         
         {/* Tooltip */}
