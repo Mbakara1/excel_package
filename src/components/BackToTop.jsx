@@ -29,7 +29,7 @@ const BackToTop = () => {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-6 right-32 z-50 group w-14 h-14"
+      className="fixed bottom-8 right-32 z-50 group w-14 h-14"
       aria-label="Back to top"
     >
       {/* Subtle pulse - lighter */}

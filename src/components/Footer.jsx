@@ -52,8 +52,8 @@ const Footer = () => {
       </div>
 
       {/* Massive Brand Narrative with Developer Credit */}
-      <div className="mt-20 overflow-hidden select-none relative">
-         <h2 className="text-[35vw] font-black uppercase tracking-[0.2em] leading-none -mb-[5vw] text-white/60 text-center pointer-events-none" style={{
+      <div className="mt-20 relative pb-16">
+         <h2 className="text-[35vw] font-black uppercase tracking-[0.2em] leading-none text-white/60 text-center pointer-events-none" style={{
            backdropFilter: 'blur(10px)',
            WebkitBackdropFilter: 'blur(10px)',
            textShadow: '0 0 40px rgba(255, 255, 255, 0.1)',
@@ -64,8 +64,8 @@ const Footer = () => {
             EXCEL
          </h2>
          
-         {/* Developer Credit - positioned to the right */}
-         <div className="absolute bottom-4 right-4 md:right-8 pointer-events-auto">
+         {/* Developer Credit - bottom right with proper spacing */}
+         <div className="absolute bottom-0 right-0 md:right-4 pointer-events-auto">
             <p className="text-xs font-medium tracking-wider uppercase text-white/40 flex items-center gap-2">
                Built by{' '}
                <a 
