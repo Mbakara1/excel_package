@@ -21,7 +21,7 @@ const Hero = () => {
             Premium Photography & Cinematography
           </span>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="font-bold mb-6 leading-tight">
             Capturing Your <br />
             <span className="gold-text">Timeless Moments</span>
           </h1>

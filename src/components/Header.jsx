@@ -54,13 +54,37 @@ const Header = () => {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-white"
-          style={{ display: 'none' /* Will fix with CSS media query or better logic later */ }}
+          className="md:hidden text-white p-2 hover:bg-white/5 rounded-lg transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X /> : <Menu />}
         </button>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden fixed inset-0 top-[73px] bg-black/95 backdrop-blur-2xl z-40 animate-fade-in">
+          <nav className="flex flex-col items-center justify-center h-full gap-8 p-6">
+            {navLinks.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href}
+                className="text-2xl font-bold text-white/70 hover:text-[#D4AF37] transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.name}
+              </a>
+            ))}
+            <a 
+              href="#book" 
+              className="w-full text-center px-8 py-4 bg-[#D4AF37] text-black text-lg font-bold rounded-full hover:bg-[#FFDF00] transition-all"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              BOOK NOW
+            </a>
+          </nav>
+        </div>
+      )}
 
       <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 768px) {
