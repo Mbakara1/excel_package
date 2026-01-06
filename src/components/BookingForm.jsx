@@ -140,7 +140,7 @@ const BookingForm = () => {
 
                {/* Main Form */}
                <div className="lg:col-span-8">
-                  <form onSubmit={handleSubmit} className="space-y-16">
+                  <form onSubmit={handleSubmit} className="space-y-20">
                      {/* Personal Details */}
                      <div className="space-y-8">
                         <div className="pb-4 border-b border-black/10">
@@ -154,7 +154,7 @@ const BookingForm = () => {
                                 required 
                                 name="name"
                                 type="text" 
-                                className="w-full bg-white border-b-2 border-black/10 py-3 text-base focus:border-black outline-none transition-colors placeholder:text-black/20" 
+                                className="w-full bg-white border-b-2 border-black/10 py-4 text-base focus:border-black outline-none transition-colors placeholder:text-black/20" 
                                 placeholder="Your full name" 
                               />
                            </div>
@@ -165,7 +165,7 @@ const BookingForm = () => {
                                 required 
                                 name="email"
                                 type="email" 
-                                className="w-full bg-white border-b-2 border-black/10 py-3 text-base focus:border-black outline-none transition-colors placeholder:text-black/20" 
+                                className="w-full bg-white border-b-2 border-black/10 py-4 text-base focus:border-black outline-none transition-colors placeholder:text-black/20" 
                                 placeholder="email@example.com" 
                               />
                            </div>
@@ -175,7 +175,7 @@ const BookingForm = () => {
                               <input 
                                 name="phone"
                                 type="tel" 
-                                className="w-full bg-white border-b-2 border-black/10 py-3 text-base focus:border-black outline-none transition-colors placeholder:text-black/20" 
+                                className="w-full bg-white border-b-2 border-black/10 py-4 text-base focus:border-black outline-none transition-colors placeholder:text-black/20" 
                                 placeholder="+234 000 000 0000" 
                               />
                            </div>
@@ -195,7 +195,7 @@ const BookingForm = () => {
                                 required 
                                 name="eventDate"
                                 type="date" 
-                                className="w-full bg-white border-b-2 border-black/10 py-3 text-base focus:border-black outline-none transition-colors cursor-pointer" 
+                                className="w-full bg-white border-b-2 border-black/10 py-4 text-base focus:border-black outline-none transition-colors cursor-pointer" 
                               />
                            </div>
 
@@ -204,7 +204,7 @@ const BookingForm = () => {
                               <select 
                                 required
                                 name="collection"
-                                className="w-full bg-white border-b-2 border-black/10 py-3 text-base focus:border-black outline-none transition-colors appearance-none cursor-pointer"
+                                className="w-full bg-white border-b-2 border-black/10 py-4 text-base focus:border-black outline-none transition-colors appearance-none cursor-pointer"
                               >
                                  <option value="">Select package</option>
                                  <option>Ruby — ₦350k</option>
