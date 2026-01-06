@@ -19,17 +19,23 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-[200] mix-blend-difference pointer-events-none">
-        <div className="section-container pt-8 md:pt-12 flex justify-between items-start pointer-events-auto">
-          <a href="/" className="group flex flex-col items-center">
+      {/* Logo - Fixed without blend mode */}
+      <div className="fixed top-0 left-0 z-[200] pointer-events-none">
+        <div className="section-container pt-8 md:pt-12 pointer-events-auto">
+          <a href="/" className="group flex flex-col items-center inline-block">
               <img 
                  src="/Excel Imagery white logo format.png" 
                  alt="Brand" 
                  className="h-12 md:h-16 w-auto object-contain transition-transform duration-700 group-hover:scale-105" 
               />
-              <span className="text-[10px] font-bold tracking-[0.5em] mt-2 opacity-60 group-hover:opacity-100 transition-opacity">EXCEL IMAGERY</span>
+              <span className="text-[10px] font-bold tracking-[0.5em] mt-2 opacity-60 group-hover:opacity-100 transition-opacity text-white">EXCEL IMAGERY</span>
           </a>
+        </div>
+      </div>
 
+      {/* Navigation - With blend mode */}
+      <header className="fixed top-0 right-0 z-[200] mix-blend-difference pointer-events-none">
+        <div className="section-container pt-8 md:pt-12 flex justify-end pointer-events-auto">
           <nav className="hidden md:flex flex-col items-end gap-3">
             {navLinks.map((link) => (
               <a 
