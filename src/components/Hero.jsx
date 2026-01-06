@@ -11,8 +11,8 @@ const Hero = () => {
         <motion.div style={{ opacity: opacityText }}>
             <span className="text-[10px] font-bold tracking-[0.5em] uppercase mb-8 block text-white/40">Luxury Wedding Photography & Cinematography</span>
             <h1 className="mb-12 font-serif leading-[0.85] text-white">
-              Timeless Moments, <br />
-              <span className="serif-italic font-normal">Beautifully Told</span>
+              The Standard of <br />
+              <span className="serif-italic font-normal">Authenticity</span>
             </h1>
             <p className="max-w-xl mx-auto text-sm font-light tracking-[0.05em] leading-relaxed text-white/60 mb-12">
                Where innovation meets artistry to preserve your most precious moments.
