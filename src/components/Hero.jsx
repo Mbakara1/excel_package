@@ -15,9 +15,7 @@ const Hero = () => {
               <span className="serif-italic font-normal">Beautifully Told</span>
             </h1>
             <p className="max-w-xl mx-auto text-sm font-light tracking-[0.05em] leading-relaxed text-white/60 mb-12">
-               The leading provider of luxury wedding photography and cinematography. 
-               Through continuous innovation and a distinctive style, we capture unique moments 
-               and ensure every client's story is beautifully preserved for eternity.
+               Where innovation meets artistry to preserve your most precious moments.
             </p>
             <div className="flex justify-center gap-6">
                <a href="#packages" className="cta-editorial">View Booking</a>
