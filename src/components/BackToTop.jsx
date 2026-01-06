@@ -28,7 +28,7 @@ const BackToTop = () => {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-12 right-32 z-50 group"
+      className="fixed bottom-12 left-1/2 -translate-x-1/2 z-50 group"
       aria-label="Back to top"
       style={{ width: '56px', height: '56px' }}
     >
