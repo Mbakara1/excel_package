@@ -7,94 +7,47 @@ const BookingForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // Web3Forms API key - replace with your actual key from web3forms.com
-  const WEB3FORMS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
-  const USE_WEB3FORMS = WEB3FORMS_KEY !== "YOUR_WEB3FORMS_ACCESS_KEY";
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setError('');
 
     const formData = new FormData(e.target);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const phone = formData.get('phone') || 'Not provided';
-    const eventDate = formData.get('eventDate');
-    const collection = formData.get('collection');
-    const message = formData.get('message') || 'No additional notes';
 
-    if (USE_WEB3FORMS) {
-      // Strategy 1: Use Web3Forms API for professional email delivery
-      const data = {
-        access_key: WEB3FORMS_KEY,
-        subject: "New Excel Imagery Booking Request",
-        from_name: name,
-        email: email,
-        phone: phone,
-        event_date: eventDate,
-        collection: collection,
-        message: message,
-        to: "pmbakara@gmail.com"
-      };
+    try {
+      // Using FormSubmit.co - completely free, zero configuration required
+      // Emails automatically send to pmbakara@gmail.com
+      const response = await fetch('https://formsubmit.co/ajax/pmbakara@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('email'),
+          phone: formData.get('phone') || 'Not provided',
+          eventDate: formData.get('eventDate'),
+          collection: formData.get('collection'),
+          message: formData.get('message') || 'No additional notes',
+          _subject: 'New Excel Imagery Booking Request',
+          _template: 'table',
+          _captcha: 'false'
+        }),
+      });
 
-      try {
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        });
+      const data = await response.json();
 
-        if (response.ok) {
-          setSubmitted(true);
-        } else {
-          setError('Failed to send your request. Please try again or contact us directly.');
-        }
-      } catch (err) {
-        setError('Network error. Please check your connection and try again.');
-      } finally {
-        setIsLoading(false);
-      }
-    } else {
-      // Strategy 2: Fallback to mailto: for immediate functionality
-      console.log('📧 Using mailto: fallback (Web3Forms not configured)');
-      
-      const subject = encodeURIComponent('Excel Imagery Booking Request');
-      const body = encodeURIComponent(`
-BOOKING REQUEST
-================
-
-Client Information:
--------------------
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-
-Event Details:
---------------
-Date: ${eventDate}
-Collection: ${collection}
-
-Additional Notes:
------------------
-${message}
-
----
-Sent via Excel Imagery Reservation Form
-      `);
-
-      const mailtoLink = `mailto:pmbakara@gmail.com?subject=${subject}&body=${body}`;
-      
-      // Open mailto link
-      window.location.href = mailtoLink;
-      
-      // Show success after a brief delay
-      setTimeout(() => {
+      if (response.ok && data.success) {
         setSubmitted(true);
-        setIsLoading(false);
-      }, 1000);
+      } else {
+        setError('Failed to send your request. Please try again or contact us directly at pmbakara@gmail.com');
+      }
+    } catch (err) {
+      console.error('Form submission error:', err);
+      setError('Network error. Please check your connection and try again.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
