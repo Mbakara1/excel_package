@@ -64,7 +64,7 @@ const Terms = () => {
                                     exit={{ height: 0, opacity: 0 }}
                                     className="overflow-hidden"
                                 >
-                                    <p className="pt-8 text-sm font-light text-white/60 leading-relaxed border-t border-white/10 mt-8">
+                                    <p className="pt-8 text-sm font-normal text-white/80 leading-relaxed border-t border-white/20 mt-8">
                                         {term.content}
                                     </p>
                                 </motion.div>

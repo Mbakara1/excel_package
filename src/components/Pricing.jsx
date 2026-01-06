@@ -67,21 +67,21 @@ const Pricing = () => {
                 </div>
                 
                 <h4 className="text-4xl font-sans font-bold tracking-tighter mb-4 text-white">{pkg.name}</h4>
-                <p className="text-xs font-light text-white/30 tracking-wide mb-8 uppercase">{pkg.description}</p>
+                <p className="text-xs font-normal text-white/50 tracking-wide mb-8 uppercase line-clamp-2 md:h-8">{pkg.description}</p>
                 
                 <div className="text-5xl font-serif text-white mb-10">{pkg.price}</div>
                 
                 <ul className="space-y-4 mb-12 flex-grow">
                    {pkg.features.map((f, i) => (
-                     <li key={i} className="text-[11px] font-medium tracking-widest uppercase text-white/50 flex items-center gap-3">
-                        <div className="w-1 h-1 bg-white/20" />
+                     <li key={i} className="text-[11px] font-medium tracking-widest uppercase text-white/70 flex items-center gap-3">
+                        <div className="w-1 h-1 bg-white/40" />
                         {f}
                      </li>
                    ))}
                 </ul>
                 
                 <a href="#book" className={`w-full py-5 text-center text-[10px] font-black tracking-[0.3em] uppercase transition-all ${
-                    pkg.highlight ? 'bg-white text-black' : 'border border-white/10 text-white/40 hover:text-white hover:border-white'
+                    pkg.highlight ? 'bg-white text-black' : 'border border-white/20 text-white/60 hover:text-white hover:border-white'
                 }`}>
                     Secure Date
                 </a>
