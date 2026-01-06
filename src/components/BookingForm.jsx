@@ -114,7 +114,7 @@ const BookingForm = () => {
                         </p>
                         <p className="flex items-start gap-3">
                            <span className="text-black/40 text-xs mt-1">✉️</span>
-                           <span className="font-medium text-black">hello@excelimagery.com</span>
+                           <span className="font-medium text-black">pmbakara@gmail</span>
                         </p>
                      </div>
                   </div>

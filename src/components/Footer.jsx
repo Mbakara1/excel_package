@@ -38,7 +38,7 @@ const Footer = () => {
              <div className="text-sm font-light text-white/50 space-y-2">
                 <p>31 Itiam Street, Uyo</p>
                 <p>+234 812 345 6789</p>
-                <p className="text-white font-medium">hello@excelimagery.com</p>
+                <p className="text-white font-medium">pmbakara@gmail</p>
              </div>
           </div>
         </div>
