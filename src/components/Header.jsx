@@ -27,7 +27,7 @@ const Header = () => {
     >
       <div className="section-container flex items-center justify-between" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <a href="#" className="flex items-center gap-2 group">
-          <Camera className="w-8 h-8 text-[#D4AF37] group-hover:scale-110 transition-transform" />
+          <img src="/favicon.png" alt="Excel Imagery Logo" className="w-8 h-8 rounded-md group-hover:scale-110 transition-transform object-cover" />
           <span className="text-xl font-bold tracking-tighter">
             EXCEL <span className="gold-text">IMAGERY</span>
           </span>
