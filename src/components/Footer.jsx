@@ -51,9 +51,9 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Massive Brand Narrative */}
-      <div className="mt-20 overflow-hidden select-none pointer-events-none text-center">
-         <h2 className="text-[30vw] font-black uppercase tracking-tighter leading-none -mb-[5vw] text-white/60 relative" style={{
+      {/* Massive Brand Narrative with Developer Credit */}
+      <div className="mt-20 overflow-hidden select-none relative">
+         <h2 className="text-[35vw] font-black uppercase tracking-[0.2em] leading-none -mb-[5vw] text-white/60 text-center pointer-events-none" style={{
            backdropFilter: 'blur(10px)',
            WebkitBackdropFilter: 'blur(10px)',
            textShadow: '0 0 40px rgba(255, 255, 255, 0.1)',
@@ -63,28 +63,28 @@ const Footer = () => {
          }}>
             EXCEL
          </h2>
-      </div>
-
-      {/* Developer Credit */}
-      <div className="mt-12 pt-8 border-t border-white/5 text-center pointer-events-auto">
-         <p className="text-xs font-medium tracking-wider uppercase text-white/40 flex items-center justify-center gap-2">
-            Built by{' '}
-            <a 
-              href="https://x.com/goodnesmbakara" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-white hover:text-[#D4AF37] transition-all duration-300 inline-flex items-center gap-2 group cursor-pointer border-b border-white/30 hover:border-[#D4AF37] pb-0.5"
-            >
-              <span className="group-hover:tracking-wide transition-all">Goodness Mbakara</span>
-              <svg 
-                viewBox="0 0 24 24" 
-                className="w-3.5 h-3.5 fill-current group-hover:scale-110 transition-transform"
-                aria-label="X (formerly Twitter)"
-              >
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
-         </p>
+         
+         {/* Developer Credit - positioned to the right */}
+         <div className="absolute bottom-4 right-4 md:right-8 pointer-events-auto">
+            <p className="text-xs font-medium tracking-wider uppercase text-white/40 flex items-center gap-2">
+               Built by{' '}
+               <a 
+                 href="https://x.com/goodnesmbakara" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="text-white hover:text-[#D4AF37] transition-all duration-300 inline-flex items-center gap-2 group cursor-pointer border-b border-white/30 hover:border-[#D4AF37] pb-0.5"
+               >
+                 <span className="group-hover:tracking-wide transition-all">Goodness Mbakara</span>
+                 <svg 
+                   viewBox="0 0 24 24" 
+                   className="w-3.5 h-3.5 fill-current group-hover:scale-110 transition-transform"
+                   aria-label="X (formerly Twitter)"
+                 >
+                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                 </svg>
+               </a>
+            </p>
+         </div>
       </div>
     </footer>
   );
