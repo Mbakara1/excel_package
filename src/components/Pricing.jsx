@@ -188,25 +188,27 @@ const Pricing = () => {
           </div>
 
           {/* Category Switcher */}
-          <div className="flex bg-white/5 p-1 rounded-lg backdrop-blur-sm">
-             <button 
-                onClick={() => setActiveCategory('weddings')}
-                className={`px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all rounded-md ${activeCategory === 'weddings' ? 'bg-white text-black shadow-lg' : 'text-white/40 hover:text-white'}`}
-             >
-               Weddings
-             </button>
-             <button 
-                onClick={() => setActiveCategory('burials')}
-                className={`px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all rounded-md ${activeCategory === 'burials' ? 'bg-white text-black shadow-lg' : 'text-white/40 hover:text-white'}`}
-             >
-               Burials
-             </button>
-             <button 
-                onClick={() => setActiveCategory('studio')}
-                className={`px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all rounded-md ${activeCategory === 'studio' ? 'bg-white text-black shadow-lg' : 'text-white/40 hover:text-white'}`}
-             >
-               Studio
-             </button>
+          <div className="flex flex-col items-end gap-2">
+            <span className="text-[10px] font-bold tracking-widest text-white/40 uppercase">Select Event Type</span>
+            <div className="flex bg-white/5 p-1 rounded-full backdrop-blur-sm relative">
+              {['weddings', 'burials', 'studio'].map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className="relative px-6 py-3 text-xs font-bold uppercase tracking-widest z-10 transition-colors duration-300"
+                  style={{ color: activeCategory === cat ? '#000' : 'rgba(255,255,255,0.4)' }}
+                >
+                  {activeCategory === cat && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute inset-0 bg-white rounded-full shadow-lg -z-10"
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    />
+                  )}
+                  {cat}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
