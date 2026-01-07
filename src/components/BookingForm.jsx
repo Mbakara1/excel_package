@@ -96,7 +96,7 @@ const BookingForm = () => {
         </div>
 
         {/* Minimal Form */}
-        <div className="max-w-xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {error && (
             <motion.div 
               initial={{ opacity: 0 }}
