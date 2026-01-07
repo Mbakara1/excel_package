@@ -181,7 +181,7 @@ const Pricing = () => {
       <div className="section-container">
         
         {/* Header & Tabs */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
           <div>
             <span className="text-[10px] font-bold tracking-[0.5em] text-white/30 uppercase mb-4 block">Investment</span>
             <h2 className="text-white mb-2">Curated <br/><span className="serif-italic font-normal">Packages</span></h2>
@@ -190,7 +190,7 @@ const Pricing = () => {
           {/* Category Switcher */}
           <div className="flex flex-col items-end gap-2">
             <span className="text-[10px] font-bold tracking-widest text-white/40 uppercase">Select Event Type</span>
-            <div className="flex bg-white/5 p-1 rounded-full backdrop-blur-sm relative">
+            <div className="flex bg-white/5 p-1 rounded-full backdrop-blur-sm relative gap-2">
               {['weddings', 'burials', 'studio'].map((cat) => (
                 <button
                   key={cat}
