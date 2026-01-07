@@ -47,6 +47,13 @@ const BookingForm = () => {
           'Epic (Burial)': 'Epic (Burial) — ₦250,000',
           'Excel (Burial)': 'Excel (Burial) — ₦400,000',
           'Smart (Burial)': 'Smart (Burial) — ₦650,000',
+
+          // Studio
+          '4 Edited (Studio)': '4 Edited (Studio) — ₦20,000',
+          '8 Edited (Studio)': '8 Edited (Studio) — ₦37,000',
+          '10 Edited (Studio)': '10 Edited (Studio) — ₦45,000',
+          '15 Edited (Studio)': '15 Edited (Studio) — ₦70,000',
+          '20 Edited (Studio)': '20 Edited (Studio) — ₦90,000',
         };
         if (packageMap[pkg]) {
           setSelectedPackage(packageMap[pkg]);
@@ -256,6 +263,14 @@ const BookingForm = () => {
                     <option value="Epic (Burial) — ₦250,000" className="bg-black text-white">Epic — ₦250,000</option>
                     <option value="Excel (Burial) — ₦400,000" className="bg-black text-white">Excel — ₦400,000</option>
                     <option value="Smart (Burial) — ₦650,000" className="bg-black text-white">Smart — ₦650,000</option>
+                  </optgroup>
+
+                  <optgroup label="Studio Session" className="bg-black text-white/60">
+                    <option value="4 Edited (Studio) — ₦20,000" className="bg-black text-white">4 Edited — ₦20,000</option>
+                    <option value="8 Edited (Studio) — ₦37,000" className="bg-black text-white">8 Edited — ₦37,000</option>
+                    <option value="10 Edited (Studio) — ₦45,000" className="bg-black text-white">10 Edited — ₦45,000</option>
+                    <option value="15 Edited (Studio) — ₦70,000" className="bg-black text-white">15 Edited — ₦70,000</option>
+                    <option value="20 Edited (Studio) — ₦90,000" className="bg-black text-white">20 Edited — ₦90,000</option>
                   </optgroup>
                 </select>
               </div>

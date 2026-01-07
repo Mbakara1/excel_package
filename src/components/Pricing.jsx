@@ -117,6 +117,59 @@ const categories = {
       ],
       description: "Premium cinematic experience with aerial coverage."
     }
+  ],
+  studio: [
+    {
+      name: "4 Edited",
+      pricing: "₦20,000",
+      features: [
+        "Duration: 45 minutes",
+        "One change of clothes allowed",
+        "4 Edited Images"
+      ],
+      description: "Quick professional session for essential portraits."
+    },
+    {
+      name: "8 Edited",
+      pricing: "₦37,000",
+      features: [
+        "Duration: 1 Hour",
+        "Two changes of clothes allowed",
+        "8 Edited Images"
+      ],
+      description: "Standard session with multiple looks."
+    },
+    {
+      name: "10 Edited",
+      pricing: "₦45,000",
+      features: [
+        "Duration: 1 Hour 30 minutes",
+        "Three changes of clothes allowed",
+        "10 Edited Images"
+      ],
+      description: "Extended session for variety and style."
+    },
+    {
+      name: "15 Edited",
+      pricing: "₦70,000",
+      features: [
+        "Duration: 2 Hours",
+        "Four changes of clothes allowed",
+        "15 Edited Images"
+      ],
+      description: "Premium portfolio builder with extensive time.",
+      highlight: true
+    },
+    {
+      name: "20 Edited",
+      pricing: "₦90,000",
+      features: [
+        "Duration: 2 Hours",
+        "Four changes of clothes allowed",
+        "20 Edited Images"
+      ],
+      description: "The ultimate studio experience for complete coverage."
+    }
   ]
 };
 
@@ -147,6 +200,12 @@ const Pricing = () => {
                 className={`px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all rounded-md ${activeCategory === 'burials' ? 'bg-white text-black shadow-lg' : 'text-white/40 hover:text-white'}`}
              >
                Burials
+             </button>
+             <button 
+                onClick={() => setActiveCategory('studio')}
+                className={`px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all rounded-md ${activeCategory === 'studio' ? 'bg-white text-black shadow-lg' : 'text-white/40 hover:text-white'}`}
+             >
+               Studio
              </button>
           </div>
         </div>
@@ -202,7 +261,11 @@ const Pricing = () => {
                 </ul>
 
                 <a 
-                  href={`#book?package=${encodeURIComponent(activeCategory === 'burials' ? `${pkg.name} (Burial)` : pkg.name)}`}
+                  href={`#book?package=${encodeURIComponent(
+                    activeCategory === 'burials' ? `${pkg.name} (Burial)` : 
+                    activeCategory === 'studio' ? `${pkg.name} (Studio)` : 
+                    pkg.name
+                  )}`}
                   className="inline-block w-full py-4 border border-white/10 text-center text-xs font-bold tracking-[0.2em] text-white uppercase hover:bg-white hover:text-black transition-all duration-500 relative z-10"
                 >
                   Secure Date
