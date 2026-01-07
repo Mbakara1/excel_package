@@ -1,11 +1,30 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, CheckCircle, Loader } from 'lucide-react';
+import { Send, CheckCircle, Loader, Calendar } from 'lucide-react';
+
+const getSeason = (dateString) => {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+  const month = date.getMonth(); // 0-11
+  
+  if (month >= 2 && month <= 4) return 'A Spring Celebration';
+  if (month >= 5 && month <= 7) return 'A Summer Union';
+  if (month >= 8 && month <= 10) return 'An Autumn Registry';
+  return 'A Winter Gathering';
+};
+
+const formatDate = (dateString) => {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+};
 
 const BookingForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [dateValue, setDateValue] = useState('');
+  const dateInputRef = React.useRef(null);
   
   const [selectedPackage, setSelectedPackage] = useState('');
 
@@ -19,7 +38,6 @@ const BookingForm = () => {
         const packageMap = {
           'Ruby': 'Ruby — ₦350k',
           'Bronze': 'Bronze — ₦450k',
-          'Silver': 'Silver — ₦600k',
           'Smart': 'Smart — ₦700k',
           'Diamond': 'Diamond — ₦1.1M'
         };
@@ -171,14 +189,42 @@ const BookingForm = () => {
                 />
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 relative">
                 <label className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/40">Event Date</label>
+                
+                {/* Hidden Native Input for Logic/Submission */}
                 <input
+                  ref={dateInputRef}
                   required
                   name="eventDate"
                   type="date"
-                  className="w-full bg-transparent border-b border-white/20 py-4 text-white focus:border-white focus:outline-none transition-all cursor-pointer invert opacity-60"
+                  value={dateValue}
+                  onChange={(e) => setDateValue(e.target.value)}
+                  className="absolute inset-0 opacity-0 cursor-pointer z-10 w-full h-full"
+                  style={{ top: '30px' }} // Push down to avoid covering label if needed, or keeping it strictly on the visual area
                 />
+
+                {/* Creative Visual Trigger */}
+                <div 
+                  className="w-full bg-transparent border-b border-white/20 py-4 text-white focus:border-white focus:outline-none transition-all cursor-pointer group hover:border-white/50 relative"
+                  onClick={() => dateInputRef.current?.showPicker()}
+                >
+                  {dateValue ? (
+                    <div className="flex flex-col animate-in fade-in slide-in-from-bottom-2 duration-500">
+                      <span className="text-2xl font-serif italic text-white leading-none mb-2">
+                        {formatDate(dateValue)}
+                      </span>
+                      <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-[#D4AF37]">
+                        {getSeason(dateValue)}
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-4 opacity-30 group-hover:opacity-60 transition-opacity">
+                      <span className="text-sm">Select Event Date</span>
+                      <Calendar className="w-4 h-4" />
+                    </div>
+                  )}
+                </div>
               </div>
 
               <div className="space-y-4 md:col-span-2">
@@ -193,7 +239,6 @@ const BookingForm = () => {
                   <option value="" className="bg-black">Select Package</option>
                   <option value="Ruby — ₦350k" className="bg-black">Ruby — ₦350k</option>
                   <option value="Bronze — ₦450k" className="bg-black">Bronze — ₦450k</option>
-                  <option value="Silver — ₦600k" className="bg-black">Silver — ₦600k</option>
                   <option value="Smart — ₦700k" className="bg-black">Smart — ₦700k</option>
                   <option value="Diamond — ₦1.1M" className="bg-black">Diamond — ₦1.1M</option>
                 </select>

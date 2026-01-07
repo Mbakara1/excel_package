@@ -44,28 +44,6 @@ const packages = [
     description: "Elevated coverage capturing every precious moment."
   },
   {
-    name: "Silver",
-    pricing: {
-      oneDay: "₦600k",
-      twoDay: "₦700k"
-    },
-    features: [
-      "2 Photo Cameras",
-      "2 Video Cameras",
-      "1 Mic + 1 Ronin",
-      "2 Portraits (16x20)",
-      "1 Photobook (12x30)",
-      "2 Video Thrillers",
-      "3 Reels",
-      "35 Edited Soft Copies",
-      "Google Drive Upload",
-      "Bridal Shower Photos (Optional)",
-      "Pre-wedding Photos (Optional)"
-    ],
-    description: "Innovative multi-platform delivery and timeless artistry.",
-    highlight: true
-  },
-  {
     name: "Smart",
     pricing: {
       oneDay: "₦700k",
@@ -134,8 +112,7 @@ const Pricing = () => {
                 {/* Subtle gradient overlay for depth */}
                 <div className="absolute inset-0 bg-gradient-to-b from-white/[0.01] to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 
-                <div className="mb-10 flex justify-between items-baseline relative z-10">
-                   <h3 className="text-2xl font-serif italic text-white/40 group-hover:text-white/60 transition-colors">Vol. {idx + 1}</h3>
+                <div className="mb-10 flex justify-end items-baseline relative z-10">
                    {pkg.highlight && (
                      <span className="text-[10px] font-bold tracking-widest text-[#D4AF37] uppercase">Recommended</span>
                    )}
