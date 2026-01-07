@@ -35,11 +35,18 @@ const BookingForm = () => {
       const pkg = params.get('package');
       if (pkg) {
         // Map simple names to full values
+        // Note: Pricing component sends 'Smart (Burial)' for burial smart package
         const packageMap = {
+          // Weddings
           'Ruby': 'Ruby — ₦350k',
           'Bronze': 'Bronze — ₦450k',
           'Smart': 'Smart — ₦700k',
-          'Diamond': 'Diamond — ₦1.1M'
+          'Diamond': 'Diamond — ₦1.1M',
+          
+          // Burials
+          'Epic (Burial)': 'Epic (Burial) — ₦250,000',
+          'Excel (Burial)': 'Excel (Burial) — ₦400,000',
+          'Smart (Burial)': 'Smart (Burial) — ₦650,000',
         };
         if (packageMap[pkg]) {
           setSelectedPackage(packageMap[pkg]);
@@ -237,10 +244,19 @@ const BookingForm = () => {
                   className="w-full bg-transparent border-b border-white/20 py-4 text-white focus:border-white focus:outline-none transition-all cursor-pointer appearance-none"
                 >
                   <option value="" className="bg-black">Select Package</option>
-                  <option value="Ruby — ₦350k" className="bg-black">Ruby — ₦350k</option>
-                  <option value="Bronze — ₦450k" className="bg-black">Bronze — ₦450k</option>
-                  <option value="Smart — ₦700k" className="bg-black">Smart — ₦700k</option>
-                  <option value="Diamond — ₦1.1M" className="bg-black">Diamond — ₦1.1M</option>
+                  
+                  <optgroup label="Weddings" className="bg-black text-white/60">
+                    <option value="Ruby — ₦350k" className="bg-black text-white">Ruby — ₦350k</option>
+                    <option value="Bronze — ₦450k" className="bg-black text-white">Bronze — ₦450k</option>
+                    <option value="Smart — ₦700k" className="bg-black text-white">Smart — ₦700k</option>
+                    <option value="Diamond — ₦1.1M" className="bg-black text-white">Diamond — ₦1.1M</option>
+                  </optgroup>
+
+                  <optgroup label="Burial Programmes" className="bg-black text-white/60">
+                    <option value="Epic (Burial) — ₦250,000" className="bg-black text-white">Epic — ₦250,000</option>
+                    <option value="Excel (Burial) — ₦400,000" className="bg-black text-white">Excel — ₦400,000</option>
+                    <option value="Smart (Burial) — ₦650,000" className="bg-black text-white">Smart — ₦650,000</option>
+                  </optgroup>
                 </select>
               </div>
 

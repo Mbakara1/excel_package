@@ -1,114 +1,163 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const packages = [
-  {
-    name: "Ruby",
-    pricing: {
-      oneDay: "₦350k",
-      twoDay: "₦450k"
+const categories = {
+  weddings: [
+    {
+      name: "Ruby",
+      pricing: { oneDay: "₦350k", twoDay: "₦450k" },
+      features: [
+        "1 Photo Camera",
+        "1 Video Camera",
+        "1 Photobook (12x24)",
+        "1 Frame (12x16)",
+        "Edited Soft Copies",
+        "Unedited Images",
+        "Flash Drive Delivery"
+      ],
+      description: "Perfect for intimate celebrations with essential coverage."
     },
-    features: [
-      "1 Photo Camera",
-      "1 Video Camera",
-      "2 Enlargements (10x12)",
-      "1 Photobook (10x20)",
-      "Video Thriller",
-      "2 Reels",
-      "20 Edited Soft Copies",
-      "Full Event Videos (Flash Drive)",
-      "All Photos (Flash Drive)"
-    ],
-    description: "Essential luxury storytelling for intimate celebrations.",
-    note: "Flash drive provided by client"
-  },
-  {
-    name: "Bronze",
-    pricing: {
-      oneDay: "₦450k",
-      twoDay: "₦550k"
+    {
+      name: "Bronze",
+      pricing: { oneDay: "₦450k", twoDay: "₦550k" },
+      features: [
+        "2 Photo Cameras",
+        "1 Video Camera",
+        "1 Photobook (12x24)",
+        "1 Frame (16x20)",
+        "Edited Soft Copies",
+        "Unedited Images",
+        "Flash Drive Delivery",
+        "Pre-wedding Shoot (Optional)"
+      ],
+      description: "Comprehensive coverage for standard wedding events."
     },
-    features: [
-      "2 Photo Cameras",
-      "2 Video Cameras",
-      "1 Mic for Interviews/Video",
-      "2 Portraits (12x15)",
-      "1 Regular Photobook (12x24)",
-      "2 Video Thrillers",
-      "2 Reels",
-      "25 Edited Soft Copies",
-      "Full Event Videos (Flash Drive)",
-      "All Photos (Flash Drive)",
-      "Pre-wedding Photos (Optional)"
-    ],
-    description: "Elevated coverage capturing every precious moment."
-  },
-  {
-    name: "Smart",
-    pricing: {
-      oneDay: "₦700k",
-      twoDay: "₦800k"
+    {
+      name: "Smart",
+      pricing: { oneDay: "₦700k", twoDay: "₦800k" },
+      features: [
+        "2 Photo Cameras",
+        "2 Video Cameras",
+        "1 Drone Pilot",
+        "1 Photobook (12x24)",
+        "2 Frames (16x20)",
+        "Edited Soft Copies",
+        "Unedited Images",
+        "Flash Drive Delivery",
+        "Pre-wedding Shoot (Optional)"
+      ],
+      description: "Premium cinematic experience with aerial perspectives."
     },
-    features: [
-      "2 Photo Cameras",
-      "2 Video Cameras",
-      "1 Mic + 1 Ronin + 1 Drone",
-      "2 Canvas Prints (16x20)",
-      "1 Synthetic Photobook (12x24)",
-      "2 Video Thrillers",
-      "3 Reels",
-      "40 Edited Soft Copies",
-      "Google Drive Upload",
-      "Bridal Shower Photos (Optional)",
-      "Pre-wedding Photos (Optional)"
-    ],
-    description: "Cutting-edge aerial cinematography and unique perspectives."
-  },
-  {
-    name: "Diamond",
-    pricing: {
-      oneDay: "₦1.1M",
-      twoDay: "₦1.2M"
+    {
+      name: "Diamond",
+      pricing: { oneDay: "₦1.1M", twoDay: "₦1.2M" },
+      features: [
+        "2 Photo Cameras",
+        "2 Video Cameras",
+        "1 Drone Pilot",
+        "1 Ronin",
+        "1 Crane/Jib",
+        "2 Photobooks (12x24)",
+        "2 Frames (20x30)",
+        "Edited Soft Copies",
+        "Unedited Images",
+        "Flash Drive Delivery",
+        "Pre-wedding Shoot (Optional)"
+      ],
+      description: "The ultimate luxury package for grand celebrations.",
+      highlight: true
+    }
+  ],
+  burials: [
+    {
+      name: "Epic",
+      pricing: "₦250,000",
+      features: [
+        "1 Photo Camera",
+        "1 Video Camera",
+        "1 Ronin + 1 Mic",
+        "1 Photobook (10x20)",
+        "40 Edited Pictures (2-3 days)",
+        "Unedited Soft Copies (Immediate)",
+        "Video Thriller (3-5 days)",
+        "Full HD Video (2 weeks)"
+      ],
+      description: "Essential coverage for respectful transitions."
     },
-    features: [
-      "3 Photo Cameras",
-      "2 Video Cameras",
-      "1 Mic + 1 Ronin + 1 Drone",
-      "3-in-1 Canvas Print",
-      "1 Synthetic + 1 Regular Photobook",
-      "2 Video Thrillers",
-      "3 Reels",
-      "40 Edited Soft Copies",
-      "Google Drive Upload",
-      "Bridal Shower Photos (Optional)",
-      "Pre-wedding Photos (Optional)"
-    ],
-    description: "Comprehensive luxury experience with unparalleled service."
-  }
-];
+    {
+      name: "Excel",
+      pricing: "₦400,000",
+      features: [
+        "2 Photo Cameras",
+        "2 Video Cameras",
+        "1 Ronin + 1 Mic",
+        "1 Photobook (12x24)",
+        "40 Edited Pictures (2-3 days)",
+        "Unedited Soft Copies (Immediate)",
+        "Video Thriller (3-5 days)",
+        "Full HD Video (2 weeks)"
+      ],
+      description: "Comprehensive coverage ensuring every moment is preserved.",
+      highlight: true
+    },
+    {
+      name: "Smart",
+      pricing: "₦650,000",
+      features: [
+        "2 Photo Cameras",
+        "2 Video Cameras",
+        "1 Drone Pilot",
+        "1 Ronin + 1 Mic",
+        "1 Synthetic Photobook (18x36)",
+        "1 Frame (16x20)",
+        "40 Edited Pictures (2-3 days)",
+        "Unedited Soft Copies (Immediate)",
+        "Video Thriller (3-5 days)",
+        "Full HD Video (2 weeks)"
+      ],
+      description: "Premium cinematic experience with aerial coverage."
+    }
+  ]
+};
 
 const Pricing = () => {
+  const [activeCategory, setActiveCategory] = useState('weddings');
+
   return (
-    <section id="packages" className="py-40 pb-60 bg-black border-y border-white/5">
+    <section id="pricing" className="py-32 bg-black relative">
       <div className="section-container">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start mb-32">
-          <div className="lg:col-span-12">
-             <h2 className="text-white text-center">Portfolio <br /><span className="serif-italic font-normal">Booking</span></h2>
+        
+        {/* Header & Tabs */}
+        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+          <div>
+            <span className="text-[10px] font-bold tracking-[0.5em] text-white/30 uppercase mb-4 block">Investment</span>
+            <h2 className="text-white mb-2">Curated <br/><span className="serif-italic font-normal">Packages</span></h2>
+          </div>
+
+          {/* Category Switcher */}
+          <div className="flex bg-white/5 p-1 rounded-lg backdrop-blur-sm">
+             <button 
+                onClick={() => setActiveCategory('weddings')}
+                className={`px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all rounded-md ${activeCategory === 'weddings' ? 'bg-white text-black shadow-lg' : 'text-white/40 hover:text-white'}`}
+             >
+               Weddings
+             </button>
+             <button 
+                onClick={() => setActiveCategory('burials')}
+                className={`px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all rounded-md ${activeCategory === 'burials' ? 'bg-white text-black shadow-lg' : 'text-white/40 hover:text-white'}`}
+             >
+               Burials
+             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-           {packages.map((pkg, idx) => (
-             <motion.div 
-               key={pkg.name}
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               transition={{ duration: 0.8, delay: idx * 0.1 }}
-               viewport={{ once: true }}
-               className={`p-12 border border-white/10 flex flex-col group hover:border-white/30 transition-all duration-500 relative overflow-hidden ${
-                 pkg.highlight ? 'bg-white/[0.02]' : 'bg-transparent'
-               }`}
-             >
+        {/* Dynamic Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {categories[activeCategory].map((pkg, idx) => (
+            <div 
+              key={idx}
+              className={`group relative p-8 md:p-12 border transition-all duration-700 hover:border-white/20 ${pkg.highlight ? 'border-white/20 bg-white/[0.02]' : 'border-white/5 bg-transparent'}`}
+            >
                 {/* Subtle gradient overlay for depth */}
                 <div className="absolute inset-0 bg-gradient-to-b from-white/[0.01] to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 
@@ -117,41 +166,49 @@ const Pricing = () => {
                      <span className="text-[10px] font-bold tracking-widest text-[#D4AF37] uppercase">Recommended</span>
                    )}
                 </div>
-                
-                <h4 className="text-4xl font-sans font-bold tracking-tighter mb-4 text-white relative z-10">{pkg.name}</h4>
-                <p className="text-xs font-normal text-white/50 tracking-wide mb-8 uppercase line-clamp-2 md:h-8 relative z-10">{pkg.description}</p>
-                
-                {/* Dual Pricing Display */}
-                <div className="grid grid-cols-2 gap-3 mb-10 relative z-10">
-                  {/* 1 Day Pricing */}
-                  <div className="border border-white/10 p-4 flex flex-col items-center justify-center hover:border-white/20 transition-all duration-300">
-                    <div className="text-[9px] font-bold tracking-[0.2em] text-white/40 uppercase mb-3">1 Day</div>
-                    <div className="text-2xl font-serif text-white">{pkg.pricing.oneDay}</div>
-                  </div>
-                  
-                  {/* 2 Days Pricing */}
-                  <div className="border border-white/10 p-4 flex flex-col items-center justify-center hover:border-white/20 transition-all duration-300">
-                    <div className="text-[9px] font-bold tracking-[0.2em] text-white/40 uppercase mb-3">2 Days</div>
-                    <div className="text-2xl font-serif text-white">{pkg.pricing.twoDay}</div>
-                  </div>
+
+                <div className="mb-12 relative z-10">
+                  <h3 className="text-4xl md:text-5xl font-serif text-white mb-4">{pkg.name}</h3>
+                  <p className="text-sm font-light text-white/40 max-w-xs">{pkg.description}</p>
                 </div>
-                
-                <ul className="space-y-4 mb-12 flex-grow relative z-10">
-                   {pkg.features.map((f, i) => (
-                     <li key={i} className="text-[11px] font-medium tracking-widest uppercase text-white/70 flex items-center gap-3">
-                        <div className="w-1 h-1 bg-white/40" />
-                        {f}
-                     </li>
-                   ))}
+
+                {/* Conditional Pricing Display */}
+                <div className="space-y-3 mb-12 relative z-10">
+                  {typeof pkg.pricing === 'string' ? (
+                     <div className="flex items-baseline gap-4">
+                        <span className="text-2xl font-light text-white">{pkg.pricing}</span>
+                     </div>
+                  ) : (
+                    <>
+                      <div className="flex justify-between items-center text-sm border-b border-white/5 pb-2">
+                        <span className="text-white/40">1 Day Event</span>
+                        <span className="text-white font-medium">{pkg.pricing.oneDay}</span>
+                      </div>
+                      <div className="flex justify-between items-center text-sm border-b border-white/5 pb-2">
+                        <span className="text-white/40">2 Day Event</span>
+                        <span className="text-[#D4AF37] font-medium">{pkg.pricing.twoDay}</span>
+                      </div>
+                    </>
+                  )}
+                </div>
+
+                <ul className="space-y-4 mb-12 relative z-10 min-h-[180px]">
+                  {pkg.features.map((feature, fIdx) => (
+                    <li key={fIdx} className="text-sm font-light text-white/60 flex items-start gap-3">
+                      <span className="mt-1.5 w-1 h-1 rounded-full bg-white/20" />
+                      {feature}
+                    </li>
+                  ))}
                 </ul>
-                
-                <a href={`#book?package=${pkg.name}`} className={`w-full py-5 text-center text-[10px] font-black tracking-[0.3em] uppercase transition-all relative z-10 ${
-                    pkg.highlight ? 'bg-white text-black hover:bg-white/90' : 'border border-white/20 text-white/60 hover:text-white hover:border-white hover:bg-white/5'
-                }`}>
-                    Secure Date
+
+                <a 
+                  href={`#book?package=${encodeURIComponent(activeCategory === 'burials' ? `${pkg.name} (Burial)` : pkg.name)}`}
+                  className="inline-block w-full py-4 border border-white/10 text-center text-xs font-bold tracking-[0.2em] text-white uppercase hover:bg-white hover:text-black transition-all duration-500 relative z-10"
+                >
+                  Secure Date
                 </a>
-             </motion.div>
-           ))}
+            </div>
+          ))}
         </div>
       </div>
     </section>
