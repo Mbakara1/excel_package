@@ -41,7 +41,7 @@ const Terms = () => {
   return (
     <section id="terms" className="bg-black">
       {/* Editorial Divider */}
-      <div className="border-t border-white/10 mx-6 md:mx-12 lg:mx-20 flex justify-between items-start pt-6">
+      <div className="mx-6 md:mx-12 lg:mx-20 flex justify-between items-start pt-6">
         <span className="text-[10px] font-bold tracking-[0.2em] text-white/20 uppercase">02 — Protocol</span>
       </div>
 
