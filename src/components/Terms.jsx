@@ -39,8 +39,13 @@ const Terms = () => {
   const [activeIdx, setActiveIdx] = useState(null);
 
   return (
-    <section id="terms" className="py-40 bg-black">
-      <div className="section-container">
+    <section id="terms" className="bg-black">
+      {/* Editorial Divider */}
+      <div className="border-t border-white/10 mx-6 md:mx-12 lg:mx-20 flex justify-between items-start pt-6">
+        <span className="text-[10px] font-bold tracking-[0.2em] text-white/20 uppercase">02 — Protocol</span>
+      </div>
+
+      <div className="section-container pt-32 pb-40">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
             <div className="lg:col-span-5">
                 <span className="text-[10px] font-bold tracking-[0.5em] text-white/30 uppercase mb-4 block">Legal</span>

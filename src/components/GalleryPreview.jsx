@@ -67,8 +67,13 @@ const NarrativeSection = ({ item, index }) => {
 
 const GalleryPreview = () => {
   return (
-    <section id="gallery" className="bg-black pt-40">
-      <div className="section-container">
+    <section id="gallery" className="bg-black">
+      {/* Editorial Divider */}
+      <div className="border-t border-white/10 mx-6 md:mx-12 lg:mx-20 flex justify-between items-start pt-6">
+        <span className="text-[10px] font-bold tracking-[0.2em] text-white/20 uppercase">03 — Archive</span>
+      </div>
+
+      <div className="section-container pt-32">
         {/* Intro */}
         <div className="mb-40 max-w-4xl">
             <span className="text-[10px] font-bold tracking-[0.6em] text-white/30 uppercase mb-6 block">Our Portfolio</span>
