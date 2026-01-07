@@ -106,29 +106,6 @@ const packages = [
       "Pre-wedding Photos (Optional)"
     ],
     description: "Comprehensive luxury experience with unparalleled service."
-  },
-  {
-    name: "Premium",
-    pricing: {
-      oneDay: "₦2M",
-      twoDay: "₦2.1M"
-    },
-    features: [
-      "3 Photo Cameras",
-      "3 Video Cameras",
-      "1 Mic + 1 Ronin + 1 Drone",
-      "360 Photo Booth Machine",
-      "5-in-1 Canvas Prints",
-      "2 Acrylic Box Photobooks",
-      "2 Video Thrillers",
-      "Content Creation",
-      "50 Edited Soft Copies",
-      "10x10 Backdrop Flex",
-      "3x2 Banners (4)",
-      "Welcome Roll-up Stands (2)",
-      "Hard Drive Delivery"
-    ],
-    description: "The ultimate archive of your history."
   }
 ];
 

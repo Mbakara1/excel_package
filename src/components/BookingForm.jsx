@@ -7,10 +7,39 @@ const BookingForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   
-  // Get package from URL parameter
-  const preselectedPackage = React.useMemo(() => {
-    const params = new URLSearchParams(window.location.hash.split('?')[1]);
-    return params.get('package') || '';
+  const [selectedPackage, setSelectedPackage] = useState('');
+
+  // Handle URL hash changes for package pre-selection
+  React.useEffect(() => {
+    const handleHashChange = () => {
+      const params = new URLSearchParams(window.location.hash.split('?')[1]);
+      const pkg = params.get('package');
+      if (pkg) {
+        // Map simple names to full values
+        const packageMap = {
+          'Ruby': 'Ruby — ₦350k',
+          'Bronze': 'Bronze — ₦450k',
+          'Silver': 'Silver — ₦600k',
+          'Smart': 'Smart — ₦700k',
+          'Diamond': 'Diamond — ₦1.1M'
+        };
+        if (packageMap[pkg]) {
+          setSelectedPackage(packageMap[pkg]);
+          // Smooth scroll to book section if not already there
+          const bookSection = document.getElementById('book');
+          if (bookSection) {
+            bookSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }
+    };
+
+    // Initial check
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
   const handleSubmit = async (e) => {
@@ -157,7 +186,8 @@ const BookingForm = () => {
                 <select
                   required
                   name="collection"
-                  defaultValue={preselectedPackage ? `${preselectedPackage} — ₦${preselectedPackage === 'Ruby' ? '350k' : preselectedPackage === 'Bronze' ? '450k' : preselectedPackage === 'Silver' ? '600k' : preselectedPackage === 'Smart' ? '700k' : preselectedPackage === 'Diamond' ? '1.1M' : '2M'}` : ""}
+                  value={selectedPackage}
+                  onChange={(e) => setSelectedPackage(e.target.value)}
                   className="w-full bg-transparent border-b border-white/20 py-4 text-white focus:border-white focus:outline-none transition-all cursor-pointer appearance-none"
                 >
                   <option value="" className="bg-black">Select Package</option>
@@ -166,7 +196,6 @@ const BookingForm = () => {
                   <option value="Silver — ₦600k" className="bg-black">Silver — ₦600k</option>
                   <option value="Smart — ₦700k" className="bg-black">Smart — ₦700k</option>
                   <option value="Diamond — ₦1.1M" className="bg-black">Diamond — ₦1.1M</option>
-                  <option value="Premium — ₦2M" className="bg-black">Premium — ₦2M</option>
                 </select>
               </div>
 
