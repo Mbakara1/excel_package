@@ -11,7 +11,7 @@ const termsData = [
   {
     title: "Delivery Timeline",
     icon: <Clock className="w-5 h-5" />,
-    content: "All deliveries will be made within 30 working days from completion of full payment and photobook picture selection. If job is not delivered after 90 working days, Excel Imagery shall pay ₦10,000 to the client for every month the job remains undelivered."
+    content: "All deliveries will be made within 30 working days from completion of full payment and photobook picture selection. Within 48 hours, we are delivering edited softcopies for online usage. All events unedited pictures delivered through a Google link within 2-3 working days. Reels delivered within 48 hours after the events ended. If job is not delivered after 90 working days, Excel Imagery shall pay ₦10,000 to the client for every month the job remains undelivered."
   },
   {
     title: "Date Changes & Storage Extension",
