@@ -85,9 +85,9 @@ const BookingForm = () => {
 
   return (
     <section id="book" className="py-40 bg-black text-white">
-      <div className="section-container">
+      <div className="section-container flex flex-col items-center">
         {/* Header */}
-        <div className="text-center mb-24">
+        <div className="text-center mb-24 w-full">
           <span className="text-[10px] font-bold tracking-[0.6em] text-white/30 uppercase block mb-8">Inquiry Registry</span>
           <h2 className="text-white mb-6 leading-[0.9] text-6xl md:text-8xl">
             Book <br />
@@ -96,7 +96,7 @@ const BookingForm = () => {
         </div>
 
         {/* Minimal Form */}
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-xl w-full">
           {error && (
             <motion.div 
               initial={{ opacity: 0 }}
