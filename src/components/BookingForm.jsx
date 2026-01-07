@@ -6,6 +6,12 @@ const BookingForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  
+  // Get package from URL parameter
+  const preselectedPackage = React.useMemo(() => {
+    const params = new URLSearchParams(window.location.hash.split('?')[1]);
+    return params.get('package') || '';
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -151,6 +157,7 @@ const BookingForm = () => {
                 <select
                   required
                   name="collection"
+                  defaultValue={preselectedPackage ? `${preselectedPackage} — ₦${preselectedPackage === 'Ruby' ? '350k' : preselectedPackage === 'Bronze' ? '450k' : preselectedPackage === 'Silver' ? '600k' : preselectedPackage === 'Smart' ? '700k' : preselectedPackage === 'Diamond' ? '1.1M' : '2M'}` : ""}
                   className="w-full bg-transparent border-b border-white/20 py-4 text-white focus:border-white focus:outline-none transition-all cursor-pointer appearance-none"
                 >
                   <option value="" className="bg-black">Select Package</option>
@@ -159,6 +166,7 @@ const BookingForm = () => {
                   <option value="Silver — ₦600k" className="bg-black">Silver — ₦600k</option>
                   <option value="Smart — ₦700k" className="bg-black">Smart — ₦700k</option>
                   <option value="Diamond — ₦1.1M" className="bg-black">Diamond — ₦1.1M</option>
+                  <option value="Premium — ₦2M" className="bg-black">Premium — ₦2M</option>
                 </select>
               </div>
 

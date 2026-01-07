@@ -4,7 +4,10 @@ import { motion } from 'framer-motion';
 const packages = [
   {
     name: "Ruby",
-    price: "₦350k",
+    pricing: {
+      oneDay: "₦350k",
+      twoDay: "₦450k"
+    },
     features: [
       "1 Photo Camera",
       "1 Video Camera",
@@ -21,7 +24,10 @@ const packages = [
   },
   {
     name: "Bronze",
-    price: "₦450k",
+    pricing: {
+      oneDay: "₦450k",
+      twoDay: "₦550k"
+    },
     features: [
       "2 Photo Cameras",
       "2 Video Cameras",
@@ -39,7 +45,10 @@ const packages = [
   },
   {
     name: "Silver",
-    price: "₦600k",
+    pricing: {
+      oneDay: "₦600k",
+      twoDay: "₦700k"
+    },
     features: [
       "2 Photo Cameras",
       "2 Video Cameras",
@@ -58,7 +67,10 @@ const packages = [
   },
   {
     name: "Smart",
-    price: "₦700k",
+    pricing: {
+      oneDay: "₦700k",
+      twoDay: "₦800k"
+    },
     features: [
       "2 Photo Cameras",
       "2 Video Cameras",
@@ -76,7 +88,10 @@ const packages = [
   },
   {
     name: "Diamond",
-    price: "₦1.1M",
+    pricing: {
+      oneDay: "₦1.1M",
+      twoDay: "₦1.2M"
+    },
     features: [
       "3 Photo Cameras",
       "2 Video Cameras",
@@ -91,12 +106,35 @@ const packages = [
       "Pre-wedding Photos (Optional)"
     ],
     description: "Comprehensive luxury experience with unparalleled service."
+  },
+  {
+    name: "Premium",
+    pricing: {
+      oneDay: "₦2M",
+      twoDay: "₦2.1M"
+    },
+    features: [
+      "3 Photo Cameras",
+      "3 Video Cameras",
+      "1 Mic + 1 Ronin + 1 Drone",
+      "360 Photo Booth Machine",
+      "5-in-1 Canvas Prints",
+      "2 Acrylic Box Photobooks",
+      "2 Video Thrillers",
+      "Content Creation",
+      "50 Edited Soft Copies",
+      "10x10 Backdrop Flex",
+      "3x2 Banners (4)",
+      "Welcome Roll-up Stands (2)",
+      "Hard Drive Delivery"
+    ],
+    description: "The ultimate archive of your history."
   }
 ];
 
 const Pricing = () => {
   return (
-    <section id="packages" className="py-40 bg-black border-y border-white/5">
+    <section id="packages" className="py-40 pb-60 bg-black border-y border-white/5">
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start mb-32">
           <div className="lg:col-span-12">
@@ -129,7 +167,20 @@ const Pricing = () => {
                 <h4 className="text-4xl font-sans font-bold tracking-tighter mb-4 text-white relative z-10">{pkg.name}</h4>
                 <p className="text-xs font-normal text-white/50 tracking-wide mb-8 uppercase line-clamp-2 md:h-8 relative z-10">{pkg.description}</p>
                 
-                <div className="text-5xl font-serif text-white mb-10 relative z-10">{pkg.price}</div>
+                {/* Dual Pricing Display */}
+                <div className="grid grid-cols-2 gap-3 mb-10 relative z-10">
+                  {/* 1 Day Pricing */}
+                  <div className="border border-white/10 p-4 flex flex-col items-center justify-center hover:border-white/20 transition-all duration-300">
+                    <div className="text-[9px] font-bold tracking-[0.2em] text-white/40 uppercase mb-3">1 Day</div>
+                    <div className="text-2xl font-serif text-white">{pkg.pricing.oneDay}</div>
+                  </div>
+                  
+                  {/* 2 Days Pricing */}
+                  <div className="border border-white/10 p-4 flex flex-col items-center justify-center hover:border-white/20 transition-all duration-300">
+                    <div className="text-[9px] font-bold tracking-[0.2em] text-white/40 uppercase mb-3">2 Days</div>
+                    <div className="text-2xl font-serif text-white">{pkg.pricing.twoDay}</div>
+                  </div>
+                </div>
                 
                 <ul className="space-y-4 mb-12 flex-grow relative z-10">
                    {pkg.features.map((f, i) => (
@@ -140,7 +191,7 @@ const Pricing = () => {
                    ))}
                 </ul>
                 
-                <a href="#book" className={`w-full py-5 text-center text-[10px] font-black tracking-[0.3em] uppercase transition-all relative z-10 ${
+                <a href={`#book?package=${pkg.name}`} className={`w-full py-5 text-center text-[10px] font-black tracking-[0.3em] uppercase transition-all relative z-10 ${
                     pkg.highlight ? 'bg-white text-black hover:bg-white/90' : 'border border-white/20 text-white/60 hover:text-white hover:border-white hover:bg-white/5'
                 }`}>
                     Secure Date
