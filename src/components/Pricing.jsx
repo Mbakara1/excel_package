@@ -188,24 +188,52 @@ const Pricing = () => {
           </div>
 
           {/* Category Switcher */}
-          <div className="flex flex-col items-end gap-2">
-            <span className="text-[10px] font-bold tracking-widest text-white/40 uppercase">Select Event Type</span>
-            <div className="flex bg-white/5 p-1 rounded-full backdrop-blur-sm relative gap-2">
-              {['weddings', 'burials', 'studio'].map((cat) => (
+          <div className="flex flex-col items-end gap-3">
+             <div className="relative inline-block">
+               <span className="relative z-10 text-[10px] font-bold tracking-widest text-[#D4AF37] uppercase animate-pulse">Select Event Type</span>
+               <svg 
+                 className="absolute -inset-3 w-[calc(100%+1.5rem)] h-[calc(100%+1.5rem)] pointer-events-none"
+                 viewBox="0 0 300 100" 
+                 preserveAspectRatio="none"
+               >
+                 <motion.path
+                   d="M10,50 C40,10 260,10 290,50 C320,90 20,90 10,50 C5,25 30,5 50,10"
+                   fill="none"
+                   stroke="white"
+                   strokeWidth="2"
+                   strokeLinecap="round"
+                   strokeLinejoin="round"
+                   initial={{ pathLength: 0, opacity: 0 }}
+                   animate={{ pathLength: 1, opacity: 0.8 }}
+                   transition={{ 
+                     pathLength: { duration: 0.9, ease: "easeInOut", delay: 0.5 },
+                     opacity: { duration: 0.2, delay: 0.5 } 
+                   }}
+                 />
+               </svg>
+             </div>
+            <div className="flex bg-white/5 p-1.5 rounded-full backdrop-blur-md border border-white/10 relative gap-2">
+              {[
+                { id: 'weddings', label: 'Weddings' },
+                { id: 'burials', label: 'Burials' },
+                { id: 'studio', label: 'Studio Session' }
+              ].map((cat) => (
                 <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
                   className="relative px-6 py-3 text-xs font-bold uppercase tracking-widest z-10 transition-colors duration-300"
-                  style={{ color: activeCategory === cat ? '#000' : 'rgba(255,255,255,0.4)' }}
+                  style={{ 
+                    color: activeCategory === cat.id ? '#000' : 'rgba(255,255,255,0.6)',
+                  }}
                 >
-                  {activeCategory === cat && (
+                  {activeCategory === cat.id && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute inset-0 bg-white rounded-full shadow-lg -z-10"
+                      className="absolute inset-0 bg-[#D4AF37] rounded-full shadow-[0_0_20px_rgba(212,175,55,0.3)] -z-10"
                       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
                   )}
-                  {cat}
+                  {cat.label}
                 </button>
               ))}
             </div>
