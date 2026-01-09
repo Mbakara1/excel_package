@@ -11,8 +11,7 @@ const categories = {
         "1 Video Camera",
         "1 Photobook (10x20)",
         "2 Enlargements (10x12)",
-        "1 Frame (12x16)",
-        "Edited Soft Copies",
+        "Edited Soft Copies (20)",
         "Unedited Images",
         "Flash Drive Delivery"
       ],
