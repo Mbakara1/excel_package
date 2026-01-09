@@ -14,7 +14,8 @@ const categories = {
         "2 Reels",
         "Edited Soft Copies (20)",
         "Full Event Videos Delivered On Flash Drive",
-        "All Event Photos Delivered On Google Drive"
+        "All Event Photos Delivered On Google Drive",
+        "Pre-wedding Photographs (Optional)"
       ],
       description: "Perfect for intimate celebrations with essential coverage."
     },
