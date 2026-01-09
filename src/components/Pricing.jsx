@@ -13,9 +13,8 @@ const categories = {
         "2 Enlargements (10x12)",
         "2 Reels",
         "Edited Soft Copies (20)",
-        "Unedited Images Delivered On Flash Drive",
         "Full Event Videos Delivered On Flash Drive",
-        "All Photos Delivered On Google Drive"
+        "All Event Photos Delivered On Google Drive"
       ],
       description: "Perfect for intimate celebrations with essential coverage."
     },
@@ -28,11 +27,10 @@ const categories = {
         "1 Mic For Interviews/Video",
         "2 Portraits (12x15)",
         "1 Regular Photobook (12x24)",
-        "2 Video Thrillers",
         "2 Reels",
         "Edited Soft Copies (25)",
         "Full Event Videos Delivered On Flash Drive",
-        "All Photos Delivered On Google Drive",
+        "All Event Photos Delivered On Google Drive",
         "Pre-wedding Photographs (Optional)"
       ],
       description: "Comprehensive coverage for standard wedding events."
@@ -48,11 +46,10 @@ const categories = {
         "1 Drone",
         "2 Canvas Print (16x20)",
         "1 Synthetic Photobook (12x24)",
-        "2 Video Thrillers",
         "3 Reels",
         "Edited Soft Copies (40)",
         "Full Event Videos Delivered On Flash Drive",
-        "All Photos Delivered On Google Drive",
+        "All Event Photos Delivered On Google Drive",
         "Bridal Shower Photographs (Optional)",
         "DVD Disc (Optional)",
         "Pre-wedding Photographs (Optional)"
@@ -70,11 +67,10 @@ const categories = {
         "1 Drone",
         "3 In 1 Canvas Print",
         "2 Synthetic Photobooks (12x24)",
-        "2 Video Thrillers",
         "4 Reels",
         "Edited Soft Copies (40)",
         "Full Event Videos Delivered On Flash Drive",
-        "All Photos Delivered On Google Drive",
+        "All Event Photos Delivered On Google Drive",
         "Bridal Shower Photographs (Optional)",
         "DVD Disc (Optional)",
         "Pre-wedding Photographs (Optional)"
