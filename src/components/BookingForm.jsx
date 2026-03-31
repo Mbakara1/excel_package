@@ -38,7 +38,6 @@ const BookingForm = () => {
         // Note: Pricing component sends 'Smart (Burial)' for burial smart package
         const packageMap = {
           // Weddings
-          'Ruby': 'Ruby — ₦350k',
           'Bronze': 'Bronze — ₦450k',
           'Smart': 'Smart — ₦700k',
           'Diamond': 'Diamond — ₦1.1M',
@@ -253,7 +252,6 @@ const BookingForm = () => {
                   <option value="" className="bg-black">Select Package</option>
                   
                   <optgroup label="Weddings" className="bg-black text-white/60">
-                    <option value="Ruby — ₦350k" className="bg-black text-white">Ruby — ₦350k</option>
                     <option value="Bronze — ₦450k" className="bg-black text-white">Bronze — ₦450k</option>
                     <option value="Smart — ₦700k" className="bg-black text-white">Smart — ₦700k</option>
                     <option value="Diamond — ₦1.1M" className="bg-black text-white">Diamond — ₦1.1M</option>

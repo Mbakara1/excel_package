@@ -4,22 +4,6 @@ import { motion } from 'framer-motion';
 const categories = {
   weddings: [
     {
-      name: "Ruby",
-      pricing: { oneDay: "₦350k", twoDay: "₦450k" },
-      features: [
-        "1 Photo Camera",
-        "1 Video Camera",
-        "1 Photobook (10x20)",
-        "2 Enlargements (10x12)",
-        "2 Reels",
-        "Edited Soft Copies (20)",
-        "Full Event Videos Delivered On Flash Drive",
-        "All Event Photos Delivered On Google Drive",
-        "Pre-wedding Photographs (Optional)"
-      ],
-      description: "Perfect for intimate celebrations with essential coverage."
-    },
-    {
       name: "Bronze",
       pricing: { oneDay: "₦450k", twoDay: "₦550k" },
       features: [
