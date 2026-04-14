@@ -66,21 +66,6 @@ const categories = {
   ],
   burials: [
     {
-      name: "Epic",
-      pricing: "₦250,000",
-      features: [
-        "1 Photo Camera",
-        "1 Video Camera",
-        "1 Ronin + 1 Mic",
-        "1 Photobook (10x20)",
-        "40 Edited Pictures (2-3 days)",
-        "Unedited Soft Copies (Immediate)",
-        "Video Thriller (3-5 days)",
-        "Full HD Video (2 weeks)"
-      ],
-      description: "Essential coverage for respectful transitions."
-    },
-    {
       name: "Excel",
       pricing: "₦400,000",
       features: [
@@ -93,8 +78,7 @@ const categories = {
         "Video Thriller (3-5 days)",
         "Full HD Video (2 weeks)"
       ],
-      description: "Comprehensive coverage ensuring every moment is preserved.",
-      highlight: true
+      description: "Comprehensive coverage ensuring every moment is preserved."
     },
     {
       name: "Smart",
@@ -111,7 +95,26 @@ const categories = {
         "Video Thriller (3-5 days)",
         "Full HD Video (2 weeks)"
       ],
-      description: "Premium cinematic experience with aerial coverage."
+      description: "Premium cinematic experience with aerial coverage.",
+      highlight: true
+    },
+    {
+      name: "Customized",
+      pricing: "₦900,000",
+      features: [
+        "3 Photo Cameras",
+        "3 Video Cameras",
+        "1 Drone + 1 Ronin",
+        "1 Mic For Quality Audio",
+        "3 Photographers + 3 Cinematographers + 1 Drone Pilot",
+        "1 Synthetic Photobook (18x36)",
+        "40 Edited Pictures (2-3 working days)",
+        "Unedited Soft Copies (Immediate on Flash)",
+        "Video Thriller (3-5 working days)",
+        "Full Event Video in HD (2 weeks on Flash)",
+        "Live Streaming on Zoom & Facebook"
+      ],
+      description: "The ultimate bespoke package with full crew and live streaming."
     }
   ],
   studio: [
