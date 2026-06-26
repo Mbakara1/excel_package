@@ -21,6 +21,10 @@ const REELS = [
     src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1515366417053891%2F&show_text=false&width=267&t=0',
     label: 'Wedding Reel — Excel Imagery',
   },
+  {
+    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F864307963331902%2F&show_text=false&width=267&t=0',
+    label: 'Wedding Reel — Excel Imagery',
+  },
 ];
 
 const FBEmbed = ({ src, className = '' }) => (
@@ -63,7 +67,7 @@ const Showreel = () => (
       </motion.div>
 
       {/* Reel grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {REELS.map((reel, i) => (
           <motion.div
             key={reel.src}
