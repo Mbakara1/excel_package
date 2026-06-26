@@ -19,7 +19,7 @@ const REELS = [
 ];
 
 // Uses exact w/h from the FB embed URL to set a pixel-perfect aspect ratio.
-// The iframe is slightly oversized and shifted up to hide the FB header bar.
+// Iframe is oversized and shifted up to clip FB header (~62px) and footer (~50px).
 const FBEmbed = ({ src, w, h }) => {
   const ratio = (h / w) * 100;
   const isPortrait = h > w;
@@ -31,10 +31,10 @@ const FBEmbed = ({ src, w, h }) => {
           border: 'none',
           overflow: 'hidden',
           position: 'absolute',
-          top: isPortrait ? '-8%' : 0,
+          top: '-8%',
           left: 0,
           width: '100%',
-          height: isPortrait ? '116%' : '100%',
+          height: isPortrait ? '120%' : '130%',
         }}
         scrolling="no"
         frameBorder="0"
