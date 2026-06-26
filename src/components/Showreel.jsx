@@ -1,29 +1,37 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Facebook plugin embed URLs — use /plugins/video.php format for reliable embedding
-// To update: get embed code from Facebook → Share → Embed → copy the src URL
+// Featured — landscape (16:9), shown full width at top
 const FEATURED = {
-  src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1511446293261227%2F&show_text=false&width=267&t=0',
-  label: 'Featured Reel — Excel Imagery',
+  src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fpromise.mbakara%2Fvideos%2F478648703623527%2F&show_text=false&width=560&t=0',
+  label: 'Excel Imagery — Cinematic Showreel',
 };
 
+// Portrait reels (9:16) — shown in grid below
 const REELS = [
   {
+    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1511446293261227%2F&show_text=false&width=267&t=0',
+    label: 'Wedding Reel',
+  },
+  {
     src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D1315540819750644&show_text=false&width=267&t=0',
-    label: 'Wedding Coverage — Excel Imagery',
+    label: 'Wedding Coverage',
   },
   {
     src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fpromise.mbakara%2Fvideos%2F4050018845271475%2F&show_text=false&width=267&t=0',
-    label: 'Cinematic Edit — Excel Imagery',
+    label: 'Cinematic Edit',
   },
   {
     src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1515366417053891%2F&show_text=false&width=267&t=0',
-    label: 'Wedding Reel — Excel Imagery',
+    label: 'Wedding Reel',
   },
   {
     src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F864307963331902%2F&show_text=false&width=267&t=0',
-    label: 'Wedding Reel — Excel Imagery',
+    label: 'Wedding Reel',
+  },
+  {
+    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1012334547986420%2F&show_text=false&width=267&t=0',
+    label: 'Wedding Reel',
   },
 ];
 
@@ -50,30 +58,28 @@ const Showreel = () => (
         </h2>
       </div>
 
-      {/* Featured reel — centred portrait */}
+      {/* Featured — full width landscape */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="flex justify-center mb-20"
+        className="border border-[#D4AF37]/30 overflow-hidden mb-20"
       >
-        <div className="border border-[#D4AF37]/30 overflow-hidden w-full max-w-sm">
-          <FBEmbed src={FEATURED.src} className="h-[476px]" />
-          <div className="px-4 py-3 bg-[#050505]">
-            <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-white/40">{FEATURED.label}</p>
-          </div>
+        <FBEmbed src={FEATURED.src} className="h-[314px] md:h-[480px]" />
+        <div className="px-4 py-3 bg-[#050505]">
+          <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-white/40">{FEATURED.label}</p>
         </div>
       </motion.div>
 
-      {/* Reel grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Portrait reel grid — 3 cols × 2 rows */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {REELS.map((reel, i) => (
           <motion.div
             key={reel.src}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.1, duration: 0.6 }}
+            transition={{ delay: i * 0.08, duration: 0.6 }}
             viewport={{ once: true }}
             className="border border-white/10 overflow-hidden"
           >
