@@ -40,7 +40,7 @@ const Counter = ({ value, suffix }) => {
 };
 
 const StatsBar = () => (
-  <section className="bg-[#050505] border-y border-white/10 py-12">
+  <section className="bg-[#050505] border-y border-white/10 py-20">
     <div className="section-container">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
         {stats.map((stat, i) => (

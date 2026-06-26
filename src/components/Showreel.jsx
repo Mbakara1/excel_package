@@ -28,10 +28,10 @@ const FBVideo = ({ url }) => {
 };
 
 const Showreel = () => (
-  <section className="bg-black py-32 border-t border-white/10">
+  <section className="bg-black py-48 border-t-4 border-white/5">
     <div className="section-container">
-      <div className="mb-16">
-        <span className="text-[10px] font-bold tracking-[0.6em] text-white/30 uppercase mb-4 block">In Motion</span>
+      <div className="mb-20">
+        <span className="text-[10px] font-bold tracking-[0.6em] text-white/30 uppercase mb-6 block">In Motion</span>
         <h2 className="text-white leading-[1.1]">
           Watch How We <br /><span className="serif-italic font-normal">Tell Your Story</span>
         </h2>

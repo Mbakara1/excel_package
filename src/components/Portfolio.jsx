@@ -78,11 +78,11 @@ const Portfolio = () => {
   }, [handleKey]);
 
   return (
-    <section id="portfolio" className="bg-black py-32">
+    <section id="portfolio" className="bg-black py-48">
       <div className="section-container">
-        <div className="mb-16">
-          <span className="text-[10px] font-bold tracking-[0.6em] text-white/30 uppercase mb-4 block">Our Work</span>
-          <h2 className="text-white mb-12 leading-[1.1]">
+        <div className="mb-20">
+          <span className="text-[10px] font-bold tracking-[0.6em] text-white/30 uppercase mb-6 block">Our Work</span>
+          <h2 className="text-white mb-16 leading-[1.1]">
             Every Frame <br /><span className="serif-italic font-normal">Tells a Story</span>
           </h2>
         </div>
