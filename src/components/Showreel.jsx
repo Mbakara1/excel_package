@@ -10,15 +10,15 @@ const FEATURED = {
 // Portrait reels (9:16) — shown in grid below
 const REELS = [
   {
-    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1511446293261227%2F&show_text=false&width=267&t=0',
+    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1200124548233169%2F&show_text=false&width=267&t=0',
     label: 'Wedding Reel',
   },
   {
-    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D1315540819750644&show_text=false&width=267&t=0',
+    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fpromise.mbakara%2Fvideos%2F585058780734049%2F&show_text=false&width=267&t=0',
     label: 'Wedding Coverage',
   },
   {
-    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fpromise.mbakara%2Fvideos%2F4050018845271475%2F&show_text=false&width=267&t=0',
+    src: 'https://www.facebook.com/plugins/video.php?height=239&href=https%3A%2F%2Fwww.facebook.com%2Fpromise.mbakara%2Fvideos%2F1594778931052722%2F&show_text=false&width=560&t=0',
     label: 'Cinematic Edit',
   },
   {

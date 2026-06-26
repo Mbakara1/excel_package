@@ -5,29 +5,35 @@ const CATEGORIES = ['All', 'Weddings', 'Pre-Wedding', 'Maternity', 'Burials', 'P
 
 // Replace src values with real images — keep the category/alt fields
 const IMAGES = [
-  // Weddings (8)
-  { id: 1,  src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800', category: 'Weddings',    alt: 'Wedding ceremony' },
-  { id: 2,  src: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=800', category: 'Weddings',    alt: 'Bride portrait' },
-  { id: 3,  src: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800', category: 'Weddings',    alt: 'Wedding couple' },
-  { id: 4,  src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800', category: 'Weddings',    alt: 'Reception dance' },
-  { id: 5,  src: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800', category: 'Weddings',    alt: 'Wedding details' },
-  { id: 6,  src: 'https://images.unsplash.com/photo-1529636798458-92182e662485?w=800', category: 'Weddings',    alt: 'Couple walking' },
-  { id: 7,  src: 'https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=800', category: 'Weddings',    alt: 'Wedding kiss' },
-  { id: 8,  src: 'https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=800', category: 'Weddings',    alt: 'Bridal party' },
-  // Pre-Wedding (3)
-  { id: 9,  src: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800', category: 'Pre-Wedding', alt: 'Pre-wedding shoot' },
-  { id: 10, src: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800', category: 'Pre-Wedding', alt: 'Couple portrait' },
-  { id: 11, src: 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800', category: 'Pre-Wedding', alt: 'Engagement shoot' },
-  // Maternity (3)
-  { id: 12, src: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800', category: 'Maternity',    alt: 'Maternity portrait' },
-  { id: 13, src: 'https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?w=800', category: 'Maternity',    alt: 'Expecting mother' },
-  { id: 14, src: 'https://images.unsplash.com/photo-1544126592-807ade215a0b?w=800', category: 'Maternity',    alt: 'Maternity session' },
-  // Burials (2)
-  { id: 15, src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800', category: 'Burials',     alt: 'Memorial ceremony' },
-  { id: 16, src: 'https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=800', category: 'Burials',     alt: 'Tribute gathering' },
-  // Portraits (2)
-  { id: 17, src: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800', category: 'Portraits',   alt: 'Studio portrait' },
-  { id: 18, src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800', category: 'Portraits',   alt: 'Editorial portrait' },
+  // Favorite Portrait - First in All (1)
+  { id: 11, src: '/images/portfolio/portrait-man-bowtie.jpg', category: 'Portraits', alt: 'Studio portrait of smiling gentleman in navy pinstripe suit and bowtie' },
+
+  // Weddings (5)
+  { id: 1,  src: '/images/portfolio/wedding-traditional-couple.jpg', category: 'Weddings', alt: 'Traditional wedding couple photoshoot' },
+  { id: 2,  src: '/images/portfolio/wedding-traditional-throne.jpg', category: 'Weddings', alt: 'Traditional wedding couple seated on thrones' },
+  { id: 3,  src: '/images/portfolio/wedding-traditional-standing.jpg', category: 'Weddings', alt: 'Traditional wedding couple portrait standing' },
+  { id: 4,  src: '/images/portfolio/wedding-traditional-blessing.jpg', category: 'Weddings', alt: 'Traditional wedding blessing ceremony' },
+  { id: 5,  src: '/images/portfolio/wedding-cake-cutting.jpg', category: 'Weddings', alt: 'Bride and groom cutting wedding cake' },
+  
+  // Pre-Wedding (2)
+  { id: 6,  src: '/images/portfolio/pre-wedding-champagne.jpg', category: 'Pre-Wedding', alt: 'Pre-wedding couple clinking champagne glasses' },
+  { id: 7,  src: '/images/portfolio/pre-wedding-embrace.jpg', category: 'Pre-Wedding', alt: 'Pre-wedding couple warm studio embrace' },
+  
+  // Maternity (2)
+  { id: 8,  src: '/images/portfolio/maternity-white-draped.jpg', category: 'Maternity', alt: 'Maternity studio shoot with white draped fabric' },
+  { id: 9,  src: '/images/portfolio/maternity-bw-studio.jpg', category: 'Maternity', alt: 'Black and white maternity portrait' },
+  
+  // Burials (1)
+  { id: 10, src: '/images/portfolio/burial-memorial-banner.jpg', category: 'Burials', alt: 'Burial memorial banner and tribute photoshoot' },
+  
+  // Portraits (7)
+  { id: 12, src: '/images/portfolio/portrait-family-maroon.jpg', category: 'Portraits', alt: 'Family studio portrait in matching maroon outfits' },
+  { id: 13, src: '/images/portfolio/portrait-couple-christmas-white.jpg', category: 'Portraits', alt: 'Couple studio portrait in white shirts by Christmas tree' },
+  { id: 14, src: '/images/portfolio/portrait-couple-christmas-plaid.jpg', category: 'Portraits', alt: 'Couple studio portrait in plaid pajamas by Christmas tree' },
+  { id: 15, src: '/images/portfolio/portrait-man-polo.jpg', category: 'Portraits', alt: 'Male studio portrait in dark polo shirt' },
+  { id: 16, src: '/images/portfolio/portrait-woman-black-dress.jpg', category: 'Portraits', alt: 'Female portrait in elegant black structured dress' },
+  { id: 17, src: '/images/portfolio/portrait-woman-lace-chin.jpg', category: 'Portraits', alt: 'Close-up female studio portrait in black lace with hand on chin' },
+  { id: 18, src: '/images/portfolio/portrait-woman-lace-sitting.jpg', category: 'Portraits', alt: 'Sitting female studio portrait in black lace' },
 ];
 
 const Lightbox = ({ image, onClose, onPrev, onNext }) => (
