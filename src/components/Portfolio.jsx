@@ -21,7 +21,7 @@ const IMAGES = [
   // Maternity (3)
   { id: 12, src: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800', category: 'Maternity',    alt: 'Maternity portrait' },
   { id: 13, src: 'https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?w=800', category: 'Maternity',    alt: 'Expecting mother' },
-  { id: 14, src: 'https://images.unsplash.com/photo-1578496781307-e6a98db3aacc?w=800', category: 'Maternity',    alt: 'Maternity session' },
+  { id: 14, src: 'https://images.unsplash.com/photo-1544126592-807ade215a0b?w=800', category: 'Maternity',    alt: 'Maternity session' },
   // Burials (2)
   { id: 15, src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800', category: 'Burials',     alt: 'Memorial ceremony' },
   { id: 16, src: 'https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=800', category: 'Burials',     alt: 'Tribute gathering' },
