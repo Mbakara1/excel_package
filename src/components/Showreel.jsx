@@ -24,7 +24,7 @@ const FBEmbed = ({ src, w, h }) => {
   const ratio = (h / w) * 100;
   const isPortrait = h > w;
   return (
-    <div style={{ position: 'relative', width: '100%', paddingBottom: `${ratio}%`, overflow: 'hidden' }}>
+    <div style={{ position: 'relative', width: '100%', paddingBottom: `${ratio - 12}%`, overflow: 'hidden' }}>
       <iframe
         src={src}
         style={{
@@ -34,7 +34,7 @@ const FBEmbed = ({ src, w, h }) => {
           top: '-8%',
           left: 0,
           width: '100%',
-          height: isPortrait ? '120%' : '130%',
+          height: '116%',
         }}
         scrolling="no"
         frameBorder="0"
