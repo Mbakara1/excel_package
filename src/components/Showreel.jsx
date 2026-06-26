@@ -10,19 +10,19 @@ const FEATURED = {
 // Portrait reels (9:16) — shown in grid below
 const REELS = [
   {
-    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1200124548233169%2F&show_text=false&width=267&t=0',
+    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1331476399027615%2F&show_text=false&width=267&t=0',
     label: 'Wedding Reel',
   },
   {
-    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fpromise.mbakara%2Fvideos%2F585058780734049%2F&show_text=false&width=267&t=0',
+    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1709675653807365%2F&show_text=false&width=267&t=0',
     label: 'Wedding Coverage',
   },
   {
-    src: 'https://www.facebook.com/plugins/video.php?height=239&href=https%3A%2F%2Fwww.facebook.com%2Fpromise.mbakara%2Fvideos%2F1594778931052722%2F&show_text=false&width=560&t=0',
+    src: 'https://www.facebook.com/plugins/video.php?height=244&href=https%3A%2F%2Fwww.facebook.com%2Fpromise.mbakara%2Fvideos%2F767660148148474%2F&show_text=false&width=560&t=0',
     label: 'Cinematic Edit',
   },
   {
-    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1515366417053891%2F&show_text=false&width=267&t=0',
+    src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fpromise.mbakara%2Fvideos%2F864345431656648%2F&show_text=false&width=560&t=0',
     label: 'Wedding Reel',
   },
   {
@@ -38,7 +38,7 @@ const REELS = [
 // Wrapper clips the Facebook header bar off the top so video content leads.
 // The iframe is taller than the container and shifted up by 62px (FB header height).
 const FBEmbed = ({ src, landscape = false }) => (
-  <div style={{ height: landscape ? '480px' : '700px', overflow: 'hidden', position: 'relative' }}>
+  <div style={{ height: landscape ? '620px' : '700px', overflow: 'hidden', position: 'relative' }}>
     <iframe
       src={src}
       width="100%"
@@ -48,7 +48,7 @@ const FBEmbed = ({ src, landscape = false }) => (
         display: 'block',
         position: 'absolute',
         top: landscape ? 0 : '-62px',
-        height: landscape ? '480px' : '824px',
+        height: landscape ? '620px' : '824px',
       }}
       scrolling="no"
       frameBorder="0"
