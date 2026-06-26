@@ -35,20 +35,26 @@ const REELS = [
   },
 ];
 
-// Wrapper clips the Facebook header bar off the top so video content leads.
-// The iframe is taller than the container and shifted up by 62px (FB header height).
+// Responsive wrapper using padding-bottom aspect ratio trick.
+// Portrait = 9:16 (177.78%), landscape = 16:9 (56.25%).
+// The iframe is oversized and shifted up to hide the FB header bar.
 const FBEmbed = ({ src, landscape = false }) => (
-  <div style={{ height: landscape ? '620px' : '700px', overflow: 'hidden', position: 'relative' }}>
+  <div style={{
+    position: 'relative',
+    width: '100%',
+    paddingBottom: landscape ? '56.25%' : '177.78%',
+    overflow: 'hidden',
+  }}>
     <iframe
       src={src}
-      width="100%"
       style={{
         border: 'none',
         overflow: 'hidden',
-        display: 'block',
         position: 'absolute',
-        top: landscape ? 0 : '-62px',
-        height: landscape ? '620px' : '824px',
+        top: landscape ? 0 : '-8%',
+        left: 0,
+        width: '100%',
+        height: landscape ? '100%' : '116%',
       }}
       scrolling="no"
       frameBorder="0"
