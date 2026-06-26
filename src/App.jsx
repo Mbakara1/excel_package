@@ -1,9 +1,13 @@
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import GalleryPreview from './components/GalleryPreview';
+import StatsBar from './components/StatsBar';
+import Portfolio from './components/Portfolio';
+import Testimonials from './components/Testimonials';
+import Showreel from './components/Showreel';
 import Pricing from './components/Pricing';
 import Terms from './components/Terms';
+import WhyUs from './components/WhyUs';
 import BookingForm from './components/BookingForm';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
@@ -15,9 +19,13 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <StatsBar />
+        <Portfolio />
+        <Testimonials />
+        <Showreel />
         <Pricing />
         <Terms />
-        <GalleryPreview />
+        <WhyUs />
         <BookingForm />
       </main>
       <Footer />
