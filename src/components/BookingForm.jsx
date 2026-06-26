@@ -167,6 +167,15 @@ const BookingForm = () => {
             </motion.div>
           )}
 
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-sm text-[#D4AF37] font-medium tracking-wide mb-8 text-center"
+          >
+            Dates fill up fast — especially December and February. Secure yours today.
+          </motion.p>
+
           <form onSubmit={handleSubmit} className="space-y-16">
             {/* Field Groups */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">

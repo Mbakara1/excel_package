@@ -19,7 +19,7 @@ const Hero = () => {
                where every frame tells an authentic story that transcends time.
             </p>
             <div className="flex justify-center gap-6">
-               <a href="#packages" className="cta-editorial">View Booking</a>
+               <a href="#portfolio" className="cta-editorial">See Our Work</a>
                <a href="#book" className="cta-editorial cta-outline">Start Enquiry</a>
             </div>
         </motion.div>
