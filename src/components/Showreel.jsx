@@ -35,17 +35,27 @@ const REELS = [
   },
 ];
 
-const FBEmbed = ({ src, className = '' }) => (
-  <iframe
-    src={src}
-    width="100%"
-    style={{ border: 'none', overflow: 'hidden', display: 'block' }}
-    scrolling="no"
-    frameBorder="0"
-    allowFullScreen
-    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-    className={className}
-  />
+// Wrapper clips the Facebook header bar off the top so video content leads.
+// The iframe is taller than the container and shifted up by 62px (FB header height).
+const FBEmbed = ({ src, landscape = false }) => (
+  <div style={{ height: landscape ? '480px' : '700px', overflow: 'hidden', position: 'relative' }}>
+    <iframe
+      src={src}
+      width="100%"
+      style={{
+        border: 'none',
+        overflow: 'hidden',
+        display: 'block',
+        position: 'absolute',
+        top: landscape ? 0 : '-62px',
+        height: landscape ? '480px' : '824px',
+      }}
+      scrolling="no"
+      frameBorder="0"
+      allowFullScreen
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+    />
+  </div>
 );
 
 const Showreel = () => (
@@ -66,7 +76,7 @@ const Showreel = () => (
         viewport={{ once: true }}
         className="border border-[#D4AF37]/30 overflow-hidden mb-20"
       >
-        <FBEmbed src={FEATURED.src} className="h-[314px] md:h-[480px]" />
+        <FBEmbed src={FEATURED.src} landscape />
         <div className="px-4 py-3 bg-[#050505]">
           <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-white/40">{FEATURED.label}</p>
         </div>
@@ -83,7 +93,7 @@ const Showreel = () => (
             viewport={{ once: true }}
             className="border border-white/10 overflow-hidden"
           >
-            <FBEmbed src={reel.src} className="h-[476px]" />
+            <FBEmbed src={reel.src} />
             <div className="px-4 py-3 bg-[#050505]">
               <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-white/40">{reel.label}</p>
             </div>
