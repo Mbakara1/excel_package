@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 // ─── SWAP THESE URLS WITH UPDATED FACEBOOK REEL LINKS AS NEEDED ──────────────
-const FEATURED_VIDEO = 'https://www.facebook.com/share/r/1FoNhL1ink/';
+const FEATURED_VIDEO = 'https://www.facebook.com/reel/1511446293261227';
 
 const REEL_GRID = [
-  { url: 'https://www.facebook.com/share/v/1Bj3Pr4UuQ/', label: 'Wedding Reel — Uyo' },
-  { url: 'https://www.facebook.com/share/v/18SdtNbpmk/', label: 'Wedding Reel — Event Coverage' },
-  { url: 'https://www.facebook.com/share/v/1HzsdGRb4F/', label: 'Wedding Reel — Cinematic Edit' },
+  { url: 'https://www.facebook.com/watch/?v=1315540819750644', label: 'Wedding Coverage — Excel Imagery' },
+  { url: 'https://www.facebook.com/watch/?v=4050018845271475', label: 'Cinematic Edit — Excel Imagery' },
+  { url: 'https://www.facebook.com/reel/1515366417053891',    label: 'Wedding Reel — Excel Imagery' },
 ];
 // ─────────────────────────────────────────────────────────────────────────────
 
