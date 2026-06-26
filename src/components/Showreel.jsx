@@ -69,9 +69,10 @@ const Showreel = () => (
         </div>
       </motion.div>
 
-      {/* Portrait reel grid — 3 cols × 2 rows */}
+      {/* Reel grid — 3 cols. Col 3 row 1 stacks the two landscape reels vertically. */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
-        {REELS.map((reel, i) => (
+        {/* Col 1 — portrait */}
+        {[REELS[0], REELS[4]].map((reel, i) => (
           <motion.div
             key={reel.src}
             initial={{ opacity: 0, y: 20 }}
@@ -86,6 +87,40 @@ const Showreel = () => (
             </div>
           </motion.div>
         ))}
+        {/* Col 2 — portrait */}
+        {[REELS[1], REELS[5]].map((reel, i) => (
+          <motion.div
+            key={reel.src}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: (i + 2) * 0.08, duration: 0.6 }}
+            viewport={{ once: true }}
+            className="border border-white/10 overflow-hidden"
+          >
+            <FBEmbed src={reel.src} w={reel.w} h={reel.h} />
+            <div className="px-4 py-3 bg-[#050505]">
+              <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-white/40">{reel.label}</p>
+            </div>
+          </motion.div>
+        ))}
+        {/* Col 3 — two landscape reels stacked */}
+        <div className="flex flex-col gap-6">
+          {[REELS[2], REELS[3]].map((reel, i) => (
+            <motion.div
+              key={reel.src}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: (i + 4) * 0.08, duration: 0.6 }}
+              viewport={{ once: true }}
+              className="border border-white/10 overflow-hidden"
+            >
+              <FBEmbed src={reel.src} w={reel.w} h={reel.h} />
+              <div className="px-4 py-3 bg-[#050505]">
+                <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-white/40">{reel.label}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
