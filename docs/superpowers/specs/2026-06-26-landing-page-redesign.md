@@ -13,6 +13,7 @@ Hero
 StatsBar          ← NEW
 Portfolio         ← REPLACES GalleryPreview
 Testimonials      ← NEW
+Showreel          ← NEW
 Pricing           ← existing
 Terms             ← existing
 WhyUs             ← NEW
@@ -91,7 +92,21 @@ Each card: 5 gold stars, quote text, client name, event type + year.
 
 ---
 
+### 5. Showreel / Reels Section
+Sits between Testimonials and Pricing — right after social proof, before the ask.
+
+**Layout:** A featured hero reel at the top (full-width embed, autoplay muted loop), followed by a 3-column grid of shorter event reels below it.
+
+**Video source:** YouTube or Instagram embeds (no hosting cost, no bandwidth). Owner drops in their YouTube/Instagram reel URLs into a data array. Placeholder uses a royalty-free cinematic wedding reel from YouTube.
+
+**Featured reel:** Large, cinematic — 16:9 embed with a thin gold border, subtle caption: *"Watch how we tell your story."*
+
+**Reel grid:** 3 cards, each with a thumbnail-style embed + event label (e.g. "Chidi & Ada — Traditional Wedding, 2024"). Placeholder labels used until real content is provided.
+
+**Mobile:** Featured reel stacks full-width, grid becomes single column.
+
+---
+
 ## Out of Scope
-- Video embeds / showreel
 - Blog / journal section
 - Multi-page routing
