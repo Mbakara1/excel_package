@@ -18,7 +18,7 @@ const REELS = [
     label: 'Wedding Coverage',
   },
   {
-    src: 'https://www.facebook.com/plugins/video.php?height=244&href=https%3A%2F%2Fwww.facebook.com%2Fpromise.mbakara%2Fvideos%2F767660148148474%2F&show_text=false&width=560&t=0',
+    src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fpromise.mbakara%2Fvideos%2F1435881600256019%2F&show_text=false&width=560&t=0',
     label: 'Cinematic Edit',
   },
   {
