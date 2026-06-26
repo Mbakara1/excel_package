@@ -3,12 +3,13 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Hero = () => {
   const { scrollY } = useScroll();
-  const opacityText = useTransform(scrollY, [0, 200], [1, 0]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const y = useTransform(scrollY, [0, 300], [0, -60]);
 
   return (
     <section className="relative h-[80vh] flex flex-col justify-center overflow-hidden pt-[100px]">
       <div className="section-container relative z-10 w-full text-center">
-        <motion.div style={{ opacity: opacityText }}>
+        <motion.div style={{ opacity, y }}>
             <span className="text-[10px] font-bold tracking-[0.5em] uppercase mb-8 block text-white/40">Luxury Wedding Photography & Cinematography</span>
             <h1 className="mb-12 font-serif leading-[0.85] text-white">
               The Standard of <br />
