@@ -1,31 +1,40 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
-// ─── SWAP THESE URLS WITH UPDATED FACEBOOK REEL LINKS AS NEEDED ──────────────
-const FEATURED_VIDEO = 'https://www.facebook.com/reel/1511446293261227';
-
-const REEL_GRID = [
-  { url: 'https://www.facebook.com/watch/?v=1315540819750644', label: 'Wedding Coverage — Excel Imagery' },
-  { url: 'https://www.facebook.com/watch/?v=4050018845271475', label: 'Cinematic Edit — Excel Imagery' },
-  { url: 'https://www.facebook.com/reel/1515366417053891',    label: 'Wedding Reel — Excel Imagery' },
-];
-// ─────────────────────────────────────────────────────────────────────────────
-
-const FBVideo = ({ url }) => {
-  useEffect(() => {
-    if (window.FB) window.FB.XFBML.parse();
-  }, [url]);
-
-  return (
-    <div
-      className="fb-video w-full"
-      data-href={url}
-      data-width="auto"
-      data-show-text="false"
-      data-autoplay="false"
-    />
-  );
+// Facebook plugin embed URLs — use /plugins/video.php format for reliable embedding
+// To update: get embed code from Facebook → Share → Embed → copy the src URL
+const FEATURED = {
+  src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1511446293261227%2F&show_text=false&width=267&t=0',
+  label: 'Featured Reel — Excel Imagery',
 };
+
+const REELS = [
+  {
+    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D1315540819750644&show_text=false&width=267&t=0',
+    label: 'Wedding Coverage — Excel Imagery',
+  },
+  {
+    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D4050018845271475&show_text=false&width=267&t=0',
+    label: 'Cinematic Edit — Excel Imagery',
+  },
+  {
+    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1515366417053891%2F&show_text=false&width=267&t=0',
+    label: 'Wedding Reel — Excel Imagery',
+  },
+];
+
+const FBEmbed = ({ src, className = '' }) => (
+  <iframe
+    src={src}
+    width="100%"
+    style={{ border: 'none', overflow: 'hidden', display: 'block' }}
+    scrolling="no"
+    frameBorder="0"
+    allowFullScreen
+    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+    className={className}
+  />
+);
 
 const Showreel = () => (
   <section className="bg-black py-48 border-t-4 border-white/5">
@@ -37,29 +46,34 @@ const Showreel = () => (
         </h2>
       </div>
 
-      {/* Featured reel */}
+      {/* Featured reel — centred portrait */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="border border-[#D4AF37]/30 mb-16 overflow-hidden"
+        className="flex justify-center mb-20"
       >
-        <FBVideo url={FEATURED_VIDEO} />
+        <div className="border border-[#D4AF37]/30 overflow-hidden w-full max-w-sm">
+          <FBEmbed src={FEATURED.src} className="h-[476px]" />
+          <div className="px-4 py-3 bg-[#050505]">
+            <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-white/40">{FEATURED.label}</p>
+          </div>
+        </div>
       </motion.div>
 
       {/* Reel grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {REEL_GRID.map((reel, i) => (
+        {REELS.map((reel, i) => (
           <motion.div
-            key={reel.url}
+            key={reel.src}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1, duration: 0.6 }}
             viewport={{ once: true }}
             className="border border-white/10 overflow-hidden"
           >
-            <FBVideo url={reel.url} />
+            <FBEmbed src={reel.src} className="h-[476px]" />
             <div className="px-4 py-3 bg-[#050505]">
               <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-white/40">{reel.label}</p>
             </div>
