@@ -14,7 +14,7 @@ const REELS = [
     label: 'Wedding Coverage — Excel Imagery',
   },
   {
-    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D4050018845271475&show_text=false&width=267&t=0',
+    src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fpromise.mbakara%2Fvideos%2F4050018845271475%2F&show_text=false&width=267&t=0',
     label: 'Cinematic Edit — Excel Imagery',
   },
   {
