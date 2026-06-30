@@ -115,7 +115,7 @@ const Portfolio = () => {
                 <img
                   src={img.src}
                   alt={img.alt}
-                  className="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                  className="w-full object-cover scale-100 group-hover:scale-105 transition-all duration-700"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-[#D4AF37]/0 group-hover:bg-[#D4AF37]/10 transition-all duration-500 flex items-end p-4">
