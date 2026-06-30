@@ -1,39 +1,29 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const CATEGORIES = ['All', 'Weddings', 'Pre-Wedding', 'Maternity', 'Burials', 'Portraits'];
+const CATEGORIES = ['All', 'Weddings', 'Pre-Wedding', 'Portraits'];
 
 // Replace src values with real images — keep the category/alt fields
 const IMAGES = [
   // Favorite Portrait - First in All (1)
   { id: 11, src: '/images/portfolio/portrait-man-bowtie.jpg', category: 'Portraits', alt: 'Studio portrait of smiling gentleman in navy pinstripe suit and bowtie' },
 
-  // Weddings (5)
-  { id: 1,  src: '/images/portfolio/wedding-traditional-couple.jpg', category: 'Weddings', alt: 'Traditional wedding couple photoshoot' },
-  { id: 2,  src: '/images/portfolio/wedding-traditional-throne.jpg', category: 'Weddings', alt: 'Traditional wedding couple seated on thrones' },
-  { id: 3,  src: '/images/portfolio/wedding-traditional-standing.jpg', category: 'Weddings', alt: 'Traditional wedding couple portrait standing' },
-  { id: 4,  src: '/images/portfolio/wedding-traditional-blessing.jpg', category: 'Weddings', alt: 'Traditional wedding blessing ceremony' },
-  { id: 5,  src: '/images/portfolio/wedding-cake-cutting.jpg', category: 'Weddings', alt: 'Bride and groom cutting wedding cake' },
-  
-  // Pre-Wedding (2)
-  { id: 6,  src: '/images/portfolio/pre-wedding-champagne.jpg', category: 'Pre-Wedding', alt: 'Pre-wedding couple clinking champagne glasses' },
-  { id: 7,  src: '/images/portfolio/pre-wedding-embrace.jpg', category: 'Pre-Wedding', alt: 'Pre-wedding couple warm studio embrace' },
-  
-  // Maternity (2)
-  { id: 8,  src: '/images/portfolio/maternity-white-draped.jpg', category: 'Maternity', alt: 'Maternity studio shoot with white draped fabric' },
-  { id: 9,  src: '/images/portfolio/maternity-bw-studio.jpg', category: 'Maternity', alt: 'Black and white maternity portrait' },
-  
-  // Burials (1)
-  { id: 10, src: '/images/portfolio/burial-memorial-banner.jpg', category: 'Burials', alt: 'Burial memorial banner and tribute photoshoot' },
-  
-  // Portraits (7)
-  { id: 12, src: '/images/portfolio/portrait-family-maroon.jpg', category: 'Portraits', alt: 'Family studio portrait in matching maroon outfits' },
-  { id: 13, src: '/images/portfolio/portrait-couple-christmas-white.jpg', category: 'Portraits', alt: 'Couple studio portrait in white shirts by Christmas tree' },
-  { id: 14, src: '/images/portfolio/portrait-couple-christmas-plaid.jpg', category: 'Portraits', alt: 'Couple studio portrait in plaid pajamas by Christmas tree' },
-  { id: 15, src: '/images/portfolio/portrait-man-polo.jpg', category: 'Portraits', alt: 'Male studio portrait in dark polo shirt' },
-  { id: 16, src: '/images/portfolio/portrait-woman-black-dress.jpg', category: 'Portraits', alt: 'Female portrait in elegant black structured dress' },
-  { id: 17, src: '/images/portfolio/portrait-woman-lace-chin.jpg', category: 'Portraits', alt: 'Close-up female studio portrait in black lace with hand on chin' },
-  { id: 18, src: '/images/portfolio/portrait-woman-lace-sitting.jpg', category: 'Portraits', alt: 'Sitting female studio portrait in black lace' },
+  // Pre-Wedding (3)
+  { id: 6,  src: '/images/portfolio/_DSC4411.jpg', category: 'Pre-Wedding', alt: 'Couple in casual wear walking hand-in-hand down an outdoor street' },
+  { id: 7,  src: '/images/portfolio/_DSC4448.jpg', category: 'Pre-Wedding', alt: 'A close couple in matching tan coats sharing an intimate moment, hugging and smiling' },
+  { id: 21, src: '/images/portfolio/_DSC4482.jpg', category: 'Pre-Wedding', alt: 'A close-up portrait of a couple in matching tan coats smiling at the camera' },
+
+  // Weddings (10)
+  { id: 1,  src: '/images/portfolio/DSC00139.jpg', category: 'Weddings', alt: 'Romantic close-up of a couple in traditional white and turquoise lace outfits embracing' },
+  { id: 2,  src: '/images/portfolio/DSC00410_060017.jpg', category: 'Weddings', alt: 'Full-length portrait of a couple standing outdoors on a lawn in matching traditional white and turquoise green attire' },
+  { id: 3,  src: '/images/portfolio/DSC01245.jpg', category: 'Weddings', alt: 'A sweet moment of a groom kissing his bride on the cheek in matching brown traditional attire and orange beads' },
+  { id: 4,  src: '/images/portfolio/EXL04364.jpg', category: 'Weddings', alt: 'A couple posing on a balcony overlooking the city, man in native outfit holding a walking stick, woman in a matching brown/gold lace gown' },
+  { id: 5,  src: '/images/portfolio/EXL04411.jpg', category: 'Weddings', alt: 'A couple standing indoors in matching brown and gold traditional attire in front of a wall painting' },
+  { id: 8,  src: '/images/portfolio/IMG_5827.jpg', category: 'Weddings', alt: 'Close-up portrait of a woman smiling, wearing a lavender-purple gele headtie and matching lace outfit' },
+  { id: 9,  src: '/images/portfolio/IMG_5924.jpg', category: 'Weddings', alt: 'A couple posing; the woman in a purple lace dress and gele, and the man in a white native outfit with a walking stick' },
+  { id: 10, src: '/images/portfolio/IMG_5948.jpg', category: 'Weddings', alt: 'A group photo of a bridal party, with bridesmaids in red dresses posing around the couple in a large hotel lobby with a blue chandelier' },
+  { id: 12, src: '/images/portfolio/_DSC4513.jpg', category: 'Weddings', alt: 'Close-up of a couple in matching black traditional attire, smiling and leaning in together' },
+  { id: 13, src: '/images/portfolio/_DSC4526.jpg', category: 'Weddings', alt: 'A couple posing indoors with the man seated in black native outfit and the woman standing beside him in a black lace dress' }
 ];
 
 const Lightbox = ({ image, onClose, onPrev, onNext }) => (

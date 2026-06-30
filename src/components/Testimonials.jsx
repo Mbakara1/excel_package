@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Play } from 'lucide-react';
+import VideoModal from './VideoModal';
 
 const Stars = ({ count }) => (
   <div className="flex gap-1 mb-6">
@@ -43,6 +45,12 @@ const reviews = [
 ];
 
 const Testimonials = () => {
+  const [videoState, setVideoState] = useState({
+    isOpen: false,
+    url: '',
+    poster: ''
+  });
+
   return (
     <section id="testimonials" className="bg-[#050505] py-48 border-t border-white/5 relative overflow-hidden">
       {/* Subtle background glow */}
@@ -87,18 +95,34 @@ const Testimonials = () => {
                 </blockquote>
               </div>
 
-              <div className="flex items-center gap-4 pt-8 border-t border-white/5 mt-auto">
-                <div className="w-12 h-12 rounded-full border border-[#D4AF37]/30 flex items-center justify-center bg-[#D4AF37]/5">
-                  <span className="text-xs font-bold tracking-widest text-[#D4AF37] font-sans">{reviews[0].initials}</span>
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-white tracking-wide font-sans">{reviews[0].name}</h4>
-                  <div className="flex items-center gap-2 mt-1">
-                    <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#D4AF37] font-sans">{reviews[0].event}</span>
-                    <span className="w-1 h-1 bg-white/20 rounded-full" />
-                    <span className="text-[10px] text-white/40 uppercase tracking-widest font-sans font-light">{reviews[0].role}</span>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-8 border-t border-white/5 mt-auto">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full border border-[#D4AF37]/30 flex items-center justify-center bg-[#D4AF37]/5">
+                    <span className="text-xs font-bold tracking-widest text-[#D4AF37] font-sans">{reviews[0].initials}</span>
+                  </div>
+                  <div>
+                    <h4 className="text-base font-bold text-white tracking-wide font-sans">{reviews[0].name}</h4>
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#D4AF37] font-sans">{reviews[0].event}</span>
+                      <span className="w-1 h-1 bg-white/20 rounded-full" />
+                      <span className="text-[10px] text-white/40 uppercase tracking-widest font-sans font-light">{reviews[0].role}</span>
+                    </div>
                   </div>
                 </div>
+
+                <button
+                  onClick={() => {
+                    setVideoState({
+                      isOpen: true,
+                      url: 'https://res.cloudinary.com/lyc8ft9s/video/upload/f_auto,q_auto/jamila_trad.mp4',
+                      poster: 'https://res.cloudinary.com/lyc8ft9s/video/upload/f_auto,q_auto,so_2/jamila_trad.jpg'
+                    });
+                  }}
+                  className="inline-flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] uppercase text-[#D4AF37] hover:text-white transition-all duration-300 group/btn border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 px-4 py-2.5 bg-[#D4AF37]/5 hover:bg-[#D4AF37]/10 cursor-pointer"
+                >
+                  <Play size={10} className="fill-[#D4AF37] group-hover/btn:fill-white group-hover/btn:stroke-white transition-all duration-300 translate-x-[0.5px]" />
+                  Watch Wedding Film
+                </button>
               </div>
             </div>
           </motion.div>
@@ -148,6 +172,13 @@ const Testimonials = () => {
 
         </div>
       </div>
+
+      <VideoModal
+        isOpen={videoState.isOpen}
+        videoUrl={videoState.url}
+        posterUrl={videoState.poster}
+        onClose={() => setVideoState({ ...videoState, isOpen: false })}
+      />
     </section>
   );
 };
