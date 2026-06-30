@@ -5,13 +5,32 @@ const CATEGORIES = ['All', 'Weddings', 'Pre-Wedding', 'Portraits'];
 
 // Replace src values with real images — keep the category/alt fields
 const IMAGES = [
-  // Favorite Portrait - First in All (1)
+  // Portraits (15)
   { id: 11, src: '/images/portfolio/portrait-man-bowtie.jpg', category: 'Portraits', alt: 'Studio portrait of smiling gentleman in navy pinstripe suit and bowtie' },
+  { id: 14, src: '/images/portfolio/_DSC4532.jpg', category: 'Portraits', alt: 'Elegant studio portrait of a woman in matching black traditional lace' },
+  { id: 15, src: '/images/portfolio/_DSC4543.jpg', category: 'Portraits', alt: 'Close-up studio portrait of a groom in traditional attire smiling' },
+  { id: 16, src: '/images/portfolio/EXL04376.jpg', category: 'Portraits', alt: 'Candid outdoor portrait of a bride in her wedding gown' },
+  { id: 17, src: '/images/portfolio/EXL04402.jpg', category: 'Portraits', alt: 'Fine art portrait of a bride reflecting in a golden mirror' },
+  { id: 18, src: '/images/portfolio/EXL04449.jpg', category: 'Portraits', alt: 'Outdoor sunlit portrait of a couple holding each other closely' },
+  { id: 30, src: '/images/portfolio/maternity-bw-studio.jpg', category: 'Portraits', alt: 'Black and white studio portrait of an expectant mother' },
+  { id: 31, src: '/images/portfolio/maternity-white-draped.jpg', category: 'Portraits', alt: 'Studio portrait of an expectant mother in white draped fabric' },
+  { id: 32, src: '/images/portfolio/portrait-couple-christmas-plaid.jpg', category: 'Portraits', alt: 'Festive holiday portrait of a couple in matching red plaid shirts' },
+  { id: 33, src: '/images/portfolio/portrait-couple-christmas-white.jpg', category: 'Portraits', alt: 'Holiday portrait of a smiling couple in cozy white sweaters' },
+  { id: 34, src: '/images/portfolio/portrait-family-maroon.jpg', category: 'Portraits', alt: 'Studio family portrait with members in coordinating maroon outfits' },
+  { id: 35, src: '/images/portfolio/portrait-man-polo.jpg', category: 'Portraits', alt: 'Casual studio portrait of a gentleman in a navy polo shirt' },
+  { id: 36, src: '/images/portfolio/portrait-woman-black-dress.jpg', category: 'Portraits', alt: 'Stunning portrait of a woman in an elegant black dress' },
+  { id: 37, src: '/images/portfolio/portrait-woman-lace-chin.jpg', category: 'Portraits', alt: 'Intimate close-up portrait of a woman resting her chin on her hand' },
+  { id: 38, src: '/images/portfolio/portrait-woman-lace-sitting.jpg', category: 'Portraits', alt: 'Studio portrait of a seated woman in traditional lace attire' },
 
-  // Pre-Wedding (3)
+  // Pre-Wedding (8)
   { id: 6,  src: '/images/portfolio/_DSC4411.jpg', category: 'Pre-Wedding', alt: 'Couple in casual wear walking hand-in-hand down an outdoor street' },
   { id: 7,  src: '/images/portfolio/_DSC4448.jpg', category: 'Pre-Wedding', alt: 'A close couple in matching tan coats sharing an intimate moment, hugging and smiling' },
   { id: 21, src: '/images/portfolio/_DSC4482.jpg', category: 'Pre-Wedding', alt: 'A close-up portrait of a couple in matching tan coats smiling at the camera' },
+  { id: 22, src: '/images/portfolio/EXL04207.jpg', category: 'Pre-Wedding', alt: 'Romantic pre-wedding shoot of a couple posing near lush greenery' },
+  { id: 23, src: '/images/portfolio/EXL04218.jpg', category: 'Pre-Wedding', alt: 'A couple sharing a warm embrace in casual outfits outdoors' },
+  { id: 24, src: '/images/portfolio/EXL04245.jpg', category: 'Pre-Wedding', alt: 'Close-up portrait of a couple smiling warmly at each other in sunlight' },
+  { id: 25, src: '/images/portfolio/EXL04250.jpg', category: 'Pre-Wedding', alt: 'Beautiful pre-wedding photo of a couple walking along a garden path' },
+  { id: 26, src: '/images/portfolio/EXL04252.jpg', category: 'Pre-Wedding', alt: 'Charming candid moment of a couple laughing during their pre-wedding session' },
 
   // Weddings (10)
   { id: 1,  src: '/images/portfolio/DSC00139.jpg', category: 'Weddings', alt: 'Romantic close-up of a couple in traditional white and turquoise lace outfits embracing' },

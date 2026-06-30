@@ -30,8 +30,8 @@ const FEATURED = {
 const REELS = [
   { src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1331476399027615%2F&show_text=false&width=267&t=0', w: 267, h: 476, label: 'Wedding Reel' },
   { src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1709675653807365%2F&show_text=false&width=267&t=0', w: 267, h: 476, label: 'Wedding Coverage' },
-  { src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Freel%2F864307963331902%2F&show_text=false&width=267&t=0', w: 267, h: 476, label: 'Wedding Reel' },
-  { src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Freel%2F1012334547986420%2F&show_text=false&width=267&t=0', w: 267, h: 476, label: 'Wedding Reel' },
+  { src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F864307963331902%2F&show_text=false&width=267&t=0', w: 267, h: 476, label: 'Wedding Reel' },
+  { src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1012334547986420%2F&show_text=false&width=267&t=0', w: 267, h: 476, label: 'Wedding Reel' },
 ];
 
 // Uses exact w/h from the FB embed URL to set a pixel-perfect aspect ratio.
