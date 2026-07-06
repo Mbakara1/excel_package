@@ -45,8 +45,8 @@ const Terms = () => {
         <span className="text-[10px] font-bold tracking-[0.2em] text-white/20 uppercase">02 — Protocol</span>
       </div>
 
-      <div className="section-container pt-32 pb-40">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
+      <div className="section-container pt-20 pb-28">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-5">
                 <span className="text-[10px] font-bold tracking-[0.5em] text-white/30 uppercase mb-4 block">Legal</span>
                 <h2 className="text-white mb-8 leading-[1.3]">Terms of <br /><span className="serif-italic font-normal">Service</span></h2>
@@ -55,36 +55,38 @@ const Terms = () => {
                 </p>
             </div>
             
-            <div className="lg:col-span-7 flex flex-col gap-4">
+            <div className="lg:col-span-7 flex flex-col divide-y divide-white/8">
                 {termsData.map((term, idx) => (
-                    <div 
+                    <div
                         key={idx}
-                        className={`p-10 border transition-all cursor-pointer ${
-                            activeIdx === idx ? 'border-white bg-white/[0.02]' : 'border-white/10 opacity-40 hover:opacity-100'
-                        }`}
+                        className="py-5 cursor-pointer group"
                         onClick={() => setActiveIdx(activeIdx === idx ? null : idx)}
                     >
                         <div className="flex justify-between items-center">
-                            <div className="flex items-center gap-6">
-                                <div className={`${activeIdx === idx ? 'text-white' : 'text-white/40'}`}>
+                            <div className="flex items-center gap-4">
+                                <div className={`transition-colors duration-300 ${activeIdx === idx ? 'text-[#D4AF37]' : 'text-white/25 group-hover:text-white/50'}`}>
                                     {term.icon}
                                 </div>
-                                <h3 className="text-2xl font-serif text-white">{term.title}</h3>
+                                <h3 className={`text-sm font-medium tracking-wide transition-colors duration-300 ${activeIdx === idx ? 'text-white' : 'text-white/60 group-hover:text-white/90'}`}>
+                                    {term.title}
+                                </h3>
                             </div>
-                            <div className={`transition-transform duration-500 ${activeIdx === idx ? 'rotate-180' : ''}`}>
-                                <ChevronDown size={20} />
-                            </div>
+                            <ChevronDown
+                                size={14}
+                                className={`text-white/30 transition-all duration-300 flex-shrink-0 ${activeIdx === idx ? 'rotate-180 text-white/60' : 'group-hover:text-white/50'}`}
+                            />
                         </div>
-                        
+
                         <AnimatePresence>
                             {activeIdx === idx && (
                                 <motion.div
                                     initial={{ height: 0, opacity: 0 }}
                                     animate={{ height: 'auto', opacity: 1 }}
                                     exit={{ height: 0, opacity: 0 }}
+                                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                                     className="overflow-hidden"
                                 >
-                                    <p className="pt-8 text-sm font-normal text-white/80 leading-relaxed border-t border-white/20 mt-8">
+                                    <p className="pt-4 text-xs font-light text-white/50 leading-relaxed pl-9">
                                         {term.content}
                                     </p>
                                 </motion.div>

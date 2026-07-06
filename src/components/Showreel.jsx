@@ -8,14 +8,14 @@ const CINEMATIC_VIDEOS = [
   {
     id: 'enwongo_trad_teaser',
     title: 'Enwongo & Partner — Traditional Teaser',
-    videoUrl: 'https://res.cloudinary.com/lyc8ft9s/video/upload/f_auto,q_auto/enwongo_trad_teaser.mp4',
-    posterUrl: 'https://res.cloudinary.com/lyc8ft9s/video/upload/f_auto,q_auto,so_2/enwongo_trad_teaser.jpg',
+    videoUrl: 'https://res.cloudinary.com/lyc8ft9s/video/upload/q_90,f_auto/enwongo_trad_teaser.mp4',
+    posterUrl: 'https://res.cloudinary.com/lyc8ft9s/video/upload/q_90,f_auto,so_2/enwongo_trad_teaser.jpg',
   },
   {
     id: 'johnny_trado',
     title: 'Johnny & Partner — Traditional Teaser',
-    videoUrl: 'https://res.cloudinary.com/lyc8ft9s/video/upload/f_auto,q_auto/johnny_trado.mp4',
-    posterUrl: 'https://res.cloudinary.com/lyc8ft9s/video/upload/f_auto,q_auto,so_2/johnny_trado.jpg',
+    videoUrl: 'https://res.cloudinary.com/lyc8ft9s/video/upload/q_90,f_auto/johnny_trado.mp4',
+    posterUrl: 'https://res.cloudinary.com/lyc8ft9s/video/upload/q_90,f_auto,so_2/johnny_trado.jpg',
   }
 ];
 
