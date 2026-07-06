@@ -30,7 +30,7 @@ function App() {
           <Showreel />
         </CollapsibleSection>
 
-        <CollapsibleSection title="What Our Clients Say" number="03" defaultOpen={false}>
+        <CollapsibleSection title="What Our Clients Say" number="03" defaultOpen={true}>
           <Testimonials />
         </CollapsibleSection>
 
@@ -46,7 +46,7 @@ function App() {
           <BookingForm />
         </CollapsibleSection>
 
-        <CollapsibleSection title="Terms & Conditions" number="07" defaultOpen={false}>
+        <CollapsibleSection title="Terms & Conditions" number="07" defaultOpen={true}>
           <Terms />
         </CollapsibleSection>
       </main>

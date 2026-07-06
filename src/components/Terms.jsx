@@ -36,7 +36,15 @@ const termsData = [
 ];
 
 const Terms = () => {
-  const [activeIdx, setActiveIdx] = useState(null);
+  const [openSet, setOpenSet] = useState(() => new Set(termsData.map((_, i) => i)));
+
+  const toggle = (idx) => {
+    setOpenSet(prev => {
+      const next = new Set(prev);
+      next.has(idx) ? next.delete(idx) : next.add(idx);
+      return next;
+    });
+  };
 
   return (
     <section id="terms" className="bg-black">
@@ -46,7 +54,7 @@ const Terms = () => {
       </div>
 
       <div className="section-container pt-20 pb-28">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-5">
                 <span className="text-[10px] font-bold tracking-[0.5em] text-white/30 uppercase mb-4 block">Legal</span>
                 <h2 className="text-white mb-8 leading-[1.3]">Terms of <br /><span className="serif-italic font-normal">Service</span></h2>
@@ -60,25 +68,25 @@ const Terms = () => {
                     <div
                         key={idx}
                         className="py-5 cursor-pointer group"
-                        onClick={() => setActiveIdx(activeIdx === idx ? null : idx)}
+                        onClick={() => toggle(idx)}
                     >
                         <div className="flex justify-between items-center">
                             <div className="flex items-center gap-4">
-                                <div className={`transition-colors duration-300 ${activeIdx === idx ? 'text-[#D4AF37]' : 'text-white/25 group-hover:text-white/50'}`}>
+                                <div className={`transition-colors duration-300 ${openSet.has(idx) ? 'text-[#D4AF37]' : 'text-white/25 group-hover:text-white/50'}`}>
                                     {term.icon}
                                 </div>
-                                <h3 className={`text-sm font-medium tracking-wide transition-colors duration-300 ${activeIdx === idx ? 'text-white' : 'text-white/60 group-hover:text-white/90'}`}>
+                                <h3 className={`text-sm font-medium tracking-wide transition-colors duration-300 ${openSet.has(idx) ? 'text-white' : 'text-white/60 group-hover:text-white/90'}`}>
                                     {term.title}
                                 </h3>
                             </div>
                             <ChevronDown
                                 size={14}
-                                className={`text-white/30 transition-all duration-300 flex-shrink-0 ${activeIdx === idx ? 'rotate-180 text-white/60' : 'group-hover:text-white/50'}`}
+                                className={`text-white/30 transition-all duration-300 flex-shrink-0 ${openSet.has(idx) ? 'rotate-180 text-white/60' : 'group-hover:text-white/50'}`}
                             />
                         </div>
 
-                        <AnimatePresence>
-                            {activeIdx === idx && (
+                        <AnimatePresence initial={false}>
+                            {openSet.has(idx) && (
                                 <motion.div
                                     initial={{ height: 0, opacity: 0 }}
                                     animate={{ height: 'auto', opacity: 1 }}
