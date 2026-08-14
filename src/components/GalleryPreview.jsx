@@ -43,7 +43,7 @@ const NarrativeSection = ({ item, index }) => {
           style={{ scale, y }}
           src={item.image} 
           alt={item.title} 
-          className="w-full h-full object-cover grayscale brightness-75 group-hover:brightness-90 transition-all duration-1000"
+          className="w-full h-full object-cover brightness-95 group-hover:brightness-100 transition-all duration-1000"
         />
         <div className="absolute top-8 left-8">
             <span className="text-[120px] font-serif italic text-white/10 select-none leading-none">{item.plate}</span>

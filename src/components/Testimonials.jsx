@@ -114,8 +114,8 @@ const Testimonials = () => {
                   onClick={() => {
                     setVideoState({
                       isOpen: true,
-                      url: 'https://res.cloudinary.com/lyc8ft9s/video/upload/f_auto,q_auto/jamila_trad.mp4',
-                      poster: 'https://res.cloudinary.com/lyc8ft9s/video/upload/f_auto,q_auto,so_2/jamila_trad.jpg'
+                      url: 'https://res.cloudinary.com/lyc8ft9s/video/upload/q_auto:best,f_auto/jamila_trad.mp4',
+                      poster: 'https://res.cloudinary.com/lyc8ft9s/video/upload/q_100,f_auto,so_2/jamila_trad.jpg'
                     });
                   }}
                   className="inline-flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] uppercase text-[#D4AF37] hover:text-white transition-all duration-300 group/btn border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 px-4 py-2.5 bg-[#D4AF37]/5 hover:bg-[#D4AF37]/10 cursor-pointer"

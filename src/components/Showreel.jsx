@@ -3,19 +3,19 @@ import { motion } from 'framer-motion';
 import { Play } from 'lucide-react';
 import VideoModal from './VideoModal';
 
-// Cinematic Wedding Teaser Films hosted on Cloudinary
+// Cinematic Wedding Teaser Films hosted on Cloudinary with max quality settings
 const CINEMATIC_VIDEOS = [
   {
     id: 'enwongo_trad_teaser',
     title: 'Enwongo & Partner — Traditional Teaser',
-    videoUrl: 'https://res.cloudinary.com/lyc8ft9s/video/upload/q_90,f_auto/enwongo_trad_teaser.mp4',
-    posterUrl: 'https://res.cloudinary.com/lyc8ft9s/video/upload/q_90,f_auto,so_2/enwongo_trad_teaser.jpg',
+    videoUrl: 'https://res.cloudinary.com/lyc8ft9s/video/upload/q_auto:best,f_auto/enwongo_trad_teaser.mp4',
+    posterUrl: 'https://res.cloudinary.com/lyc8ft9s/video/upload/q_100,f_auto,so_2/enwongo_trad_teaser.jpg',
   },
   {
     id: 'johnny_trado',
     title: 'Johnny & Partner — Traditional Teaser',
-    videoUrl: 'https://res.cloudinary.com/lyc8ft9s/video/upload/q_90,f_auto/johnny_trado.mp4',
-    posterUrl: 'https://res.cloudinary.com/lyc8ft9s/video/upload/q_90,f_auto,so_2/johnny_trado.jpg',
+    videoUrl: 'https://res.cloudinary.com/lyc8ft9s/video/upload/q_auto:best,f_auto/johnny_trado.mp4',
+    posterUrl: 'https://res.cloudinary.com/lyc8ft9s/video/upload/q_100,f_auto,so_2/johnny_trado.jpg',
   }
 ];
 
@@ -99,7 +99,7 @@ const Showreel = () => {
                 <img
                   src={video.posterUrl}
                   alt={video.title}
-                  className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-all duration-700 brightness-[0.7] group-hover:brightness-50"
+                  className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-all duration-700 brightness-100 group-hover:brightness-90"
                   loading="lazy"
                 />
                 
